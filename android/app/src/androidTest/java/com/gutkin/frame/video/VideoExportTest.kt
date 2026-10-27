@@ -23,6 +23,10 @@ import com.gutkin.frame.ProjectStore
 import org.json.JSONObject
 import org.junit.Assert.*
 import org.junit.Test
+import org.junit.Rule
+import androidx.compose.ui.test.*
+import androidx.compose.ui.test.junit4.createEmptyComposeRule
+import androidx.compose.ui.semantics.SemanticsProperties
 import org.junit.runner.RunWith
 import java.io.File
 import java.util.concurrent.CountDownLatch
@@ -32,35 +36,25 @@ import java.util.concurrent.TimeUnit
 class VideoExportTest {
     private val instrumentation = InstrumentationRegistry.getInstrumentation()
     private val context = instrumentation.targetContext
-    private fun findNode(label: String): AccessibilityNodeInfo? {
-        val queue = java.util.ArrayDeque<AccessibilityNodeInfo>()
-        instrumentation.uiAutomation.rootInActiveWindow?.let { queue.add(it) }
-        while (queue.isNotEmpty()) {
-            val node = queue.removeFirst()
-            if (node.contentDescription?.toString() == label) return node
-            for (i in 0 until node.childCount) node.getChild(i)?.let { queue.add(it) }
+    @get:Rule val compose = createEmptyComposeRule()
+    private fun awaitNode(label: String, selected: Boolean? = null): SemanticsNodeInteraction {
+        compose.waitUntil(10000) {
+            compose.onAllNodesWithContentDescription(label).fetchSemanticsNodes().any { node ->
+                selected == null || (node.config.contains(SemanticsProperties.Selected) && node.config[SemanticsProperties.Selected] == selected)
+            }
         }
-        return null
+        val node = compose.onNodeWithContentDescription(label).assertExists()
+        if (selected == true) node.assertIsSelected()
+        if (selected == false) node.assertIsNotSelected()
+        return node
     }
-    private fun awaitNode(label: String, selected: Boolean? = null): AccessibilityNodeInfo {
-        val deadline = SystemClock.uptimeMillis() + 10000
-        while (SystemClock.uptimeMillis() < deadline) {
-            val node = findNode(label)
-            if (node != null && (selected == null || node.isSelected == selected)) return node
-            SystemClock.sleep(100)
-        }
-        throw AssertionError("Missing UI control: $label, selected=$selected")
-    }
-    private fun tap(label: String) {
-        assertTrue("Control must be clickable: $label", awaitNode(label).performAction(AccessibilityNodeInfo.ACTION_CLICK))
-        instrumentation.waitForIdleSync()
-    }
+    private fun tap(label: String) { awaitNode(label).performClick(); compose.waitForIdle() }
     private fun playerView(view: View): PlayerView? {
         if (view is PlayerView) return view
         if (view is ViewGroup) for (i in 0 until view.childCount) playerView(view.getChildAt(i))?.let { return it }
         return null
     }
-    @Test fun appStartsWithBundledJavaScript() {
+    @Test fun composeScreensAndNativePlaybackWork() {
         ActivityScenario.launch(MainActivity::class.java).use { scenario ->
             val deadline = SystemClock.uptimeMillis() + 45000
             var found = false
@@ -106,6 +100,7 @@ class VideoExportTest {
             val readyDeadline = SystemClock.uptimeMillis() + 30000
             var ready = false
             while (SystemClock.uptimeMillis() < readyDeadline && !ready) {
+                compose.mainClock.advanceTimeBy(200)
                 scenario.onActivity { activity ->
                     val player = playerView(activity.window.decorView)?.player
                     ready = player?.playbackState == Player.STATE_READY && player.playerError == null
@@ -114,6 +109,27 @@ class VideoExportTest {
                 if (!ready) SystemClock.sleep(200)
             }
             assertTrue("Compose editor must prepare the real video player", ready)
+            SystemClock.sleep(350)
+            scenario.onActivity { activity ->
+                val player = playerView(activity.window.decorView)?.player!!
+                assertNull(player.playerError)
+                assertTrue("Native video must actually advance", player.currentPosition > 0)
+                player.pause()
+            }
+            compose.onNodeWithContentDescription("Сохранить проект").performScrollTo().performClick()
+            compose.waitUntil(10000) { compose.onAllNodesWithText("OK").fetchSemanticsNodes().isNotEmpty() }
+            compose.onNodeWithText("OK").performClick()
+            compose.onNodeWithContentDescription("Назад").performScrollTo().performClick()
+            tap("Шаблоны")
+            compose.onNodeWithText("Найди свой стиль").assertIsDisplayed()
+            compose.onNode(hasSetTextAction()).performTextInput("Film")
+            compose.onNodeWithText("Film Diary").assertExists()
+            tap("Проекты")
+            tap("Продолжить проект")
+            awaitNode("Заменить видео")
+            compose.onNodeWithContentDescription("Назад").performClick()
+            tap("О приложении")
+            compose.onNodeWithText("Просто о важном").assertIsDisplayed()
         }
     }
     private fun fixture(name: String): File = File(context.filesDir, "media/$name").apply {
