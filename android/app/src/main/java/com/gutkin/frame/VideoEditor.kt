@@ -68,6 +68,7 @@ internal class EditorPlayback {
     val draft = s.draft()
     val playback = remember { EditorPlayback() }
     var tool by remember { mutableStateOf("Монтаж") }
+    val toolScroll = remember(tool) { ScrollState(0) }
     Column(Modifier.fillMaxSize().imePadding().padding(horizontal = 12.dp), verticalArrangement = Arrangement.spacedBy(4.dp)) {
         Row(Modifier.fillMaxWidth().height(48.dp), verticalAlignment = Alignment.CenterVertically) {
             IconButton(model::back) { Icon(Icons.Outlined.ArrowBack, "Назад") }
@@ -93,7 +94,7 @@ internal class EditorPlayback {
         Row(Modifier.fillMaxWidth().horizontalScroll(rememberScrollState()), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
             listOf("Монтаж", "Текст", "Стиль", "Звук").forEach { name -> FilterChip(tool == name, { tool = name }, { Text(name) }, modifier = Modifier.semantics { contentDescription = "Инструмент $name" }) }
         }
-        Column(Modifier.fillMaxWidth().height(188.dp).clip(RoundedCornerShape(12.dp)).background(EditorPanel).verticalScroll(rememberScrollState()).padding(horizontal = 12.dp, vertical = 8.dp), verticalArrangement = Arrangement.spacedBy(6.dp)) {
+        Column(Modifier.fillMaxWidth().height(188.dp).clip(RoundedCornerShape(12.dp)).background(EditorPanel).verticalScroll(toolScroll).padding(horizontal = 12.dp, vertical = 8.dp), verticalArrangement = Arrangement.spacedBy(6.dp)) {
             when (tool) {
                 "Монтаж" -> {
                     if (s.video != null) {
@@ -139,7 +140,7 @@ internal class EditorPlayback {
 }
 
 @Composable private fun EditorChoices(items: List<Pair<String, String>>, selected: String, description: String, change: (String) -> Unit) {
-    Row(Modifier.horizontalScroll(rememberScrollState()), horizontalArrangement = Arrangement.spacedBy(6.dp)) {
+    Row(Modifier.semantics { contentDescription = "Параметр $description" }.horizontalScroll(rememberScrollState()), horizontalArrangement = Arrangement.spacedBy(6.dp)) {
         items.forEach { (id, label) -> FilterChip(selected == id, { change(id) }, { Text(label, fontSize = 12.sp) }, modifier = Modifier.semantics { contentDescription = "$description: $label" }) }
     }
 }
@@ -169,9 +170,8 @@ internal class EditorPlayback {
         }
         RangeSlider(selection, { requested ->
             val movingStart = requested.start != selection.start
-            val a = if (movingStart) requested.start.coerceIn(maxOf(0f, selection.endInclusive - 30000f), selection.endInclusive - 1000f) else selection.start
-            val b = if (!movingStart) requested.endInclusive.coerceIn(a + 1000f, minOf(duration, a + 30000f)) else selection.endInclusive
-            selection = a..b
+            val range = EditorTrim.move(selection.start.roundToLong(), selection.endInclusive.roundToLong(), movingStart, (if (movingStart) requested.start else requested.endInclusive).roundToLong(), video.durationMs)
+            selection = range.first.toFloat()..range.last.toFloat()
         }, onValueChangeFinished = { trim(selection.start.roundToLong(), selection.endInclusive.roundToLong()) }, valueRange = 0f..duration, modifier = Modifier.fillMaxWidth().height(32.dp).semantics { contentDescription = "Границы фрагмента" })
     }
 }

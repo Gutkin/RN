@@ -30,6 +30,14 @@ class UiStateTest {
             try { edits.validate(); fail("Invalid edits must fail: $edits") } catch (_: IllegalArgumentException) { }
         }
     }
+    @Test fun trimHandlesCanReachTheEntireSourceWithinLimits() {
+        val lastThirty = EditorTrim.move(0, 15000, false, 60000, 60000)
+        assertEquals(30000L..60000L, lastThirty)
+        val firstThirty = EditorTrim.move(lastThirty.first, lastThirty.last, true, 0, 60000)
+        assertEquals(0L..30000L, firstThirty)
+        assertEquals(0L..1000L, EditorTrim.move(0, 1000, true, 500, 1000))
+        assertEquals(1000L..2000L, EditorTrim.move(1000, 3000, false, 1000, 60000))
+    }
     @Test fun everyCollectionHasFiveUniqueValidTemplates() {
         for (name in listOf("Stories", "Reels", "Posts")) {
             assertEquals(5, Templates.collection(name).map { it.id }.toSet().size)

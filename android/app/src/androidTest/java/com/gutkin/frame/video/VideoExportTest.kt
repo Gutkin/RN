@@ -51,6 +51,10 @@ class VideoExportTest {
         return node
     }
     private fun tap(label: String) { awaitNode(label).performClick(); compose.waitForIdle() }
+    private fun choose(group: String, value: String) {
+        compose.onNodeWithContentDescription("Параметр $group").performScrollTo()
+        compose.onNodeWithContentDescription("$group: $value").performScrollTo().performClick().assertIsSelected()
+    }
     private fun playerView(view: View): PlayerView? {
         if (view is PlayerView) return view
         if (view is ViewGroup) for (i in 0 until view.childCount) playerView(view.getChildAt(i))?.let { return it }
@@ -115,12 +119,12 @@ class VideoExportTest {
             // Real controls, not a ViewModel-only setup: change every persistent visual option.
             tap("Инструмент Текст")
             compose.onNodeWithText("Заголовок").performTextReplacement("МОЙ МОНТАЖ")
-            compose.onNodeWithContentDescription("Положение текста: Снизу").performScrollTo().performClick()
+            choose("Положение текста", "Снизу")
             compose.onNodeWithContentDescription("Размер текста").performScrollTo().performSemanticsAction(SemanticsActions.SetProgress) { it(1.3f) }
-            compose.onNodeWithContentDescription("Цвет текста: Коралловый").performScrollTo().performClick()
+            choose("Цвет текста", "Коралловый")
             tap("Инструмент Стиль")
-            compose.onNodeWithContentDescription("Фильтр: Ч/б").performScrollTo().performClick()
-            compose.onNodeWithContentDescription("Масштаб: Вписать целиком").performScrollTo().performClick()
+            choose("Фильтр", "Ч/б")
+            choose("Масштаб", "Вписать целиком")
             tap("Инструмент Звук")
             tap("Отключить звук оригинала")
             tap("Инструмент Монтаж")
