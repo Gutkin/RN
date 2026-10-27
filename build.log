@@ -32,8 +32,8 @@ Unable to strip the following libraries, packaging them as they are: libandroidx
 > Task :app:mergeReleaseNativeDebugMetadata NO-SOURCE
 > Task :app:mergeReleaseStartupProfile
 > Task :app:mergeExtDexRelease FROM-CACHE
-> Task :app:mergeReleaseArtProfile
 > Task :app:mergeReleaseShaders
+> Task :app:mergeReleaseArtProfile
 > Task :app:compileReleaseShaders NO-SOURCE
 > Task :app:generateReleaseAssets UP-TO-DATE
 > Task :app:mergeReleaseAssets
@@ -86,9 +86,9 @@ w: file:///home/runner/work/RN/RN/android/app/src/main/java/com/gutkin/frame/Vid
 > Task :app:bundleReleaseClassesToRuntimeJar
 > Task :app:bundleReleaseClassesToCompileJar
 > Task :app:mergeDexRelease
-> Task :app:compileReleaseArtProfile
 > Task :app:compileReleaseUnitTestKotlin
 > Task :app:compileReleaseUnitTestJavaWithJavac NO-SOURCE
+> Task :app:compileReleaseArtProfile
 > Task :app:processReleaseUnitTestJavaRes
 > Task :app:testReleaseUnitTest
 > Task :app:packageRelease
@@ -107,7 +107,7 @@ w: file:///home/runner/work/RN/RN/android/app/src/main/java/com/gutkin/frame/Vid
 > Task :app:lintVitalReportRelease
 > Task :app:lintVitalRelease
 > Task :app:assembleRelease
-gradle/actions: Writing build results to /home/runner/work/_temp/.gradle-actions/build-results/apk-1793074522721.json
+gradle/actions: Writing build results to /home/runner/work/_temp/.gradle-actions/build-results/apk-1793074982549.json
 
 [Incubating] Problems report is available at: file:///home/runner/work/RN/RN/android/build/reports/problems/problems-report.html
 
@@ -117,5 +117,5 @@ You can use '--warning-mode all' to show the individual deprecation warnings and
 
 For more on this, please refer to https://docs.gradle.org/8.13/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
 
-BUILD SUCCESSFUL in 44s
+BUILD SUCCESSFUL in 1m 6s
 84 actionable tasks: 55 executed, 29 from cache

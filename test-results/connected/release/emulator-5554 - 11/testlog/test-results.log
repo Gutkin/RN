@@ -127,7 +127,7 @@ INSTRUMENTATION_STATUS: test=acceptsActualHevcFromCamera
 INSTRUMENTATION_STATUS_CODE: 0
 INSTRUMENTATION_RESULT: stream=
 
-Time: 60.98
+Time: 85.453
 
 OK (9 tests)
 

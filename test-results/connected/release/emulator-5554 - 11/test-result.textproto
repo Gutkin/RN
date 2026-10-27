@@ -1,4 +1,4 @@
-# 2026-10-27T04:18:33.648176930Z:
+# 2026-10-27T04:27:04.036556346Z:
 test_suite_meta_data {
   scheduled_test_case_count: 9
 }
@@ -9,12 +9,12 @@ test_result {
     test_package: "com.gutkin.frame.video"
     test_method: "editorSettingsRoundTripAndLegacyDefaultsWork"
     start_time {
-      seconds: 1793074651
-      nanos: 640000000
+      seconds: 1793075137
+      nanos: 496000000
     }
     end_time {
-      seconds: 1793074651
-      nanos: 707000000
+      seconds: 1793075137
+      nanos: 599000000
     }
   }
   test_status: PASSED
@@ -61,12 +61,12 @@ test_result {
     test_package: "com.gutkin.frame.video"
     test_method: "validatesActualVideoAndRejects4K"
     start_time {
-      seconds: 1793074651
-      nanos: 718000000
+      seconds: 1793075137
+      nanos: 615000000
     }
     end_time {
-      seconds: 1793074651
-      nanos: 743000000
+      seconds: 1793075137
+      nanos: 666000000
     }
   }
   test_status: PASSED
@@ -113,12 +113,12 @@ test_result {
     test_package: "com.gutkin.frame.video"
     test_method: "exportsEditorGeometryFilterAndColoredText"
     start_time {
-      seconds: 1793074651
-      nanos: 745000000
+      seconds: 1793075137
+      nanos: 669000000
     }
     end_time {
-      seconds: 1793074675
-      nanos: 499000000
+      seconds: 1793075162
+      nanos: 926000000
     }
   }
   test_status: PASSED
@@ -165,12 +165,12 @@ test_result {
     test_package: "com.gutkin.frame.video"
     test_method: "readsLegacyReactNativeProjectAndPreservesItsMedia"
     start_time {
-      seconds: 1793074675
-      nanos: 503000000
+      seconds: 1793075162
+      nanos: 929000000
     }
     end_time {
-      seconds: 1793074675
-      nanos: 504000000
+      seconds: 1793075162
+      nanos: 980000000
     }
   }
   test_status: PASSED
@@ -217,12 +217,12 @@ test_result {
     test_package: "com.gutkin.frame.video"
     test_method: "importsHevcWithoutChangingTheSource"
     start_time {
-      seconds: 1793074675
-      nanos: 507000000
+      seconds: 1793075162
+      nanos: 987000000
     }
     end_time {
-      seconds: 1793074675
-      nanos: 558000000
+      seconds: 1793075163
+      nanos: 63000000
     }
   }
   test_status: PASSED
@@ -269,12 +269,12 @@ test_result {
     test_package: "com.gutkin.frame.video"
     test_method: "convertsHevcToCompatibleH264"
     start_time {
-      seconds: 1793074675
-      nanos: 559000000
+      seconds: 1793075163
+      nanos: 67000000
     }
     end_time {
-      seconds: 1793074679
-      nanos: 665000000
+      seconds: 1793075169
+      nanos: 472000000
     }
   }
   test_status: PASSED
@@ -321,12 +321,12 @@ test_result {
     test_package: "com.gutkin.frame.video"
     test_method: "exportsTrimmedPortraitWithTextAndWithoutAudio"
     start_time {
-      seconds: 1793074679
-      nanos: 667000000
+      seconds: 1793075169
+      nanos: 475000000
     }
     end_time {
-      seconds: 1793074703
-      nanos: 327000000
+      seconds: 1793075194
+      nanos: 793000000
     }
   }
   test_status: PASSED
@@ -373,12 +373,12 @@ test_result {
     test_package: "com.gutkin.frame.video"
     test_method: "composeScreensAndNativePlaybackWork"
     start_time {
-      seconds: 1793074703
-      nanos: 329000000
+      seconds: 1793075194
+      nanos: 797000000
     }
     end_time {
-      seconds: 1793074712
-      nanos: 588000000
+      seconds: 1793075222
+      nanos: 884000000
     }
   }
   test_status: PASSED
@@ -425,12 +425,12 @@ test_result {
     test_package: "com.gutkin.frame.video"
     test_method: "acceptsActualHevcFromCamera"
     start_time {
-      seconds: 1793074712
-      nanos: 590000000
+      seconds: 1793075222
+      nanos: 888000000
     }
     end_time {
-      seconds: 1793074712
-      nanos: 618000000
+      seconds: 1793075222
+      nanos: 939000000
     }
   }
   test_status: PASSED
