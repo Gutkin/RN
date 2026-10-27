@@ -1,18 +1,18 @@
 {
-  "source": "a23d06cfa905eb3b65601f1855f5a17fc7f625a1",
-  "version": "0.1.1",
-  "version_code": 2,
-  "sha256": "3703d4326a957007a02bc2ea89aae2d3928ff1f7cca1abe2c1600c9d3075baed",
-  "bytes": 64418364,
+  "source": "a21936139c783c55d9d44c46488b0bd439b0a6f5",
+  "version": "0.2.0",
+  "version_code": 3,
+  "sha256": "0dccfc29f25dde078f2a2d8d2528f0f628b4e428c973d01c40ec897e6f260672",
+  "bytes": 28407672,
   "min_android": "10",
   "validation": {
-    "javascript_tests_passed": 12,
-    "native_unit_tests_passed": 7,
-    "android_tests_passed": 5,
+    "application_stack": "Kotlin / Jetpack Compose / Media3",
+    "native_unit_tests_passed": 11,
+    "android_tests_passed": 7,
     "android_tests_failed": 0,
     "android_tests_skipped": 0,
     "android": "11",
     "signature": "verified; matches 0.1.0",
-    "run": "https://github.com/Gutkin/RN/actions/runs/40436430626"
+    "run": "https://github.com/Gutkin/RN/actions/runs/40442809693"
   }
 }
