@@ -20,29 +20,29 @@ Daemon will be stopped at the end of the build
 > Task :app:extractProguardFiles
 > Task :app:mergeReleaseJniLibFolders
 > Task :app:mergeReleaseNativeLibs
-> Task :app:mergeReleaseResources
 > Task :app:checkReleaseDuplicateClasses
-> Task :app:desugarReleaseFileDependencies
-> Task :app:mergeReleaseStartupProfile
 
 > Task :app:stripReleaseDebugSymbols
 Unable to strip the following libraries, packaging them as they are: libandroidx.graphics.path.so.
 
-> Task :app:processReleaseResources
-> Task :app:mergeExtDexRelease
+> Task :app:desugarReleaseFileDependencies
+> Task :app:mergeReleaseStartupProfile
 > Task :app:extractReleaseNativeSymbolTables
+> Task :app:mergeReleaseResources
+> Task :app:mergeExtDexRelease
 > Task :app:mergeReleaseNativeDebugMetadata NO-SOURCE
 > Task :app:mergeReleaseArtProfile
 > Task :app:mergeReleaseShaders
 > Task :app:compileReleaseShaders NO-SOURCE
 > Task :app:generateReleaseAssets UP-TO-DATE
+> Task :app:processReleaseResources
 > Task :app:mergeReleaseAssets
 > Task :app:compressReleaseAssets
 > Task :app:extractReleaseVersionControlInfo
-> Task :app:optimizeReleaseResources
 > Task :app:collectReleaseDependencies
 > Task :app:sdkReleaseDependencyData
 > Task :app:validateSigningRelease
+> Task :app:optimizeReleaseResources
 > Task :app:writeReleaseAppMetadata
 > Task :app:writeReleaseSigningConfigVersions
 > Task :app:preReleaseUnitTestBuild UP-TO-DATE
@@ -59,11 +59,11 @@ Unable to strip the following libraries, packaging them as they are: libandroidx
 > Task :app:compileReleaseAndroidTestShaders NO-SOURCE
 > Task :app:generateReleaseAndroidTestAssets UP-TO-DATE
 > Task :app:mergeReleaseAndroidTestAssets
-> Task :app:mergeReleaseAndroidTestResources
 > Task :app:compressReleaseAndroidTestAssets
-> Task :app:processReleaseAndroidTestResources
+> Task :app:mergeReleaseAndroidTestResources
 > Task :app:checkReleaseAndroidTestDuplicateClasses
 > Task :app:desugarReleaseAndroidTestFileDependencies FROM-CACHE
+> Task :app:processReleaseAndroidTestResources
 > Task :app:mergeReleaseAndroidTestJniLibFolders
 > Task :app:mergeReleaseAndroidTestNativeLibs NO-SOURCE
 > Task :app:stripReleaseAndroidTestDebugSymbols NO-SOURCE
@@ -72,24 +72,24 @@ Unable to strip the following libraries, packaging them as they are: libandroidx
 > Task :app:mergeExtDexReleaseAndroidTest
 
 > Task :app:compileReleaseKotlin
-w: file:///home/runner/work/RN/RN/android/app/src/main/java/com/gutkin/frame/FrameApp.kt:87:20 'setter for statusBarColor: Int' is deprecated. Deprecated in Java
-w: file:///home/runner/work/RN/RN/android/app/src/main/java/com/gutkin/frame/FrameApp.kt:88:20 'setter for navigationBarColor: Int' is deprecated. Deprecated in Java
-w: file:///home/runner/work/RN/RN/android/app/src/main/java/com/gutkin/frame/FrameApp.kt:153:93 'ArrowBack: ImageVector' is deprecated. Use the AutoMirrored version at Icons.AutoMirrored.Outlined.ArrowBack
-w: file:///home/runner/work/RN/RN/android/app/src/main/java/com/gutkin/frame/FrameApp.kt:266:290 'ArrowForward: ImageVector' is deprecated. Use the AutoMirrored version at Icons.AutoMirrored.Outlined.ArrowForward
+w: file:///home/runner/work/RN/RN/android/app/src/main/java/com/gutkin/frame/FrameApp.kt:89:20 'setter for statusBarColor: Int' is deprecated. Deprecated in Java
+w: file:///home/runner/work/RN/RN/android/app/src/main/java/com/gutkin/frame/FrameApp.kt:90:20 'setter for navigationBarColor: Int' is deprecated. Deprecated in Java
+w: file:///home/runner/work/RN/RN/android/app/src/main/java/com/gutkin/frame/FrameApp.kt:155:93 'ArrowBack: ImageVector' is deprecated. Use the AutoMirrored version at Icons.AutoMirrored.Outlined.ArrowBack
+w: file:///home/runner/work/RN/RN/android/app/src/main/java/com/gutkin/frame/FrameApp.kt:268:290 'ArrowForward: ImageVector' is deprecated. Use the AutoMirrored version at Icons.AutoMirrored.Outlined.ArrowForward
 
 > Task :app:compileReleaseJavaWithJavac
 > Task :app:generateReleaseLintVitalReportModel
 > Task :app:dexBuilderRelease
 > Task :app:mergeReleaseGlobalSynthetics
 > Task :app:processReleaseJavaRes
+> Task :app:mergeDexRelease
 > Task :app:mergeReleaseJavaResource
 > Task :app:bundleReleaseClassesToRuntimeJar
 > Task :app:bundleReleaseClassesToCompileJar
-> Task :app:mergeDexRelease
+> Task :app:compileReleaseArtProfile
 > Task :app:compileReleaseUnitTestKotlin
 > Task :app:compileReleaseUnitTestJavaWithJavac NO-SOURCE
 > Task :app:processReleaseUnitTestJavaRes
-> Task :app:compileReleaseArtProfile
 > Task :app:testReleaseUnitTest
 > Task :app:packageRelease
 > Task :app:createReleaseApkListingFileRedirect
@@ -107,7 +107,7 @@ w: file:///home/runner/work/RN/RN/android/app/src/main/java/com/gutkin/frame/Fra
 > Task :app:lintVitalReportRelease
 > Task :app:lintVitalRelease
 > Task :app:assembleRelease
-gradle/actions: Writing build results to /home/runner/work/_temp/.gradle-actions/build-results/apk-1793069478325.json
+gradle/actions: Writing build results to /home/runner/work/_temp/.gradle-actions/build-results/apk-1793069644163.json
 
 [Incubating] Problems report is available at: file:///home/runner/work/RN/RN/android/build/reports/problems/problems-report.html
 
@@ -117,5 +117,5 @@ You can use '--warning-mode all' to show the individual deprecation warnings and
 
 For more on this, please refer to https://docs.gradle.org/8.13/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
 
-BUILD SUCCESSFUL in 2m 12s
+BUILD SUCCESSFUL in 2m 22s
 84 actionable tasks: 79 executed, 5 from cache
