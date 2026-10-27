@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<testsuite name="com.gutkin.frame.video.VideoExportTest" tests="7" failures="1" errors="0" skipped="0" time="44.62" timestamp="2026-10-27T02:50:27" hostname="localhost">
+  <properties>
+    <property name="device" value="emulator-5554 - 11" />
+    <property name="flavor" value="" />
+    <property name="project" value=":app" />
+  </properties>
+  <testcase name="appStartsWithBundledJavaScript" classname="com.gutkin.frame.video.VideoExportTest" time="11.224">
+    <failure>java.lang.AssertionError: Missing UI control: Stories, selected=true
+at com.gutkin.frame.video.VideoExportTest.awaitNode(VideoExportTest.kt:46)
+at com.gutkin.frame.video.VideoExportTest.appStartsWithBundledJavaScript(VideoExportTest.kt:67)
+</failure>
+  </testcase>
+  <testcase name="validatesActualVideoAndRejects4K" classname="com.gutkin.frame.video.VideoExportTest" time="0.083" />
+  <testcase name="readsLegacyReactNativeProjectAndPreservesItsMedia" classname="com.gutkin.frame.video.VideoExportTest" time="0.049" />
+  <testcase name="importsHevcWithoutChangingTheSource" classname="com.gutkin.frame.video.VideoExportTest" time="0.305" />
+  <testcase name="convertsHevcToCompatibleH264" classname="com.gutkin.frame.video.VideoExportTest" time="6.327" />
+  <testcase name="exportsTrimmedPortraitWithTextAndWithoutAudio" classname="com.gutkin.frame.video.VideoExportTest" time="25.523" />
+  <testcase name="acceptsActualHevcFromCamera" classname="com.gutkin.frame.video.VideoExportTest" time="0.029" />
+</testsuite>

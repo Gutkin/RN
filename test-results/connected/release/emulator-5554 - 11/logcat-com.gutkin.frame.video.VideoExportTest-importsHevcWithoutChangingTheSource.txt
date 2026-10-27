@@ -1,0 +1,46 @@
+10-27 02:49:53.899  2371  2391 I TestRunner: started: importsHevcWithoutChangingTheSource(com.gutkin.frame.video.VideoExportTest)
+10-27 02:49:53.910   426   426 D MediaBufferGroup: creating MemoryDealer
+10-27 02:49:53.923   429  2442 I OMXClient: IOmx service obtained
+10-27 02:49:53.923   436   476 I OMXMaster: makeComponentInstance(OMX.google.hevc.decoder) in android.hardwar process
+10-27 02:49:53.934   429  2442 D ACodec  : Setting [OMX.google.hevc.decoder] input port buffer number: 1
+10-27 02:49:53.935   436   814 W SimpleSoftOMXComponent: component requires at least 8 buffers (1 requested)
+10-27 02:49:53.935   436   814 E OMXNodeInstance: setParameter(0xf3d81350:google.hevc.decoder, ParamPortDefinition(0x2000001)) ERROR: UnsupportedSetting(0x80001019)
+10-27 02:49:53.935   429  2442 W ACodec  : Fail to set [OMX.google.hevc.decoder] input port buffer number: 1
+10-27 02:49:53.935   429  2442 D ACodec  : Setting [OMX.google.hevc.decoder] output port buffer number: 1
+10-27 02:49:53.935   436   814 W SimpleSoftOMXComponent: component requires at least 8 buffers (1 requested)
+10-27 02:49:53.935   436   814 E OMXNodeInstance: setParameter(0xf3d81350:google.hevc.decoder, ParamPortDefinition(0x2000001)) ERROR: UnsupportedSetting(0x80001019)
+10-27 02:49:53.935   429  2442 W ACodec  : Fail to set [OMX.google.hevc.decoder] output port buffer number: 1
+10-27 02:49:53.935   436   814 D SoftVideoDecoderOMXComponent: Color Aspects preference: 1
+10-27 02:49:53.936   436   814 E OMXNodeInstance: getConfig(0xf3d81350:google.hevc.decoder, ConfigAndroidVendorExtension(0x6f100004)) ERROR: UnsupportedIndex(0x8000101a)
+10-27 02:49:53.973   429  2441 W ResourceManagerService: Ignoring request to add new resource entry with value <= 0
+10-27 02:49:53.974   426  2440 D MediaBufferGroup: creating MemoryDealer
+10-27 02:49:53.978   436  2443 D SoftVideoDecoderOMXComponent: Color Aspects preference: 1
+10-27 02:49:53.992   507   650 W InputReader: Device virtio_input_multi_touch_10 is associated with display ADISPLAY_ID_NONE.
+10-27 02:49:53.992   507   650 W InputReader: Device virtio_input_multi_touch_4 is associated with display ADISPLAY_ID_NONE.
+10-27 02:49:53.992   507   650 W InputReader: Device virtio_input_multi_touch_11 is associated with display ADISPLAY_ID_NONE.
+10-27 02:49:53.992   507   650 W InputReader: Device virtio_input_multi_touch_5 is associated with display ADISPLAY_ID_NONE.
+10-27 02:49:53.992   507   650 W InputReader: Device virtio_input_multi_touch_8 is associated with display ADISPLAY_ID_NONE.
+10-27 02:49:53.992   507   650 W InputReader: Device virtio_input_multi_touch_2 is associated with display ADISPLAY_ID_NONE.
+10-27 02:49:53.992   507   650 W InputReader: Device virtio_input_multi_touch_6 is associated with display ADISPLAY_ID_NONE.
+10-27 02:49:53.992   507   650 W InputReader: Device virtio_input_multi_touch_3 is associated with display ADISPLAY_ID_NONE.
+10-27 02:49:53.992   507   650 W InputReader: Device virtio_input_multi_touch_9 is associated with display ADISPLAY_ID_NONE.
+10-27 02:49:53.992   507   650 W InputReader: Device virtio_input_multi_touch_7 is associated with display ADISPLAY_ID_NONE.
+10-27 02:49:53.992   507   650 W InputReader: Device virtio_input_multi_touch_10 is associated with display ADISPLAY_ID_NONE.
+10-27 02:49:53.992   507   650 W InputReader: Device virtio_input_multi_touch_4 is associated with display ADISPLAY_ID_NONE.
+10-27 02:49:53.992   507   650 W InputReader: Device virtio_input_multi_touch_11 is associated with display ADISPLAY_ID_NONE.
+10-27 02:49:53.992   507   650 W InputReader: Device virtio_input_multi_touch_5 is associated with display ADISPLAY_ID_NONE.
+10-27 02:49:53.992   507   650 W InputReader: Device virtio_input_multi_touch_8 is associated with display ADISPLAY_ID_NONE.
+10-27 02:49:53.992   507   650 W InputReader: Device virtio_input_multi_touch_2 is associated with display ADISPLAY_ID_NONE.
+10-27 02:49:53.992   507   650 W InputReader: Device virtio_input_multi_touch_6 is associated with display ADISPLAY_ID_NONE.
+10-27 02:49:53.992   507   650 W InputReader: Device virtio_input_multi_touch_3 is associated with display ADISPLAY_ID_NONE.
+10-27 02:49:53.992   507   650 W InputReader: Device virtio_input_multi_touch_9 is associated with display ADISPLAY_ID_NONE.
+10-27 02:49:53.992   507   650 W InputReader: Device virtio_input_multi_touch_7 is associated with display ADISPLAY_ID_NONE.
+10-27 02:49:53.994   326   611 W ServiceManager: Permission failure: android.permission.ACCESS_SURFACE_FLINGER from uid=10131 pid=2413
+10-27 02:49:53.994   326   611 D PermissionCache: checking android.permission.ACCESS_SURFACE_FLINGER for uid=10131 => denied (107 us)
+10-27 02:49:54.010   300   338 D goldfish-address-space: claimShared: Ask to claim region [0x3fdd8b000 0x3fde53000]
+10-27 02:49:54.012   300   338 D goldfish-address-space: claimShared: Ask to claim region [0x3fde53000 0x3fdf1b000]
+10-27 02:49:54.013   300   340 D goldfish-address-space: claimShared: Ask to claim region [0x3fdf1b000 0x3fdf1c000]
+10-27 02:49:54.085   300   338 D goldfish-address-space: claimShared: Ask to claim region [0x3fdf1c000 0x3fdfe4000]
+10-27 02:49:54.212   930  1657 E FrameEvents: updateAcquireFence: Did not find frame.
+10-27 02:49:54.213   300   338 D goldfish-address-space: claimShared: Ask to claim region [0x3fdfe4000 0x3fdfe5000]
+10-27 02:49:54.230  2371  2391 I TestRunner: finished: importsHevcWithoutChangingTheSource(com.gutkin.frame.video.VideoExportTest)
