@@ -1,0 +1,9 @@
+node_modules/
+.build-cache/
+android/.gradle/
+android/**/build/
+android/local.properties
+*.keystore
+!android/app/debug.keystore
+artifacts/
+coverage/

@@ -1,0 +1,93 @@
+name: Android preview APK
+on:
+  push:
+    branches: [master]
+    paths-ignore: ['design/**', '**.md']
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: android-preview
+  cancel-in-progress: false
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - uses: android-actions/setup-android@v3
+      - name: Install dependencies
+        run: npm ci --no-audit --no-fund
+      - name: Check TypeScript and project logic
+        run: npm run typecheck && npm test
+      - name: Build standalone APK and native tests
+        id: apk
+        run: |
+          cd android
+          chmod +x gradlew
+          ./gradlew --no-daemon assembleRelease testReleaseUnitTest assembleReleaseAndroidTest 2>&1 | tee /tmp/frame-build.log
+        shell: bash
+      - name: Exercise native import and video export
+        id: device
+        uses: reactivecircus/android-emulator-runner@v2
+        with:
+          api-level: 30
+          arch: x86_64
+          target: default
+          disable-animations: true
+          emulator-options: -no-window -gpu swiftshader_indirect -no-snapshot -noaudio -no-boot-anim -camera-back none
+          script: cd android && ./gradlew --no-daemon connectedReleaseAndroidTest
+      - name: Upload APK and test evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: frame-preview-apk
+          retention-days: 14
+          path: |
+            android/app/build/outputs/apk/release/*.apk
+            android/app/build/reports/tests/
+            android/app/build/reports/androidTests/
+            /tmp/frame-build.log
+      - name: Publish result to download branch
+        if: always()
+        env:
+          BUILD_OUTCOME: ${{ steps.apk.outcome }}
+          DEVICE_OUTCOME: ${{ steps.device.outcome }}
+        run: |
+          set -e
+          delivery=$(mktemp -d)
+          if [ "$BUILD_OUTCOME" = success ] && [ "$DEVICE_OUTCOME" = success ]; then
+            cp android/app/build/outputs/apk/release/app-release.apk "$delivery/frame-preview.apk"
+          fi
+          if [ -f /tmp/frame-build.log ]; then cp /tmp/frame-build.log "$delivery/build.log"; fi
+          python3 - "$delivery" <<'PY'
+          import os,sys,json,pathlib
+          root=pathlib.Path(sys.argv[1])
+          (root/'result.json').write_text(json.dumps({'source':os.environ['GITHUB_SHA'],'build':os.environ['BUILD_OUTCOME'],'device_tests':os.environ['DEVICE_OUTCOME'],'run':os.environ['GITHUB_RUN_ID']},indent=2)+'\n')
+          PY
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          if git ls-remote --exit-code --heads origin android-builds >/dev/null; then
+            git fetch origin android-builds
+            git checkout -B android-builds FETCH_HEAD
+          else
+            git checkout --orphan android-builds
+          fi
+          git rm -rf --ignore-unmatch . >/dev/null
+          cp "$delivery"/* .
+          git add -f result.json
+          if [ -f build.log ]; then git add -f build.log; fi
+          if [ -f frame-preview.apk ]; then
+            sha256sum frame-preview.apk > SHA256SUMS
+            git add -f frame-preview.apk SHA256SUMS
+          fi
+          git commit -m "Android preview build ${GITHUB_RUN_NUMBER}"
+          git push origin android-builds
