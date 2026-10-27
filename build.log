@@ -39,10 +39,10 @@ Unable to strip the following libraries, packaging them as they are: libandroidx
 > Task :app:mergeReleaseAssets
 > Task :app:compressReleaseAssets
 > Task :app:extractReleaseVersionControlInfo
+> Task :app:optimizeReleaseResources
 > Task :app:collectReleaseDependencies
 > Task :app:sdkReleaseDependencyData
 > Task :app:validateSigningRelease
-> Task :app:optimizeReleaseResources
 > Task :app:writeReleaseAppMetadata
 > Task :app:writeReleaseSigningConfigVersions
 > Task :app:preReleaseUnitTestBuild UP-TO-DATE
@@ -75,21 +75,21 @@ Unable to strip the following libraries, packaging them as they are: libandroidx
 w: file:///home/runner/work/RN/RN/android/app/src/main/java/com/gutkin/frame/FrameApp.kt:89:20 'setter for statusBarColor: Int' is deprecated. Deprecated in Java
 w: file:///home/runner/work/RN/RN/android/app/src/main/java/com/gutkin/frame/FrameApp.kt:90:20 'setter for navigationBarColor: Int' is deprecated. Deprecated in Java
 w: file:///home/runner/work/RN/RN/android/app/src/main/java/com/gutkin/frame/FrameApp.kt:155:93 'ArrowBack: ImageVector' is deprecated. Use the AutoMirrored version at Icons.AutoMirrored.Outlined.ArrowBack
-w: file:///home/runner/work/RN/RN/android/app/src/main/java/com/gutkin/frame/FrameApp.kt:268:290 'ArrowForward: ImageVector' is deprecated. Use the AutoMirrored version at Icons.AutoMirrored.Outlined.ArrowForward
+w: file:///home/runner/work/RN/RN/android/app/src/main/java/com/gutkin/frame/FrameApp.kt:269:290 'ArrowForward: ImageVector' is deprecated. Use the AutoMirrored version at Icons.AutoMirrored.Outlined.ArrowForward
 
 > Task :app:compileReleaseJavaWithJavac
 > Task :app:generateReleaseLintVitalReportModel
 > Task :app:dexBuilderRelease
 > Task :app:mergeReleaseGlobalSynthetics
 > Task :app:processReleaseJavaRes
-> Task :app:mergeDexRelease
 > Task :app:mergeReleaseJavaResource
 > Task :app:bundleReleaseClassesToRuntimeJar
 > Task :app:bundleReleaseClassesToCompileJar
-> Task :app:compileReleaseArtProfile
+> Task :app:mergeDexRelease
 > Task :app:compileReleaseUnitTestKotlin
 > Task :app:compileReleaseUnitTestJavaWithJavac NO-SOURCE
 > Task :app:processReleaseUnitTestJavaRes
+> Task :app:compileReleaseArtProfile
 > Task :app:testReleaseUnitTest
 > Task :app:packageRelease
 > Task :app:createReleaseApkListingFileRedirect
@@ -107,7 +107,7 @@ w: file:///home/runner/work/RN/RN/android/app/src/main/java/com/gutkin/frame/Fra
 > Task :app:lintVitalReportRelease
 > Task :app:lintVitalRelease
 > Task :app:assembleRelease
-gradle/actions: Writing build results to /home/runner/work/_temp/.gradle-actions/build-results/apk-1793069644163.json
+gradle/actions: Writing build results to /home/runner/work/_temp/.gradle-actions/build-results/apk-1793069824341.json
 
 [Incubating] Problems report is available at: file:///home/runner/work/RN/RN/android/build/reports/problems/problems-report.html
 
@@ -117,5 +117,5 @@ You can use '--warning-mode all' to show the individual deprecation warnings and
 
 For more on this, please refer to https://docs.gradle.org/8.13/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
 
-BUILD SUCCESSFUL in 2m 22s
+BUILD SUCCESSFUL in 2m 29s
 84 actionable tasks: 79 executed, 5 from cache
