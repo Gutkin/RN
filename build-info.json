@@ -13,6 +13,14 @@
     "javascript_tests": 9,
     "native_unit_tests": 4,
     "apk_signature": "verified",
-    "device_tests": "pending"
+    "device_tests": {
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0,
+      "android": "11",
+      "run": "https://github.com/Gutkin/RN/actions/runs/40430559791",
+      "test_source": "8516f4bdaa7c44b1306da813b376213b3e01a77c"
+    },
+    "note": "APK application source matches the application source validated by the instrumentation run. Only tests, workflow and README changed afterwards."
   }
 }
