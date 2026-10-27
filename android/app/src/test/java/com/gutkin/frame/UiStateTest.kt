@@ -19,6 +19,17 @@ class UiStateTest {
         assertEquals(1500, draft.startMs); assertEquals(3750, draft.endMs)
         assertEquals("Привет", draft.title); assertTrue(draft.muted)
     }
+    @Test fun editorOptionsTravelWithTheExportDraft() {
+        val edits = EditSettings("bottom", 1.3f, "coral", "mono", true)
+        edits.validate()
+        val draft = UiState(video = video, edits = edits).draft()!!
+        assertEquals(edits, draft.edits)
+    }
+    @Test fun invalidEditorSettingsAreRejected() {
+        for (edits in listOf(EditSettings(textScale = Float.NaN), EditSettings(textScale = 10f), EditSettings(textPosition = "outside"), EditSettings(textColor = "unknown"), EditSettings(filter = "unknown"))) {
+            try { edits.validate(); fail("Invalid edits must fail: $edits") } catch (_: IllegalArgumentException) { }
+        }
+    }
     @Test fun everyCollectionHasFiveUniqueValidTemplates() {
         for (name in listOf("Stories", "Reels", "Posts")) {
             assertEquals(5, Templates.collection(name).map { it.id }.toSet().size)

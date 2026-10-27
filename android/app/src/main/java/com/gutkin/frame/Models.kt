@@ -44,17 +44,43 @@ data class VideoData(val id: String, val uri: String, val width: Int, val height
     }
 }
 
-data class Project(val templateId: String, val title: String, val video: VideoData, val startMs: Long, val endMs: Long, val muted: Boolean, val updatedAt: Long = System.currentTimeMillis()) {
+/** Optional additions keep project.json v1 compatible with 0.1.x and 0.2.0. */
+data class EditSettings(
+    val textPosition: String = "template",
+    val textScale: Float = 1f,
+    val textColor: String = "template",
+    val filter: String = "template",
+    val fit: Boolean = false
+) {
+    fun validate() {
+        require(textPosition in setOf("template", "top", "center", "bottom"))
+        require(textScale.isFinite() && textScale in .7f..1.5f)
+        require(textColor in setOf("template", "white", "coral", "black"))
+        require(filter in setOf("template", "original", "mono"))
+    }
+    fun json() = JSONObject().apply {
+        put("textPosition", textPosition); put("textScale", textScale.toDouble())
+        put("textColor", textColor); put("filter", filter); put("fit", fit)
+    }
+    companion object {
+        fun parse(j: JSONObject?) = if (j == null) EditSettings() else EditSettings(
+            j.optString("textPosition", "template"), j.optDouble("textScale", 1.0).toFloat(),
+            j.optString("textColor", "template"), j.optString("filter", "template"), j.optBoolean("fit", false)
+        ).also { it.validate() }
+    }
+}
+
+data class Project(val templateId: String, val title: String, val video: VideoData, val startMs: Long, val endMs: Long, val muted: Boolean, val updatedAt: Long = System.currentTimeMillis(), val edits: EditSettings = EditSettings()) {
     fun json() = JSONObject().apply {
         put("version", 1); put("templateId", templateId); put("title", title); put("video", video.json())
-        put("startMs", startMs); put("endMs", endMs); put("muted", muted); put("updatedAt", updatedAt)
+        put("startMs", startMs); put("endMs", endMs); put("muted", muted); put("updatedAt", updatedAt); put("edits", edits.json())
     }.toString()
     companion object {
         fun parse(text: String): Project {
             require(text.length < 100000)
             val j = JSONObject(text)
             require(j.getInt("version") == 1)
-            val p = Project(j.getString("templateId"), j.getString("title"), VideoData.fromJson(j.getJSONObject("video")), j.getLong("startMs"), j.getLong("endMs"), j.getBoolean("muted"), j.getLong("updatedAt"))
+            val p = Project(j.getString("templateId"), j.getString("title"), VideoData.fromJson(j.getJSONObject("video")), j.getLong("startMs"), j.getLong("endMs"), j.getBoolean("muted"), j.getLong("updatedAt"), EditSettings.parse(j.optJSONObject("edits")))
             require(Templates.byId(p.templateId) != null && p.title.length <= 45)
             require(MediaLimits.validTrim(p.startMs, p.endMs, p.video.durationMs))
             return p

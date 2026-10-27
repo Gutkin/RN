@@ -28,7 +28,6 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.semantics.Role
@@ -36,26 +35,15 @@ import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.compose.foundation.text.KeyboardOptions
-import androidx.compose.ui.viewinterop.AndroidView
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleEventObserver
 import androidx.lifecycle.compose.LocalLifecycleOwner
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.core.view.WindowCompat
-import androidx.media3.common.MediaItem
-import androidx.media3.common.Player
-import androidx.media3.common.PlaybackException
-import androidx.media3.exoplayer.ExoPlayer
-import androidx.media3.ui.AspectRatioFrameLayout
-import androidx.media3.ui.PlayerView
-import com.gutkin.frame.video.VideoStyle
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import java.text.DateFormat
@@ -72,7 +60,6 @@ private val Dark = Color(0xFF20211F)
     val s = model.state
     val context = LocalContext.current
     val lifecycle = LocalLifecycleOwner.current
-    val previewWidth = minOf(236.dp, LocalConfiguration.current.screenHeightDp.dp * .52f * 9f / 16f)
     val picker = rememberLauncherForActivityResult(ActivityResultContracts.OpenDocument()) { it?.let(model::importVideo) }
     var clearConfirm by remember { mutableStateOf(false) }
     DisposableEffect(lifecycle) {
@@ -99,7 +86,9 @@ private val Dark = Color(0xFF20211F)
             Scaffold(containerColor = if (isEditor) Dark else Cream, contentWindowInsets = WindowInsets(0), bottomBar = {
                 if (s.screen !in listOf(Screen.EDITOR, Screen.EXPORT)) BottomBar(s.screen, model::navigate)
             }) { padding ->
-                key(s.screen) {
+                if (isEditor) Box(Modifier.fillMaxSize().padding(padding)) {
+                    VideoEditor(model) { picker.launch(arrayOf("video/*")) }
+                } else key(s.screen) {
                     Column(Modifier.fillMaxSize().padding(padding).verticalScroll(rememberScrollState()).padding(horizontal = if (isEditor) 20.dp else 24.dp).padding(top = 24.dp, bottom = 32.dp), verticalArrangement = Arrangement.spacedBy(16.dp)) {
                         when (s.screen) {
                             Screen.HOME -> {
@@ -146,47 +135,17 @@ private val Dark = Color(0xFF20211F)
                             Screen.SETTINGS -> {
                                 Brand(); Heading("Просто о важном")
                                 InfoCard("Ограничения импорта") { Body("Android 10+\nH.264 или HEVC/H.265, SDR\nДо 1920 × 1080 / 1080 × 1920\nДо 60 кадров/с, 60 секунд и 200 МБ\n4K и HDR пока не поддерживаются") }
-                                InfoCard("Что умеет эта версия") { Body("Один клип, пять вариантов оформления, заголовок, выбор фрагмента, отключение звука и экспорт в галерею.\n\nФотоколлажи, музыка и несколько клипов появятся позже.") }
+                                InfoCard("Что умеет эта версия") { Body("Редактор одного клипа: лента кадров, обрезка и перемотка, положение, размер и цвет текста, фильтр, заполнение / вписывание кадра, отключение звука и экспорт в галерею.\n\nФотоколлажи, музыка и несколько клипов появятся позже.") }
                                 ActionButton("Очистить локальные проекты", { clearConfirm = true }, outlined = true)
                                 Note("FRAME ${BuildConfig.VERSION_NAME} · Kotlin / Jetpack Compose\nВидео обрабатываются только на устройстве.")
                             }
-                            Screen.EDITOR -> {
-                                Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
-                                    IconButton(onClick = model::back) { Icon(Icons.Outlined.ArrowBack, "Назад") }
-                                    Text(s.template.name, Modifier.weight(1f), textAlign = TextAlign.Center, fontSize = 13.sp)
-                                    TextButton(onClick = { model.navigate(Screen.EXPORT) }, enabled = s.trimProblem == null) { Text("Далее →") }
-                                }
-                                Box(Modifier.align(Alignment.CenterHorizontally).widthIn(max = previewWidth).fillMaxWidth().aspectRatio(9f / 16f).clip(RoundedCornerShape(3.dp)).background(Color.Black)) {
-                                    val draft = s.draft()
-                                    if (draft != null) NativeVideoPreview(draft, Modifier.fillMaxSize()) else {
-                                        Image(painterResource(R.drawable.featured_collage), null, Modifier.fillMaxSize(), contentScale = ContentScale.Crop)
-                                        Text(s.title, Modifier.fillMaxWidth().padding(top = 52.dp, start = 12.dp, end = 12.dp), color = Color.White, fontFamily = FontFamily.Serif, fontSize = 24.sp, textAlign = TextAlign.Center)
-                                        Text("ПРИМЕР ШАБЛОНА", Modifier.align(Alignment.BottomCenter).fillMaxWidth().background(Color.Black.copy(alpha = .5f)).padding(10.dp), color = Color.White, fontSize = 10.sp, textAlign = TextAlign.Center)
-                                    }
-                                }
-                                Note(if (s.video == null) "Добавьте своё видео — пример заменится вашим кадром" else "Нажмите на видео для управления просмотром")
-                                ActionButton(if (s.video == null) "+ Добавить видео" else "Заменить видео", { picker.launch(arrayOf("video/*")) }, enabled = !s.busy)
-                                OutlinedTextField(s.title, model::title, Modifier.fillMaxWidth(), label = { Text("Заголовок") }, maxLines = 3)
-                                Row(horizontalArrangement = Arrangement.spacedBy(14.dp)) {
-                                    OutlinedTextField(s.start, model::start, Modifier.weight(1f), label = { Text("Начало, сек") }, singleLine = true, keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Decimal))
-                                    OutlinedTextField(s.length, model::length, Modifier.weight(1f), label = { Text("Длительность, сек") }, singleLine = true, keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Decimal))
-                                }
-                                s.video?.let { v -> Text(s.trimProblem ?: "${v.width} × ${v.height} · ${v.fps.toInt()} кадров/с · ${"%.1f".format(v.bytes / 1048576.0)} МБ", color = if (s.trimProblem != null) Color(0xFFFFB3A8) else Color(0xFFADB0A5), fontSize = 12.sp) }
-                                Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
-                                    Text("Отключить звук оригинала", Modifier.weight(1f), fontSize = 14.sp)
-                                    Switch(s.muted, model::mute, modifier = Modifier.semantics { contentDescription = "Отключить звук оригинала" })
-                                }
-                                Chips(Templates.all.map { it.name }, s.template.name) { name -> model.template(Templates.all.first { it.name == name }) }
-                                ActionButton("Сохранить проект", model::save, enabled = s.trimProblem == null, outlined = true)
-                                Note("Экспорт: 9:16, 1080 × 1920, до 30 кадров/с. Кадр заполняется с обрезкой по центру.")
-                            }
+                            Screen.EDITOR -> Unit
                             Screen.EXPORT -> {
                                 TextButton(model::back, enabled = !s.exporting) { Text("‹ Редактор") }
                                 Heading(if (s.savedUri != null) "Готово!" else "Готово к публикации")
                                 Body(if (s.savedUri != null) "Видео сохранено в галерее, альбом Movies/FRAME." else "Ваша история, в лучшем качестве.")
                                 Box(Modifier.align(Alignment.CenterHorizontally).width(146.dp).height(260.dp).clip(RoundedCornerShape(4.dp))) {
-                                    s.video?.let { Thumb(it, Modifier.fillMaxSize()) }
-                                    Text(s.title, Modifier.fillMaxWidth().padding(top = 36.dp).background(Color.Black.copy(alpha = .3f)), color = Color.White, fontFamily = FontFamily.Serif, fontSize = 20.sp, textAlign = TextAlign.Center)
+                                    s.draft()?.let { NativeVideoPreview(it, Modifier.fillMaxSize()) }
                                 }
                                 InfoCard("Параметры видео") {
                                     Setting("Формат", "MP4 · H.264"); Setting("Разрешение", "1080 × 1920"); Setting("Частота кадров", "до 30 кадров/с"); Setting("Длительность", "${s.durationMs / 1000.0} сек")
@@ -292,27 +251,4 @@ private val Dark = Color(0xFF20211F)
     val bitmap by produceState<android.graphics.Bitmap?>(null, video.thumbnail) { value = withContext(Dispatchers.IO) { video.thumbnail?.let { runCatching { BitmapFactory.decodeFile(Uri.parse(it).path) }.getOrNull() } } }
     val b = bitmap
     if (b != null) Image(b.asImageBitmap(), null, modifier, contentScale = ContentScale.Crop) else Image(painterResource(R.drawable.featured_collage), null, modifier, contentScale = ContentScale.Crop)
-}
-@Composable private fun NativeVideoPreview(project: Project, modifier: Modifier) {
-    val context = LocalContext.current
-    val owner = LocalLifecycleOwner.current
-    val player = remember(context) { ExoPlayer.Builder(context).build().apply { repeatMode = Player.REPEAT_MODE_ONE } }
-    var error by remember { mutableStateOf<String?>(null) }
-    DisposableEffect(player, owner) {
-        val observer = LifecycleEventObserver { _, event -> if (event == Lifecycle.Event.ON_STOP) player.pause() }
-        val listener = object : Player.Listener { override fun onPlayerError(e: PlaybackException) { error = "Не удалось воспроизвести видео: ${e.message}" } }
-        player.addListener(listener); owner.lifecycle.addObserver(observer)
-        onDispose { owner.lifecycle.removeObserver(observer); player.removeListener(listener); player.release() }
-    }
-    LaunchedEffect(project.video.uri, project.startMs, project.endMs, project.title, project.templateId, project.muted) {
-        delay(350); error = null
-        player.pause(); player.setVideoEffects(VideoStyle.effects(project.templateId, project.title))
-        player.volume = if (project.muted) 0f else 1f
-        player.setMediaItem(MediaItem.Builder().setUri(project.video.uri).setClippingConfiguration(MediaItem.ClippingConfiguration.Builder().setStartPositionMs(project.startMs).setEndPositionMs(project.endMs).build()).build())
-        player.prepare()
-    }
-    Box(modifier) {
-        AndroidView(factory = { PlayerView(it).apply { this.player = player; useController = true; resizeMode = AspectRatioFrameLayout.RESIZE_MODE_ZOOM } }, modifier = Modifier.fillMaxSize())
-        error?.let { Text(it, Modifier.align(Alignment.Center).background(Dark.copy(alpha = .85f)).padding(16.dp), color = Color.White, fontSize = 13.sp) }
-    }
 }

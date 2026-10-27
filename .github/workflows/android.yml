@@ -33,7 +33,7 @@ jobs:
           ./gradlew --no-daemon assembleRelease testReleaseUnitTest assembleReleaseAndroidTest 2>&1 | tee /tmp/frame-build.log
         shell: bash
       - name: Download previous release for upgrade check
-        run: curl -fL --retry 2 https://github.com/Gutkin/RN/raw/refs/heads/phone-preview/frame-0.1.1.apk -o /tmp/frame-previous.apk
+        run: curl -fL --retry 2 https://github.com/Gutkin/RN/raw/refs/heads/phone-preview/frame-0.2.0.apk -o /tmp/frame-previous.apk
       - name: Enable emulator hardware acceleration
         run: sudo chmod a+rw /dev/kvm
       - name: Exercise native import and video export
@@ -50,6 +50,7 @@ jobs:
             adb install -r /tmp/frame-previous.apk
             cd android && ./gradlew --no-daemon connectedReleaseAndroidTest
             adb pull /sdcard/Pictures/FRAME-tests/frame-home.png /tmp/frame-home.png || true
+            adb pull /sdcard/Pictures/FRAME-tests/frame-editor.png /tmp/frame-editor.png || true
       - name: Upload APK and test evidence
         if: always()
         uses: actions/upload-artifact@v4
@@ -62,6 +63,7 @@ jobs:
             android/app/build/reports/androidTests/
             /tmp/frame-build.log
             /tmp/frame-home.png
+            /tmp/frame-editor.png
       - name: Publish result to download branch
         if: always()
         env:
@@ -75,6 +77,7 @@ jobs:
           fi
           if [ -f /tmp/frame-build.log ]; then cp /tmp/frame-build.log "$delivery/build.log"; fi
           if [ -f /tmp/frame-home.png ]; then cp /tmp/frame-home.png "$delivery/frame-home.png"; fi
+          if [ -f /tmp/frame-editor.png ]; then cp /tmp/frame-editor.png "$delivery/frame-editor.png"; fi
           if [ -d android/app/build/outputs/androidTest-results ]; then cp -R android/app/build/outputs/androidTest-results "$delivery/test-results"; fi
           python3 - "$delivery" <<'PY'
           import os,sys,json,pathlib
@@ -93,6 +96,7 @@ jobs:
           cp -R "$delivery"/. .
           git add -f result.json
           if [ -f frame-home.png ]; then git add -f frame-home.png; fi
+          if [ -f frame-editor.png ]; then git add -f frame-editor.png; fi
           if [ -d test-results ]; then git add -f test-results; fi
           if [ -f build.log ]; then git add -f build.log; fi
           if [ -f frame-preview.apk ]; then

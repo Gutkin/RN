@@ -19,6 +19,7 @@ data class UiState(
     val screen: Screen = Screen.HOME, val collection: String = "Stories",
     val template: Template = Templates.all[0], val title: String = Templates.all[0].title,
     val video: VideoData? = null, val start: String = "0", val length: String = "15", val muted: Boolean = false,
+    val edits: EditSettings = EditSettings(),
     val busy: Boolean = false, val exporting: Boolean = false, val progress: Int = 0,
     val savedUri: String? = null, val project: Project? = null, val message: String? = null,
     val search: String = "", val category: String = "Все"
@@ -33,7 +34,7 @@ data class UiState(
         !MediaLimits.validTrim(startMs, endMs, video.durationMs) -> "Длительность фрагмента — от 1 до 30 секунд"
         else -> null
     }
-    fun draft(): Project? = video?.takeIf { trimProblem == null }?.let { Project(template.id, title, it, startMs, endMs, muted) }
+    fun draft(): Project? = video?.takeIf { trimProblem == null }?.let { Project(template.id, title, it, startMs, endMs, muted, edits = edits) }
 }
 
 class FrameViewModel(app: Application) : AndroidViewModel(app) {
@@ -44,11 +45,16 @@ class FrameViewModel(app: Application) : AndroidViewModel(app) {
     fun navigate(value: Screen) { if (!state.busy && !state.exporting) state = state.copy(screen = value) }
     fun back() = navigate(if (state.screen == Screen.EXPORT) Screen.EDITOR else Screen.HOME)
     fun collection(value: String) { state = state.copy(collection = value) }
-    fun template(value: Template) { state = state.copy(template = value, title = value.title, savedUri = null) }
+    fun template(value: Template) { state = state.copy(template = value, title = if (state.title == state.template.title) value.title else state.title, savedUri = null) }
     fun open(value: Template) { template(value); navigate(Screen.EDITOR) }
     fun title(value: String) { state = state.copy(title = value.take(45), savedUri = null) }
     fun start(value: String) { state = state.copy(start = value, savedUri = null) }
     fun length(value: String) { state = state.copy(length = value, savedUri = null) }
+    fun edits(value: EditSettings) { value.validate(); state = state.copy(edits = value, savedUri = null) }
+    fun trim(startMs: Long, endMs: Long) {
+        val duration = state.video?.durationMs ?: return
+        if (MediaLimits.validTrim(startMs, endMs, duration)) state = state.copy(start = (startMs / 1000.0).toString(), length = ((endMs - startMs) / 1000.0).toString(), savedUri = null)
+    }
     fun mute(value: Boolean) { state = state.copy(muted = value, savedUri = null) }
     fun search(value: String) { state = state.copy(search = value) }
     fun category(value: String) { state = state.copy(category = value) }
@@ -75,7 +81,7 @@ class FrameViewModel(app: Application) : AndroidViewModel(app) {
     }
     fun restore() {
         val p = state.project ?: return
-        state = state.copy(template = Templates.byId(p.templateId)!!, title = p.title, video = p.video, start = (p.startMs / 1000.0).toString(), length = ((p.endMs - p.startMs) / 1000.0).toString(), muted = p.muted, savedUri = null, screen = Screen.EDITOR)
+        state = state.copy(template = Templates.byId(p.templateId)!!, title = p.title, video = p.video, start = (p.startMs / 1000.0).toString(), length = ((p.endMs - p.startMs) / 1000.0).toString(), muted = p.muted, edits = p.edits, savedUri = null, screen = Screen.EDITOR)
     }
     fun clear() {
         if (state.busy || state.exporting) return

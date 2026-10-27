@@ -116,7 +116,7 @@ class VideoEngine(context: Context) {
             require(MediaLimits.validTrim(project.startMs, project.endMs, duration)) { "Выберите фрагмент от 1 до 30 секунд в пределах исходного видео" }
             require(app.cacheDir.usableSpace > 350L * 1024 * 1024) { "Для экспорта нужно хотя бы 350 МБ свободного места" }
             val item = MediaItem.Builder().setUri(uri).setClippingConfiguration(MediaItem.ClippingConfiguration.Builder().setStartPositionMs(project.startMs).setEndPositionMs(project.endMs).build()).build()
-            val effects = VideoStyle.effects(project.templateId, project.title).toMutableList().apply { add(FrameDropEffect.createDefaultFrameDropEffect(30f)) }
+            val effects = VideoStyle.effects(project.templateId, project.title, project.edits).toMutableList().apply { add(FrameDropEffect.createDefaultFrameDropEffect(30f)) }
             val edited = EditedMediaItem.Builder(item).setRemoveAudio(project.muted).setEffects(Effects(emptyList(), effects)).build()
             val output = File(app.cacheDir, "frame-${UUID.randomUUID()}.mp4")
             temporary = output; resultCallback = onResult
