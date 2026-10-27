@@ -82,8 +82,16 @@ class VideoExportTest {
                 val r = MediaMetadataRetriever()
                 try {
                     r.setDataSource(context, uri)
-                    assertEquals("1080", r.extractMetadata(MediaMetadataRetriever.METADATA_KEY_VIDEO_WIDTH))
-                    assertEquals("1920", r.extractMetadata(MediaMetadataRetriever.METADATA_KEY_VIDEO_HEIGHT))
+                    val encodedWidth = r.extractMetadata(MediaMetadataRetriever.METADATA_KEY_VIDEO_WIDTH)!!.toInt()
+                    val encodedHeight = r.extractMetadata(MediaMetadataRetriever.METADATA_KEY_VIDEO_HEIGHT)!!.toInt()
+                    val rotation = r.extractMetadata(MediaMetadataRetriever.METADATA_KEY_VIDEO_ROTATION)?.toInt() ?: 0
+                    assertTrue("Invalid MP4 rotation: $rotation", rotation in listOf(0, 90, 180, 270))
+                    // Media3 defaults to landscape encoding + MP4 rotation for encoder compatibility.
+                    // Check displayed geometry, keeping the full 1080x1920 resolution requirement.
+                    val displayWidth = if (rotation % 180 == 0) encodedWidth else encodedHeight
+                    val displayHeight = if (rotation % 180 == 0) encodedHeight else encodedWidth
+                    assertEquals(1080, displayWidth)
+                    assertEquals(1920, displayHeight)
                     val duration = r.extractMetadata(MediaMetadataRetriever.METADATA_KEY_DURATION)!!.toLong()
                     assertTrue("Unexpected output duration: $duration", duration in 1800..2200)
                     val frame = r.getFrameAtTime(0, MediaMetadataRetriever.OPTION_CLOSEST_SYNC)
