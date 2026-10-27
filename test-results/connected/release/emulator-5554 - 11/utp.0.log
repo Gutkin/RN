@@ -36,17 +36,10 @@ INFO: Copying files from device to host: /sdcard/Android/media/com.gutkin.frame/
 INFO: Stop logcat streaming.
 INFO: Uninstalling com.gutkin.frame for device emulator-5554.
 INFO: Uninstalling com.gutkin.frame.test for device emulator-5554.
-SEVERE: Execute com.gutkin.frame.video.VideoExportTest.appStartsWithBundledJavaScript: FAILED
-java.lang.AssertionError: java.lang.AssertionError: Missing UI control: Stories, selected=true
-at com.gutkin.frame.video.VideoExportTest.awaitNode(VideoExportTest.kt:52)
-at com.gutkin.frame.video.VideoExportTest.appStartsWithBundledJavaScript(VideoExportTest.kt:78)
-
-java.lang.AssertionError: Missing UI control: Stories, selected=true
-at com.gutkin.frame.video.VideoExportTest.awaitNode(VideoExportTest.kt:52)
-at com.gutkin.frame.video.VideoExportTest.appStartsWithBundledJavaScript(VideoExportTest.kt:78)
 INFO: Execute com.gutkin.frame.video.VideoExportTest.validatesActualVideoAndRejects4K: PASSED
 INFO: Execute com.gutkin.frame.video.VideoExportTest.readsLegacyReactNativeProjectAndPreservesItsMedia: PASSED
 INFO: Execute com.gutkin.frame.video.VideoExportTest.importsHevcWithoutChangingTheSource: PASSED
 INFO: Execute com.gutkin.frame.video.VideoExportTest.convertsHevcToCompatibleH264: PASSED
 INFO: Execute com.gutkin.frame.video.VideoExportTest.exportsTrimmedPortraitWithTextAndWithoutAudio: PASSED
+INFO: Execute com.gutkin.frame.video.VideoExportTest.composeScreensAndNativePlaybackWork: PASSED
 INFO: Execute com.gutkin.frame.video.VideoExportTest.acceptsActualHevcFromCamera: PASSED

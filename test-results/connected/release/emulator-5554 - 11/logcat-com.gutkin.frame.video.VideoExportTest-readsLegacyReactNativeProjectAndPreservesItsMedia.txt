@@ -1,5 +1,5 @@
-10-27 03:01:25.952  2471  2491 I TestRunner: started: readsLegacyReactNativeProjectAndPreservesItsMedia(com.gutkin.frame.video.VideoExportTest)
-10-27 03:01:25.964   430   985 D MediaBufferGroup: creating MemoryDealer
-10-27 03:01:26.017   299   299 D goldfish-address-space: claimShared: Ask to claim region [0x3fd9b3000 0x3fda7b000]
-10-27 03:01:26.040   299   341 D goldfish-address-space: claimShared: Ask to claim region [0x3fda7b000 0x3fdb43000]
-10-27 03:01:26.043  2471  2491 I TestRunner: finished: readsLegacyReactNativeProjectAndPreservesItsMedia(com.gutkin.frame.video.VideoExportTest)
+10-27 03:14:44.261  2448  2468 I TestRunner: started: readsLegacyReactNativeProjectAndPreservesItsMedia(com.gutkin.frame.video.VideoExportTest)
+10-27 03:14:44.262  2448  2468 D IdlingRegistry: Registering idling resources: [androidx.compose.ui.test.EspressoLink@241478a]
+10-27 03:14:44.284   438  2470 D MediaBufferGroup: creating MemoryDealer
+10-27 03:14:44.304  2448  2468 D IdlingRegistry: Unregistering idling resources: [androidx.compose.ui.test.EspressoLink@241478a]
+10-27 03:14:44.305  2448  2468 I TestRunner: finished: readsLegacyReactNativeProjectAndPreservesItsMedia(com.gutkin.frame.video.VideoExportTest)

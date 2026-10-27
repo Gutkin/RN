@@ -1,77 +1,20 @@
-# 2026-10-27T03:02:00.323300754Z:
+# 2026-10-27T03:15:23.904739342Z:
 test_suite_meta_data {
   scheduled_test_case_count: 7
 }
-test_status: FAILED
-test_result {
-  test_case {
-    test_class: "VideoExportTest"
-    test_package: "com.gutkin.frame.video"
-    test_method: "appStartsWithBundledJavaScript"
-    start_time {
-      seconds: 1793070074
-      nanos: 929000000
-    }
-    end_time {
-      seconds: 1793070086
-      nanos: 471000000
-    }
-  }
-  test_status: FAILED
-  error {
-    error_message: "java.lang.AssertionError: Missing UI control: Stories, selected=true\nat com.gutkin.frame.video.VideoExportTest.awaitNode(VideoExportTest.kt:52)\nat com.gutkin.frame.video.VideoExportTest.appStartsWithBundledJavaScript(VideoExportTest.kt:78)\n"
-    error_type: "java.lang.AssertionError"
-    stack_trace: "java.lang.AssertionError: Missing UI control: Stories, selected=true\nat com.gutkin.frame.video.VideoExportTest.awaitNode(VideoExportTest.kt:52)\nat com.gutkin.frame.video.VideoExportTest.appStartsWithBundledJavaScript(VideoExportTest.kt:78)\n"
-  }
-  output_artifact {
-    label {
-      label: "logcat"
-      namespace: "android"
-    }
-    source_path {
-      path: "/home/runner/work/RN/RN/android/app/build/outputs/androidTest-results/connected/release/emulator-5554 - 11/logcat-com.gutkin.frame.video.VideoExportTest-appStartsWithBundledJavaScript.txt"
-    }
-  }
-  output_artifact {
-    label {
-      label: "device-info"
-      namespace: "android"
-    }
-    source_path {
-      path: "/home/runner/work/RN/RN/android/app/build/outputs/androidTest-results/connected/release/emulator-5554 - 11/device-info.pb"
-    }
-  }
-  output_artifact {
-    label {
-      label: "device-info.meminfo"
-      namespace: "android"
-    }
-    source_path {
-      path: "/home/runner/work/RN/RN/android/app/build/outputs/androidTest-results/connected/release/emulator-5554 - 11/meminfo"
-    }
-  }
-  output_artifact {
-    label {
-      label: "device-info.cpuinfo"
-      namespace: "android"
-    }
-    source_path {
-      path: "/home/runner/work/RN/RN/android/app/build/outputs/androidTest-results/connected/release/emulator-5554 - 11/cpuinfo"
-    }
-  }
-}
+test_status: PASSED
 test_result {
   test_case {
     test_class: "VideoExportTest"
     test_package: "com.gutkin.frame.video"
     test_method: "validatesActualVideoAndRejects4K"
     start_time {
-      seconds: 1793070086
-      nanos: 491000000
+      seconds: 1793070884
+      nanos: 219000000
     }
     end_time {
-      seconds: 1793070086
-      nanos: 543000000
+      seconds: 1793070884
+      nanos: 324000000
     }
   }
   test_status: PASSED
@@ -118,12 +61,12 @@ test_result {
     test_package: "com.gutkin.frame.video"
     test_method: "readsLegacyReactNativeProjectAndPreservesItsMedia"
     start_time {
-      seconds: 1793070086
-      nanos: 548000000
+      seconds: 1793070884
+      nanos: 344000000
     }
     end_time {
-      seconds: 1793070086
-      nanos: 625000000
+      seconds: 1793070884
+      nanos: 371000000
     }
   }
   test_status: PASSED
@@ -170,12 +113,12 @@ test_result {
     test_package: "com.gutkin.frame.video"
     test_method: "importsHevcWithoutChangingTheSource"
     start_time {
-      seconds: 1793070086
-      nanos: 629000000
+      seconds: 1793070884
+      nanos: 374000000
     }
     end_time {
-      seconds: 1793070086
-      nanos: 809000000
+      seconds: 1793070884
+      nanos: 475000000
     }
   }
   test_status: PASSED
@@ -222,12 +165,12 @@ test_result {
     test_package: "com.gutkin.frame.video"
     test_method: "convertsHevcToCompatibleH264"
     start_time {
-      seconds: 1793070086
-      nanos: 819000000
+      seconds: 1793070884
+      nanos: 478000000
     }
     end_time {
-      seconds: 1793070093
-      nanos: 564000000
+      seconds: 1793070890
+      nanos: 982000000
     }
   }
   test_status: PASSED
@@ -274,12 +217,12 @@ test_result {
     test_package: "com.gutkin.frame.video"
     test_method: "exportsTrimmedPortraitWithTextAndWithoutAudio"
     start_time {
-      seconds: 1793070093
-      nanos: 567000000
+      seconds: 1793070890
+      nanos: 985000000
     }
     end_time {
-      seconds: 1793070119
-      nanos: 120000000
+      seconds: 1793070916
+      nanos: 325000000
     }
   }
   test_status: PASSED
@@ -324,14 +267,66 @@ test_result {
   test_case {
     test_class: "VideoExportTest"
     test_package: "com.gutkin.frame.video"
-    test_method: "acceptsActualHevcFromCamera"
+    test_method: "composeScreensAndNativePlaybackWork"
     start_time {
-      seconds: 1793070119
-      nanos: 125000000
+      seconds: 1793070916
+      nanos: 328000000
     }
     end_time {
-      seconds: 1793070119
-      nanos: 152000000
+      seconds: 1793070922
+      nanos: 718000000
+    }
+  }
+  test_status: PASSED
+  output_artifact {
+    label {
+      label: "logcat"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/RN/RN/android/app/build/outputs/androidTest-results/connected/release/emulator-5554 - 11/logcat-com.gutkin.frame.video.VideoExportTest-composeScreensAndNativePlaybackWork.txt"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/RN/RN/android/app/build/outputs/androidTest-results/connected/release/emulator-5554 - 11/device-info.pb"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.meminfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/RN/RN/android/app/build/outputs/androidTest-results/connected/release/emulator-5554 - 11/meminfo"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.cpuinfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/RN/RN/android/app/build/outputs/androidTest-results/connected/release/emulator-5554 - 11/cpuinfo"
+    }
+  }
+}
+test_result {
+  test_case {
+    test_class: "VideoExportTest"
+    test_package: "com.gutkin.frame.video"
+    test_method: "acceptsActualHevcFromCamera"
+    start_time {
+      seconds: 1793070922
+      nanos: 720000000
+    }
+    end_time {
+      seconds: 1793070922
+      nanos: 747000000
     }
   }
   test_status: PASSED
