@@ -1,6 +1,0 @@
-10-27 02:09:36.612  2343  2363 I TestRunner: started: validatesActualVideoAndRejects4K(com.gutkin.frame.video.VideoExportTest)
-10-27 02:09:36.618   300   300 D goldfish-address-space: claimShared: Ask to claim region [0x3fd9b3000 0x3fda7b000]
-10-27 02:09:36.698   436  2195 D MediaBufferGroup: creating MemoryDealer
-10-27 02:09:36.704  2343  2363 I VideoCapabilities: Unsupported profile 4 for video/mp4v-es
-10-27 02:09:36.708   436  2239 D MediaBufferGroup: creating MemoryDealer
-10-27 02:09:36.709  2343  2363 I TestRunner: finished: validatesActualVideoAndRejects4K(com.gutkin.frame.video.VideoExportTest)
