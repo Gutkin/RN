@@ -1,6 +1,6 @@
 {
-  "source": "b42d38fdbedbc60fcbff0961305488e7dbdf17de",
-  "build": "cancelled",
-  "device_tests": "skipped",
-  "run": "40433239529"
+  "source": "dbf2888d8c3d6fc40d6d890ae22a396aa47ddc3e",
+  "build": "success",
+  "device_tests": "success",
+  "run": "40433480187"
 }

@@ -1,0 +1,276 @@
+# 2026-10-27T01:40:57.725955179Z:
+test_suite_meta_data {
+  scheduled_test_case_count: 5
+}
+test_status: PASSED
+test_result {
+  test_case {
+    test_class: "VideoExportTest"
+    test_package: "com.gutkin.frame.video"
+    test_method: "appStartsWithBundledJavaScript"
+    start_time {
+      seconds: 1793065220
+      nanos: 422000000
+    }
+    end_time {
+      seconds: 1793065223
+      nanos: 630000000
+    }
+  }
+  test_status: PASSED
+  output_artifact {
+    label {
+      label: "logcat"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/RN/RN/android/app/build/outputs/androidTest-results/connected/release/emulator-5554 - 11/logcat-com.gutkin.frame.video.VideoExportTest-appStartsWithBundledJavaScript.txt"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/RN/RN/android/app/build/outputs/androidTest-results/connected/release/emulator-5554 - 11/device-info.pb"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.meminfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/RN/RN/android/app/build/outputs/androidTest-results/connected/release/emulator-5554 - 11/meminfo"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.cpuinfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/RN/RN/android/app/build/outputs/androidTest-results/connected/release/emulator-5554 - 11/cpuinfo"
+    }
+  }
+}
+test_result {
+  test_case {
+    test_class: "VideoExportTest"
+    test_package: "com.gutkin.frame.video"
+    test_method: "validatesActualVideoAndRejects4K"
+    start_time {
+      seconds: 1793065223
+      nanos: 672000000
+    }
+    end_time {
+      seconds: 1793065223
+      nanos: 825000000
+    }
+  }
+  test_status: PASSED
+  output_artifact {
+    label {
+      label: "logcat"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/RN/RN/android/app/build/outputs/androidTest-results/connected/release/emulator-5554 - 11/logcat-com.gutkin.frame.video.VideoExportTest-validatesActualVideoAndRejects4K.txt"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/RN/RN/android/app/build/outputs/androidTest-results/connected/release/emulator-5554 - 11/device-info.pb"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.meminfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/RN/RN/android/app/build/outputs/androidTest-results/connected/release/emulator-5554 - 11/meminfo"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.cpuinfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/RN/RN/android/app/build/outputs/androidTest-results/connected/release/emulator-5554 - 11/cpuinfo"
+    }
+  }
+}
+test_result {
+  test_case {
+    test_class: "VideoExportTest"
+    test_package: "com.gutkin.frame.video"
+    test_method: "convertsHevcToCompatibleH264"
+    start_time {
+      seconds: 1793065223
+      nanos: 830000000
+    }
+    end_time {
+      seconds: 1793065231
+      nanos: 60000000
+    }
+  }
+  test_status: PASSED
+  output_artifact {
+    label {
+      label: "logcat"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/RN/RN/android/app/build/outputs/androidTest-results/connected/release/emulator-5554 - 11/logcat-com.gutkin.frame.video.VideoExportTest-convertsHevcToCompatibleH264.txt"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/RN/RN/android/app/build/outputs/androidTest-results/connected/release/emulator-5554 - 11/device-info.pb"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.meminfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/RN/RN/android/app/build/outputs/androidTest-results/connected/release/emulator-5554 - 11/meminfo"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.cpuinfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/RN/RN/android/app/build/outputs/androidTest-results/connected/release/emulator-5554 - 11/cpuinfo"
+    }
+  }
+}
+test_result {
+  test_case {
+    test_class: "VideoExportTest"
+    test_package: "com.gutkin.frame.video"
+    test_method: "exportsTrimmedPortraitWithTextAndWithoutAudio"
+    start_time {
+      seconds: 1793065231
+      nanos: 64000000
+    }
+    end_time {
+      seconds: 1793065256
+      nanos: 556000000
+    }
+  }
+  test_status: PASSED
+  output_artifact {
+    label {
+      label: "logcat"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/RN/RN/android/app/build/outputs/androidTest-results/connected/release/emulator-5554 - 11/logcat-com.gutkin.frame.video.VideoExportTest-exportsTrimmedPortraitWithTextAndWithoutAudio.txt"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/RN/RN/android/app/build/outputs/androidTest-results/connected/release/emulator-5554 - 11/device-info.pb"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.meminfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/RN/RN/android/app/build/outputs/androidTest-results/connected/release/emulator-5554 - 11/meminfo"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.cpuinfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/RN/RN/android/app/build/outputs/androidTest-results/connected/release/emulator-5554 - 11/cpuinfo"
+    }
+  }
+}
+test_result {
+  test_case {
+    test_class: "VideoExportTest"
+    test_package: "com.gutkin.frame.video"
+    test_method: "acceptsActualHevcFromCamera"
+    start_time {
+      seconds: 1793065256
+      nanos: 564000000
+    }
+    end_time {
+      seconds: 1793065256
+      nanos: 590000000
+    }
+  }
+  test_status: PASSED
+  output_artifact {
+    label {
+      label: "logcat"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/RN/RN/android/app/build/outputs/androidTest-results/connected/release/emulator-5554 - 11/logcat-com.gutkin.frame.video.VideoExportTest-acceptsActualHevcFromCamera.txt"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/RN/RN/android/app/build/outputs/androidTest-results/connected/release/emulator-5554 - 11/device-info.pb"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.meminfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/RN/RN/android/app/build/outputs/androidTest-results/connected/release/emulator-5554 - 11/meminfo"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.cpuinfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/RN/RN/android/app/build/outputs/androidTest-results/connected/release/emulator-5554 - 11/cpuinfo"
+    }
+  }
+}
+output_artifact {
+  label {
+    label: "test-results.log"
+    namespace: "com.google.testing.platform.runtime.android.driver.AndroidInstrumentationDriver"
+  }
+  source_path {
+    path: "/home/runner/work/RN/RN/android/app/build/outputs/androidTest-results/connected/release/emulator-5554 - 11/testlog/test-results.log"
+  }
+  type: TEST_DATA
+  mime_type: "text/plain"
+}

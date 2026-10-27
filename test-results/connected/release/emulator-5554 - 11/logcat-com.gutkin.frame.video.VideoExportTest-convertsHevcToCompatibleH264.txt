@@ -1,0 +1,173 @@
+10-27 01:40:23.375  2415  2435 I TestRunner: started: convertsHevcToCompatibleH264(com.gutkin.frame.video.VideoExportTest)
+10-27 01:40:23.405  2415  2415 I TransformerInternal: Init 49fe4c4 [AndroidXMedia3/1.5.1] [generic_x86_64, Android SDK built for x86_64, unknown, 30]
+10-27 01:40:23.416  2415  2415 I ExoPlayerImpl: Init 516d2e2 [AndroidXMedia3/1.5.1] [generic_x86_64, Android SDK built for x86_64, unknown, 30]
+10-27 01:40:23.429   507  2116 I system_server: oneway function results will be dropped but finished with status OK and parcel size 4
+10-27 01:40:23.429   507  2116 I system_server: oneway function results will be dropped but finished with status OK and parcel size 4
+10-27 01:40:23.434  2415  2415 I TetheringManager: registerTetheringEventCallback:com.gutkin.frame
+10-27 01:40:23.492  2415  2503 D HostConnection: HostConnection::get() New Host Connection established 0x7673be24cf50, tid 2503
+10-27 01:40:23.495  2415  2503 D HostConnection: HostComposition ext ANDROID_EMU_CHECKSUM_HELPER_v1 ANDROID_EMU_native_sync_v2 ANDROID_EMU_dma_v1 ANDROID_EMU_direct_mem ANDROID_EMU_host_composition_v1 ANDROID_EMU_host_composition_v2 ANDROID_EMU_vulkan ANDROID_EMU_deferred_vulkan_commands ANDROID_EMU_vulkan_null_optional_strings ANDROID_EMU_vulkan_create_resources_with_requirements ANDROID_EMU_YUV_Cache ANDROID_EMU_vulkan_ignored_handles ANDROID_EMU_has_shared_slots_host_memory_allocator ANDROID_EMU_vulkan_free_memory_sync ANDROID_EMU_vulkan_shader_float16_int8 ANDROID_EMU_vulkan_async_queue_submit ANDROID_EMU_sync_buffer_data ANDROID_EMU_vulkan_async_qsri ANDROID_EMU_read_color_buffer_dma ANDROID_EMU_hwc_color_transform GL_OES_EGL_image_external_essl3 GL_OES_vertex_array_object GL_KHR_texture_compression_astc_ldr ANDROID_EMU_host_side_tracing ANDROID_EMU_gles_max_version_3_0
+10-27 01:40:23.497  2415  2503 D EGL_emulation: eglCreateContext: 0x7673ae2abab0: maj 3 min 0 rcv 3
+10-27 01:40:23.499  2415  2503 D EGL_emulation: eglMakeCurrent: 0x7673ae2abab0: ver 3 0 (tinfo 0x76734e27c0e0) (first time)
+10-27 01:40:23.505  2415  2503 E EGL_emulation: eglQueryContext 32c0  EGL_BAD_ATTRIBUTE
+10-27 01:40:23.505  2415  2503 E EGL_emulation: tid 2503: eglQueryContext(2019): error 0x3004 (EGL_BAD_ATTRIBUTE)
+10-27 01:40:23.506   298   298 D goldfish-address-space: claimShared: Ask to claim region [0x3fe5c1000 0x3fe689000]
+10-27 01:40:23.515   343  1103 W ServiceManager: Permission failure: android.permission.ACCESS_SURFACE_FLINGER from uid=10131 pid=2473
+10-27 01:40:23.515   343  1103 D PermissionCache: checking android.permission.ACCESS_SURFACE_FLINGER for uid=10131 => denied (191 us)
+10-27 01:40:23.515   507   541 D EventSequenceValidator: Transition from ACTIVITY_LAUNCHED to ACTIVITY_FINISHED
+10-27 01:40:23.517   507   996 W InputReader: Device virtio_input_multi_touch_10 is associated with display ADISPLAY_ID_NONE.
+10-27 01:40:23.517   507   996 W InputReader: Device virtio_input_multi_touch_4 is associated with display ADISPLAY_ID_NONE.
+10-27 01:40:23.517   507   996 W InputReader: Device virtio_input_multi_touch_11 is associated with display ADISPLAY_ID_NONE.
+10-27 01:40:23.517   507   996 W InputReader: Device virtio_input_multi_touch_5 is associated with display ADISPLAY_ID_NONE.
+10-27 01:40:23.517   507   996 W InputReader: Device virtio_input_multi_touch_2 is associated with display ADISPLAY_ID_NONE.
+10-27 01:40:23.517   507   996 W InputReader: Device virtio_input_multi_touch_6 is associated with display ADISPLAY_ID_NONE.
+10-27 01:40:23.517   507   996 W InputReader: Device virtio_input_multi_touch_8 is associated with display ADISPLAY_ID_NONE.
+10-27 01:40:23.517   507   996 W InputReader: Device virtio_input_multi_touch_9 is associated with display ADISPLAY_ID_NONE.
+10-27 01:40:23.517   507   996 W InputReader: Device virtio_input_multi_touch_3 is associated with display ADISPLAY_ID_NONE.
+10-27 01:40:23.517   507   996 W InputReader: Device virtio_input_multi_touch_7 is associated with display ADISPLAY_ID_NONE.
+10-27 01:40:23.517   507   996 W InputReader: Device virtio_input_multi_touch_10 is associated with display ADISPLAY_ID_NONE.
+10-27 01:40:23.517   507   996 W InputReader: Device virtio_input_multi_touch_4 is associated with display ADISPLAY_ID_NONE.
+10-27 01:40:23.517   507   996 W InputReader: Device virtio_input_multi_touch_11 is associated with display ADISPLAY_ID_NONE.
+10-27 01:40:23.517   507   996 W InputReader: Device virtio_input_multi_touch_5 is associated with display ADISPLAY_ID_NONE.
+10-27 01:40:23.517   507   996 W InputReader: Device virtio_input_multi_touch_2 is associated with display ADISPLAY_ID_NONE.
+10-27 01:40:23.517   507   996 W InputReader: Device virtio_input_multi_touch_6 is associated with display ADISPLAY_ID_NONE.
+10-27 01:40:23.517   507   996 W InputReader: Device virtio_input_multi_touch_8 is associated with display ADISPLAY_ID_NONE.
+10-27 01:40:23.517   507   996 W InputReader: Device virtio_input_multi_touch_9 is associated with display ADISPLAY_ID_NONE.
+10-27 01:40:23.517   507   996 W InputReader: Device virtio_input_multi_touch_3 is associated with display ADISPLAY_ID_NONE.
+10-27 01:40:23.517   507   996 W InputReader: Device virtio_input_multi_touch_7 is associated with display ADISPLAY_ID_NONE.
+10-27 01:40:23.549  2415  2505 I OMXClient: IOmx service obtained
+10-27 01:40:23.549   434   807 I OMXMaster: makeComponentInstance(OMX.google.hevc.decoder) in android.hardwar process
+10-27 01:40:23.553   298   298 D goldfish-address-space: claimShared: Ask to claim region [0x3fe1d9000 0x3fe2a1000]
+10-27 01:40:23.561   298   298 D goldfish-address-space: claimShared: Ask to claim region [0x3fe689000 0x3fe751000]
+10-27 01:40:23.564   298   332 D goldfish-address-space: claimShared: Ask to claim region [0x3fe751000 0x3fe752000]
+10-27 01:40:23.565   298   298 D goldfish-address-space: claimShared: Ask to claim region [0x3fe752000 0x3fe81a000]
+10-27 01:40:23.575  2415  2504 D SurfaceUtils: connecting to surface 0x7674ae22a330, reason connectToSurface
+10-27 01:40:23.575  2415  2504 I MediaCodec: [OMX.google.hevc.decoder] setting surface generation to 2472961
+10-27 01:40:23.575  2415  2504 D SurfaceUtils: disconnecting from surface 0x7674ae22a330, reason connectToSurface(reconnect)
+10-27 01:40:23.575  2415  2504 D SurfaceUtils: connecting to surface 0x7674ae22a330, reason connectToSurface(reconnect)
+10-27 01:40:23.575  2415  2504 D SurfaceUtils: legacy buffer drop disabled: target sdk (35)
+10-27 01:40:23.578   507   546 D ArtManagerInternalImpl: /data/misc/iorapd/com.gutkin.frame.test/0/androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity/compiled_traces/compiled_trace.pb doesn't exist
+10-27 01:40:23.579   507   546 I ActivityTaskManager: Displayed com.gutkin.frame.test/androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity: +495ms
+10-27 01:40:23.580   434   807 E OMXNodeInstance: getExtensionIndex(0xf13415f0:google.hevc.decoder, OMX.google.android.index.enableAndroidNativeBuffers) ERROR: UnsupportedIndex(0x8000101a)
+10-27 01:40:23.580  2415  2505 E ACodec  : [OMX.google.hevc.decoder] setPortMode on output to DynamicANWBuffer failed w/ err -1010
+10-27 01:40:23.580   434   807 E OMXNodeInstance: getParameter(0xf13415f0:google.hevc.decoder, ??(0x6f600011)) ERROR: UnsupportedIndex(0x8000101a)
+10-27 01:40:23.581   434   807 W OMXNodeInstance: [0xf13415f0:google.hevc.decoder] component does not support metadata mode; using fallback
+10-27 01:40:23.581   434   763 D SoftVideoDecoderOMXComponent: Color Aspects preference: 1
+10-27 01:40:23.581   434   763 E OMXNodeInstance: getConfig(0xf13415f0:google.hevc.decoder, ConfigAndroidVendorExtension(0x6f100004)) ERROR: UnsupportedIndex(0x8000101a)
+10-27 01:40:23.581   434   763 E OMXNodeInstance: getConfig(0xf13415f0:google.hevc.decoder, ??(0x7f000003)) ERROR: UnsupportedSetting(0x80001019)
+10-27 01:40:23.688   961  1778 E FrameEvents: updateAcquireFence: Did not find frame.
+10-27 01:40:23.689   298   298 D goldfish-address-space: claimShared: Ask to claim region [0x3fe81a000 0x3fe81b000]
+10-27 01:40:23.692   422  2161 W ResourceManagerService: Ignoring request to add new resource entry with value <= 0
+10-27 01:40:23.696   434  2508 D SoftVideoDecoderOMXComponent: Color Aspects preference: 1
+10-27 01:40:23.697   434   807 E OMXNodeInstance: getConfig(0xf13415f0:google.hevc.decoder, ??(0x7f000003)) ERROR: UnsupportedSetting(0x80001019)
+10-27 01:40:23.712  2415  2504 D MediaCodec: [OMX.google.hevc.decoder] setting dataspace on output surface to #10c50000
+10-27 01:40:23.829   159   159 I hwservicemanager: getTransport: Cannot find entry android.hardware.graphics.allocator@4.0::IAllocator/default in either framework or device manifest.
+10-27 01:40:23.829  2415  2504 W Gralloc4: allocator 3.x is not supported
+10-27 01:40:23.830   298   298 D goldfish-address-space: claimShared: Ask to claim region [0x3fe81a000 0x3fe86f000]
+10-27 01:40:23.953  2415  2504 D SoftwareRenderer: setting dataspace on output surface to #10c50000
+10-27 01:40:23.960   507  2496 D HostConnection: HostConnection::get() New Host Connection established 0x7673be21de50, tid 2496
+10-27 01:40:23.961   343   343 E Layer   : [Surface(name=Task=1)/@0x9fc2c32 - animation-leash#0] No local sync point found
+10-27 01:40:23.961   343   343 E Layer   : [Surface(name=Task=1)/@0x9fc2c32 - animation-leash#0] No local sync point found
+10-27 01:40:23.961   343   343 E Layer   : [Surface(name=Task=10)/@0x6638912 - animation-leash#0] No local sync point found
+10-27 01:40:23.961   343   343 E Layer   : [Surface(name=Task=10)/@0x6638912 - animation-leash#0] No local sync point found
+10-27 01:40:23.967   507  2496 D HostConnection: HostComposition ext ANDROID_EMU_CHECKSUM_HELPER_v1 ANDROID_EMU_native_sync_v2 ANDROID_EMU_dma_v1 ANDROID_EMU_direct_mem ANDROID_EMU_host_composition_v1 ANDROID_EMU_host_composition_v2 ANDROID_EMU_vulkan ANDROID_EMU_deferred_vulkan_commands ANDROID_EMU_vulkan_null_optional_strings ANDROID_EMU_vulkan_create_resources_with_requirements ANDROID_EMU_YUV_Cache ANDROID_EMU_vulkan_ignored_handles ANDROID_EMU_has_shared_slots_host_memory_allocator ANDROID_EMU_vulkan_free_memory_sync ANDROID_EMU_vulkan_shader_float16_int8 ANDROID_EMU_vulkan_async_queue_submit ANDROID_EMU_sync_buffer_data ANDROID_EMU_vulkan_async_qsri ANDROID_EMU_read_color_buffer_dma ANDROID_EMU_hwc_color_transform GL_OES_EGL_image_external_essl3 GL_OES_vertex_array_object GL_KHR_texture_compression_astc_ldr ANDROID_EMU_host_side_tracing ANDROID_EMU_gles_max_version_3_0
+10-27 01:40:23.969   298   298 D goldfish-address-space: claimShared: Ask to claim region [0x3fe86f000 0x3fe8c4000]
+10-27 01:40:24.247   298   298 D goldfish-address-space: claimShared: Ask to claim region [0x3fe8c4000 0x3fe919000]
+10-27 01:40:24.248   507  2496 D EGL_emulation: eglCreateContext: 0x7673ae29de00: maj 3 min 0 rcv 3
+10-27 01:40:24.317   298   298 D goldfish-address-space: claimShared: Ask to claim region [0x3fe919000 0x3fe96e000]
+10-27 01:40:24.318   507  2496 D EGL_emulation: eglMakeCurrent: 0x7673ae29de00: ver 3 0 (tinfo 0x76734e320780) (first time)
+10-27 01:40:24.389   298   298 D goldfish-address-space: claimShared: Ask to claim region [0x3fe96e000 0x3fe9c3000]
+10-27 01:40:24.454   298   298 D goldfish-address-space: claimShared: Ask to claim region [0x3fe9c3000 0x3fea18000]
+10-27 01:40:24.606   284  2459 W android.hardware.audio.service.ranchu: TinyalsaSink::write:125 pcm_write was late reading frames, dropping 22131 us of audio
+10-27 01:40:24.685   284  2459 I chatty  : uid=1041(audioserver) HwBinder:284_3 identical 3 lines
+10-27 01:40:24.832   284  2459 W android.hardware.audio.service.ranchu: TinyalsaSink::write:125 pcm_write was late reading frames, dropping 22131 us of audio
+10-27 01:40:24.959  2415  2541 I OMXClient: IOmx service obtained
+10-27 01:40:24.960   434   807 I OMXMaster: makeComponentInstance(OMX.google.h264.encoder) in android.hardwar process
+10-27 01:40:24.969  2415  2541 W OMXUtils: do not know color format 0x7f000789 = 2130708361
+10-27 01:40:24.972  2415  2541 I ACodec  : setupAVCEncoderParameters with [profile: Baseline] [level: Level41]
+10-27 01:40:24.972  2415  2541 I ACodec  : [OMX.google.h264.encoder] cannot encode color aspects. Ignoring.
+10-27 01:40:24.972  2415  2541 I ACodec  : [OMX.google.h264.encoder] cannot encode HDR static metadata. Ignoring.
+10-27 01:40:24.972  2415  2541 I ACodec  : setupVideoEncoder succeeded
+10-27 01:40:24.973   434   807 E OMXNodeInstance: setConfig(0xf1340780:google.h264.encoder, ConfigPriority(0x6f800002)) ERROR: Undefined(0x80001001)
+10-27 01:40:24.973  2415  2541 I ACodec  : codec does not support config priority (err -2147483648)
+10-27 01:40:24.973  2415  2541 W OMXUtils: do not know color format 0x7f000789 = 2130708361
+10-27 01:40:24.973   434   807 E OMXNodeInstance: getConfig(0xf1340780:google.h264.encoder, ConfigLatency(0x6f800005)) ERROR: Undefined(0x80001001)
+10-27 01:40:24.974   434   807 E OMXNodeInstance: getConfig(0xf1340780:google.h264.encoder, ConfigAndroidVendorExtension(0x6f100004)) ERROR: Undefined(0x80001001)
+10-27 01:40:24.976   434   807 D GraphicBufferSource: setting dataspace: 0x104, acquired=0
+10-27 01:40:24.977   434   807 D GraphicBufferSource: requesting color aspects (R:2(Limited), P:1(BT709_5), M:1(BT709_5), T:3(SMPTE170M))
+10-27 01:40:24.977   406   406 I perfetto: probes_producer.cc:329  Producer stop (id=5)
+10-27 01:40:24.979   407   407 I perfetto: ng_service_impl.cc:1948 Tracing session 5 ended, total sessions:1
+10-27 01:40:24.981   422  2161 W ResourceManagerService: Ignoring request to add new resource entry with value <= 0
+10-27 01:40:24.981   434  2542 D SoftAVCEnc: Params width 1920 height 1080 level 41 colorFormat 0
+10-27 01:40:24.982   159   159 I hwservicemanager: getTransport: Cannot find entry android.hardware.graphics.mapper@4.0::IMapper/default in either framework or device manifest.
+10-27 01:40:24.982   434   807 I Gralloc4: mapper 4.x is not supported
+10-27 01:40:24.986   434   807 D HostConnection: createUnique: call
+10-27 01:40:24.987   434   807 D HostConnection: HostConnection::get() New Host Connection established 0xf13414a0, tid 807
+10-27 01:40:24.987   434   807 D goldfish-address-space: allocate: Ask for block of size 0x100
+10-27 01:40:24.987   434   807 D goldfish-address-space: allocate: ioctl allocate returned offset 0x3fbffe000 size 0x2000
+10-27 01:40:24.995   159   159 I hwservicemanager: getTransport: Cannot find entry android.hardware.graphics.allocator@4.0::IAllocator/default in either framework or device manifest.
+10-27 01:40:24.995   434   807 W Gralloc4: allocator 3.x is not supported
+10-27 01:40:24.997   298   298 D goldfish-address-space: claimShared: Ask to claim region [0x3fea18000 0x3ff201000]
+10-27 01:40:25.006   434   807 D HostConnection: HostComposition ext ANDROID_EMU_CHECKSUM_HELPER_v1 ANDROID_EMU_native_sync_v2 ANDROID_EMU_dma_v1 ANDROID_EMU_direct_mem ANDROID_EMU_host_composition_v1 ANDROID_EMU_host_composition_v2 ANDROID_EMU_vulkan ANDROID_EMU_deferred_vulkan_commands ANDROID_EMU_vulkan_null_optional_strings ANDROID_EMU_vulkan_create_resources_with_requirements ANDROID_EMU_YUV_Cache ANDROID_EMU_vulkan_ignored_handles ANDROID_EMU_has_shared_slots_host_memory_allocator ANDROID_EMU_vulkan_free_memory_sync ANDROID_EMU_vulkan_shader_float16_int8 ANDROID_EMU_vulkan_async_queue_submit ANDROID_EMU_sync_buffer_data ANDROID_EMU_vulkan_async_qsri ANDROID_EMU_read_color_buffer_dma ANDROID_EMU_hwc_color_transform GL_OES_EGL_image_external_essl3 GL_OES_vertex_array_object GL_KHR_texture_compression_astc_ldr ANDROID_EMU_host_side_tracing ANDROID_EMU_gles_max_version_3_0
+10-27 01:40:25.042  2473  2487 W System  : A resource failed to call release.
+10-27 01:40:25.182   434   807 D GraphicBufferSource: got buffer with new dataSpace #104
+10-27 01:40:25.182  2415  2541 D ACodec  : dataspace changed to 0x10c10000 (R:2(Limited), P:1(BT709_5), M:1(BT709_5), T:3(SMPTE170M)) (R:2(Limited), S:1(BT709), T:3(SMPTE_170M))
+10-27 01:40:25.190   298   298 D goldfish-address-space: claimShared: Ask to claim region [0x3ff201000 0x3ff9ea000]
+10-27 01:40:25.210  2415  2500 D MPEG4Writer: PreAllocation enabled
+10-27 01:40:25.334  2415  2500 D MPEG4Writer: fpathconf _PC_FILESIZEBITS:64
+10-27 01:40:25.334  2415  2500 D MPEG4Writer: File size limit set to 4503599627370495 bytes implicitly
+10-27 01:40:25.334  2415  2500 D MPEG4Writer: MP4WtrCtrlHlpLooper Started
+10-27 01:40:25.334  2415  2500 I MPEG4Writer: limits: 4503599627370495/0 bytes/us, bit rate: -1 bps and the estimated moov size 3192 bytes
+10-27 01:40:25.334  2415  2549 D MPEG4Writer: kWhatNoIOErrorSoFar
+10-27 01:40:25.335  2415  2550 I MPEG4Writer: setStartTimestampUs: 0
+10-27 01:40:25.335  2415  2550 I MPEG4Writer: Earliest track starting time: 0
+10-27 01:40:25.558   298   298 D goldfish-address-space: claimShared: Ask to claim region [0x3fc0c8000 0x3fc8b1000]
+10-27 01:40:25.978   507   535 I system_server: oneway function results will be dropped but finished with status OK and parcel size 4
+10-27 01:40:26.437   507   535 I system_server: oneway function results will be dropped but finished with status OK and parcel size 4
+10-27 01:40:28.010   406   406 I perfetto: probes_producer.cc:329  Producer stop (id=6)
+10-27 01:40:28.014   406   406 I perfetto: ftrace_procfs.cc:183    disabled ftrace
+10-27 01:40:28.019   407   407 I perfetto: ng_service_impl.cc:1948 Tracing session 6 ended, total sessions:0
+10-27 01:40:30.453  2415  2500 I TransformerInternal: Release 49fe4c4 [AndroidXMedia3/1.5.1] [generic_x86_64, Android SDK built for x86_64, unknown, 30] [media3.common, media3.transformer, media3.exoplayer, media3.decoder, media3.datasource, media3.extractor, media3.effect]
+10-27 01:40:30.457   434   807 W GraphicBufferSource: released unpopulated slots: [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63]
+10-27 01:40:30.457  2415  2503 E Surface : getSlotFromBufferLocked: unknown buffer: 0x0
+10-27 01:40:30.459  2415  2500 I ExoPlayerImpl: Release 516d2e2 [AndroidXMedia3/1.5.1] [generic_x86_64, Android SDK built for x86_64, unknown, 30] [media3.common, media3.transformer, media3.exoplayer, media3.decoder, media3.datasource, media3.extractor, media3.effect]
+10-27 01:40:30.459  2415  2504 D SurfaceUtils: connecting to surface 0x7674ae228120, reason connectToSurface
+10-27 01:40:30.459  2415  2504 I MediaCodec: [OMX.google.hevc.decoder] setting surface generation to 2472962
+10-27 01:40:30.459  2415  2504 D SurfaceUtils: disconnecting from surface 0x7674ae228120, reason connectToSurface(reconnect)
+10-27 01:40:30.459  2415  2504 D SurfaceUtils: connecting to surface 0x7674ae228120, reason connectToSurface(reconnect)
+10-27 01:40:30.459  2415  2504 D SurfaceUtils: legacy buffer drop disabled: target sdk (35)
+10-27 01:40:30.459  2415  2504 D SurfaceUtils: disconnecting from surface 0x7674ae22a330, reason disconnectFromSurface
+10-27 01:40:30.460  2415  2500 D MPEG4Writer: reset()
+10-27 01:40:30.460  2415  2500 D MPEG4Writer: Video track stopping. Stop source
+10-27 01:40:30.460  2415  2500 D MPEG4Writer: Video track source stopping
+10-27 01:40:30.460  2415  2500 D MPEG4Writer: Video track source stopped
+10-27 01:40:30.460  2415  2550 V MediaWriter: Track event err/info msg:101, trackId:1, type:1000,val:-1011
+10-27 01:40:30.460  2415  2550 I MPEG4Writer: Received total/0-length (47/0) buffers and encoded 47 frames. - Video
+10-27 01:40:30.461  2415  2500 D MPEG4Writer: Video track stopped. Status:0. Stop source
+10-27 01:40:30.461  2415  2548 D MPEG4Writer: 0 chunks are written in the last batch
+10-27 01:40:30.462  2415  2500 D MPEG4Writer: WriterThread stopped. Status:0
+10-27 01:40:30.462  2415  2500 I MPEG4Writer: Adjust the moov start time from 0 us -> 0 us
+10-27 01:40:30.462  2415  2500 I MPEG4Writer: MOOV atom was written to the file
+10-27 01:40:30.462  2415  2500 D MPEG4Writer: release()
+10-27 01:40:30.462  2415  2500 D MPEG4Writer: ftruncate mPreAllocateFileEndOffset:1679350 mOffset:1008 mMdatEndOffset:1677726 diff:1624
+10-27 01:40:30.468  2415  2504 D SurfaceUtils: disconnecting from surface 0x7674ae228120, reason disconnectFromSurface
+10-27 01:40:30.469  2415  2500 D MPEG4Writer: MP4WtrCtrlHlpLooper stopped
+10-27 01:40:30.469  2415  2500 D MPEG4Writer: Top 5 write durations(microseconds): #1:45 #2:46 #3:74 #4:79 #5:102
+10-27 01:40:30.469  2415  2500 D MPEG4Writer: reset()
+10-27 01:40:30.469  2415  2500 D MPEG4Writer: Video track stopping. Stop source
+10-27 01:40:30.469  2415  2500 E MPEG4Writer: Stop() called but track is not started or stopped
+10-27 01:40:30.479  1430  1452 I MediaProvider: Using lower FS for /storage/emulated/0/Movies/FRAME/.pending-1793670030-FRAME-1793065230470.mp4
+10-27 01:40:30.485  1430  1452 D MediaProvider: Moving /storage/emulated/0/Movies/FRAME/.pending-1793670030-FRAME-1793065230470.mp4 to /storage/emulated/0/Movies/FRAME/FRAME-1793065230470.mp4
+10-27 01:40:30.507  1430  1452 I MediaProvider: Using lower FS for /storage/emulated/0/Movies/FRAME/FRAME-1793065230470.mp4
+10-27 01:40:30.518   422  2631 I OMXClient: IOmx service obtained
+10-27 01:40:30.518   434   763 I OMXMaster: makeComponentInstance(OMX.google.h264.decoder) in android.hardwar process
+10-27 01:40:30.521   422  2631 D ACodec  : Setting [OMX.google.h264.decoder] input port buffer number: 1
+10-27 01:40:30.521   422  2631 D ACodec  : Setting [OMX.google.h264.decoder] output port buffer number: 1
+10-27 01:40:30.521   434   763 D SoftVideoDecoderOMXComponent: Color Aspects preference: 1
+10-27 01:40:30.522   434   763 E OMXNodeInstance: getConfig(0xf13415f0:google.h264.decoder, ConfigAndroidVendorExtension(0x6f100004)) ERROR: UnsupportedIndex(0x8000101a)
+10-27 01:40:30.548   422  2630 W ResourceManagerService: Ignoring request to add new resource entry with value <= 0
+10-27 01:40:30.548   420  2499 D MediaBufferGroup: creating MemoryDealer
+10-27 01:40:30.549   434  2632 D SoftVideoDecoderOMXComponent: Color Aspects preference: 1
+10-27 01:40:30.593  1430  1452 I MediaProvider: Using lower FS for /storage/emulated/0/Movies/FRAME/FRAME-1793065230470.mp4
+10-27 01:40:30.594  2415  2435 W FileSource: offset/length adjusted from 0/576460752303423487 to 0/1677726
+10-27 01:40:30.605  1430  1452 I MediaProvider: Deleted 1 items on external due to com.gutkin.frame
+10-27 01:40:30.606  2415  2435 I TestRunner: finished: convertsHevcToCompatibleH264(com.gutkin.frame.video.VideoExportTest)
