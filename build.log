@@ -149,16 +149,16 @@ info Done copying assets
 > Task :app:extractReleaseNativeSymbolTables
 > Task :app:processReleaseResources
 > Task :app:mergeReleaseNativeDebugMetadata NO-SOURCE
-> Task :app:mergeReleaseArtProfile
 > Task :app:mergeReleaseShaders
+> Task :app:mergeReleaseArtProfile
 > Task :app:compileReleaseShaders NO-SOURCE
 > Task :app:generateReleaseAssets UP-TO-DATE
 > Task :app:mergeReleaseAssets
 > Task :app:compressReleaseAssets
 > Task :app:extractReleaseVersionControlInfo
 > Task :app:collectReleaseDependencies
-> Task :app:optimizeReleaseResources
 > Task :app:sdkReleaseDependencyData
+> Task :app:optimizeReleaseResources
 > Task :app:validateSigningRelease
 > Task :app:writeReleaseAppMetadata
 > Task :app:writeReleaseSigningConfigVersions
@@ -171,9 +171,9 @@ info Done copying assets
 > Task :app:generateReleaseAndroidTestResValues
 > Task :app:mapReleaseAndroidTestSourceSetPaths
 > Task :app:generateReleaseAndroidTestResources
+> Task :app:mergeReleaseAndroidTestResources
 > Task :app:javaPreCompileReleaseAndroidTest
 > Task :app:mergeReleaseAndroidTestShaders
-> Task :app:mergeReleaseAndroidTestResources
 > Task :app:compileReleaseAndroidTestShaders NO-SOURCE
 > Task :app:generateReleaseAndroidTestAssets UP-TO-DATE
 > Task :app:mergeReleaseAndroidTestAssets
@@ -196,19 +196,19 @@ w: file:///home/runner/work/RN/RN/android/app/src/main/java/com/gutkin/frame/vid
 > Task :app:generateReleaseLintVitalReportModel
 > Task :app:dexBuilderRelease
 > Task :app:mergeReleaseGlobalSynthetics
-> Task :app:mergeDexRelease
 > Task :app:processReleaseJavaRes
+> Task :app:mergeDexRelease
 > Task :app:compileReleaseArtProfile
 > Task :app:bundleReleaseClassesToRuntimeJar
 > Task :app:bundleReleaseClassesToCompileJar
+> Task :app:mergeReleaseJavaResource
+> Task :app:packageRelease
+> Task :app:createReleaseApkListingFileRedirect
 > Task :app:compileReleaseUnitTestKotlin
 > Task :app:compileReleaseUnitTestJavaWithJavac NO-SOURCE
 > Task :app:processReleaseUnitTestJavaRes
-> Task :app:mergeReleaseJavaResource
-> Task :app:testReleaseUnitTest
-> Task :app:packageRelease
-> Task :app:createReleaseApkListingFileRedirect
 > Task :app:compileReleaseAndroidTestKotlin
+> Task :app:testReleaseUnitTest
 > Task :app:compileReleaseAndroidTestJavaWithJavac
 > Task :app:dexBuilderReleaseAndroidTest
 > Task :app:mergeDexReleaseAndroidTest
@@ -222,6 +222,7 @@ w: file:///home/runner/work/RN/RN/android/app/src/main/java/com/gutkin/frame/vid
 > Task :app:lintVitalReportRelease
 > Task :app:lintVitalRelease
 > Task :app:assembleRelease
+gradle/actions: Writing build results to /home/runner/work/_temp/.gradle-actions/build-results/apk-1793062725248.json
 
 [Incubating] Problems report is available at: file:///home/runner/work/RN/RN/android/build/reports/problems/problems-report.html
 
@@ -231,5 +232,5 @@ You can use '--warning-mode all' to show the individual deprecation warnings and
 
 For more on this, please refer to https://docs.gradle.org/8.13/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
 
-BUILD SUCCESSFUL in 3m 51s
+BUILD SUCCESSFUL in 3m 41s
 99 actionable tasks: 99 executed
