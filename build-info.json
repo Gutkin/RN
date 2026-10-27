@@ -1,26 +1,18 @@
 {
-  "source": "4a7ebf2c9b9928517147c475946ee425201392d4",
-  "version": "0.1.0",
+  "source": "a23d06cfa905eb3b65601f1855f5a17fc7f625a1",
+  "version": "0.1.1",
+  "version_code": 2,
+  "sha256": "3703d4326a957007a02bc2ea89aae2d3928ff1f7cca1abe2c1600c9d3075baed",
+  "bytes": 64418364,
   "min_android": "10",
-  "architecture": [
-    "arm64-v8a",
-    "x86_64"
-  ],
-  "sha256": "caad422ae8ae993301bcedd37fefea96b338074d94f0453e3655204ddb6f43c0",
-  "bytes": 62240000,
   "validation": {
-    "typescript": "passed",
-    "javascript_tests": 9,
-    "native_unit_tests": 4,
-    "apk_signature": "verified",
-    "device_tests": {
-      "passed": 3,
-      "failed": 0,
-      "skipped": 0,
-      "android": "11",
-      "run": "https://github.com/Gutkin/RN/actions/runs/40430559791",
-      "test_source": "8516f4bdaa7c44b1306da813b376213b3e01a77c"
-    },
-    "note": "APK application source matches the application source validated by the instrumentation run. Only tests, workflow and README changed afterwards."
+    "javascript_tests_passed": 12,
+    "native_unit_tests_passed": 7,
+    "android_tests_passed": 5,
+    "android_tests_failed": 0,
+    "android_tests_skipped": 0,
+    "android": "11",
+    "signature": "verified; matches 0.1.0",
+    "run": "https://github.com/Gutkin/RN/actions/runs/40436430626"
   }
 }
