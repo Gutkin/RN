@@ -1,5 +1,5 @@
 import {templates} from './templates';
-export type Video = {id: string; uri: string; thumbnail?: string; width: number; height: number; bytes: number; durationMs: number; fps: number};
+export type Video = {id: string; uri: string; thumbnail?: string; mime?: string; width: number; height: number; bytes: number; durationMs: number; fps: number};
 export type Project = {version: 1; templateId: string; title: string; video: Video; startMs: number; endMs: number; muted: boolean; updatedAt: number};
 export function trimProblem(startMs: number, endMs: number, durationMs: number): string | null {
   if (![startMs, endMs, durationMs].every(Number.isFinite)) return 'Укажите время числом';

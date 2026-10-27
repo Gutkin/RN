@@ -4,6 +4,8 @@ import android.media.MediaExtractor
 import android.media.MediaFormat
 import android.media.MediaMetadataRetriever
 import android.net.Uri
+import android.content.ContentValues
+import android.provider.MediaStore
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.core.app.ActivityScenario
@@ -22,6 +24,29 @@ import java.util.concurrent.TimeUnit
 class VideoExportTest {
     private val instrumentation = InstrumentationRegistry.getInstrumentation()
     private val context = instrumentation.targetContext
+    private fun findNode(label: String): AccessibilityNodeInfo? {
+        val queue = java.util.ArrayDeque<AccessibilityNodeInfo>()
+        instrumentation.uiAutomation.rootInActiveWindow?.let { queue.add(it) }
+        while (queue.isNotEmpty()) {
+            val node = queue.removeFirst()
+            if (node.contentDescription?.toString() == label) return node
+            for (i in 0 until node.childCount) node.getChild(i)?.let { queue.add(it) }
+        }
+        return null
+    }
+    private fun awaitNode(label: String, selected: Boolean? = null): AccessibilityNodeInfo {
+        val deadline = SystemClock.uptimeMillis() + 10000
+        while (SystemClock.uptimeMillis() < deadline) {
+            val node = findNode(label)
+            if (node != null && (selected == null || node.isSelected == selected)) return node
+            SystemClock.sleep(100)
+        }
+        throw AssertionError("Missing UI control: $label, selected=$selected")
+    }
+    private fun tap(label: String) {
+        assertTrue("Control must be clickable: $label", awaitNode(label).performAction(AccessibilityNodeInfo.ACTION_CLICK))
+        instrumentation.waitForIdleSync()
+    }
     @Test fun appStartsWithBundledJavaScript() {
         ActivityScenario.launch(MainActivity::class.java).use {
             val deadline = SystemClock.uptimeMillis() + 45000
@@ -37,10 +62,30 @@ class VideoExportTest {
                 if (!found) SystemClock.sleep(250)
             }
             assertTrue("Bundled React Native home screen did not render", found)
+            awaitNode("Stories", true); awaitNode("Reels", false); awaitNode("Posts", false)
+            for (i in 1..5) awaitNode("Слайд $i из 5", i == 1)
+            awaitNode("Открыть Sunday Journal")
+            tap("Reels"); awaitNode("Reels", true); awaitNode("Открыть Make It Bold")
+            tap("Слайд 3 из 5"); awaitNode("Слайд 3 из 5", true); awaitNode("Открыть Sunday Journal")
+            tap("Posts"); awaitNode("Posts", true); awaitNode("Слайд 1 из 5", true); awaitNode("Открыть Coastal Days")
+            tap("Stories"); awaitNode("Stories", true); awaitNode("Открыть Sunday Journal")
             instrumentation.uiAutomation.takeScreenshot()?.let { bitmap ->
-                File(context.getExternalFilesDir(null), "frame-home.png").outputStream().use { output -> bitmap.compress(android.graphics.Bitmap.CompressFormat.PNG, 100, output) }
-                bitmap.recycle()
+                // Public test output survives target-app uninstall at the end of connected tests.
+                val values = ContentValues().apply {
+                    put(MediaStore.Images.Media.DISPLAY_NAME, "frame-home.png")
+                    put(MediaStore.Images.Media.MIME_TYPE, "image/png")
+                    put(MediaStore.Images.Media.RELATIVE_PATH, "Pictures/FRAME-tests")
+                    put(MediaStore.Images.Media.IS_PENDING, 1)
+                }
+                val uri = context.contentResolver.insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, values)!!
+                try {
+                    context.contentResolver.openOutputStream(uri).use { output -> bitmap.compress(android.graphics.Bitmap.CompressFormat.PNG, 100, output!!) }
+                    context.contentResolver.update(uri, ContentValues().apply { put(MediaStore.Images.Media.IS_PENDING, 0) }, null, null)
+                } finally { bitmap.recycle() }
             }
+            tap("Слайд 2 из 5"); awaitNode("Слайд 2 из 5", true)
+            tap("Открыть Quiet Moment")
+            awaitNode("+ Добавить видео")
         }
     }
     private fun fixture(name: String): File = File(context.filesDir, "media/$name").apply {
@@ -59,8 +104,19 @@ class VideoExportTest {
             catch (e: IllegalStateException) { assertTrue(e.message!!.contains("1080p")) }
         } finally { instrumentation.runOnMainSync { module.invalidate() } }
     }
-    @Test fun exportsTrimmedPortraitWithTextAndWithoutAudio() {
-        val file = fixture("sample.mp4")
+    @Test fun acceptsActualHevcFromCamera() {
+        lateinit var module: VideoModule
+        instrumentation.runOnMainSync { module = VideoModule(BridgeReactContext(context)) }
+        try {
+            val info = module.inspect(Uri.fromFile(fixture("sample-hevc.mp4")))
+            assertEquals("video/hevc", info.getString("mime"))
+            assertEquals(640, info.getInt("width"))
+        } finally { instrumentation.runOnMainSync { module.invalidate() } }
+    }
+    @Test fun exportsTrimmedPortraitWithTextAndWithoutAudio() = assertNativeExport("sample.mp4")
+    @Test fun convertsHevcToCompatibleH264() = assertNativeExport("sample-hevc.mp4")
+    private fun assertNativeExport(name: String) {
+        val file = fixture(name)
         lateinit var module: VideoModule
         instrumentation.runOnMainSync { module = VideoModule(BridgeReactContext(context)) }
         val done = CountDownLatch(1)

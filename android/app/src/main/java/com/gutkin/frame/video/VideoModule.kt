@@ -4,6 +4,7 @@ import android.app.Activity
 import android.content.*
 import android.database.Cursor
 import android.media.MediaExtractor
+import android.media.MediaCodecList
 import android.media.MediaFormat
 import android.media.MediaMetadataRetriever
 import android.net.Uri
@@ -103,7 +104,7 @@ class VideoModule(private val app: ReactApplicationContext) : ReactContextBaseJa
             extractor.setDataSource(app, uri, null)
             val format = (0 until extractor.trackCount).map { extractor.getTrackFormat(it) }.firstOrNull { it.getString(MediaFormat.KEY_MIME)?.startsWith("video/") == true }
                 ?: error("В файле нет видеодорожки")
-            require(format.getString(MediaFormat.KEY_MIME) == "video/avc") { "Пока поддерживается видео H.264. В камере выберите режим «Совместимый», без HEVC/HDR." }
+            val mime = format.getString(MediaFormat.KEY_MIME)
             val transfer = if (format.containsKey(MediaFormat.KEY_COLOR_TRANSFER)) format.getInteger(MediaFormat.KEY_COLOR_TRANSFER) else 0
             require(transfer != 6 && transfer != 7) { "HDR пока не поддерживается. Выберите обычное SDR-видео." }
             val width = format.getInteger(MediaFormat.KEY_WIDTH)
@@ -123,7 +124,11 @@ class VideoModule(private val app: ReactApplicationContext) : ReactContextBaseJa
             if (last > first && frames > 1) fps = maxOf(fps, (frames - 1) * 1_000_000f / (last - first))
             if (shortest < Long.MAX_VALUE && shortest > 0) fps = maxOf(fps, 1_000_000f / shortest)
             MediaLimits.problem(bytes, width, height, duration, fps)?.let { error(it) }
-            return Arguments.createMap().apply { putDouble("bytes", bytes.toDouble()); putInt("width", width); putInt("height", height); putDouble("durationMs", duration.toDouble()); putDouble("fps", fps.toDouble()) }
+            // Accept HEVC from phone cameras without weakening the resource limits above.
+            // Import checks the real decoder on this device; export remains H.264/AAC.
+            val decoder = MediaCodecList(MediaCodecList.REGULAR_CODECS).findDecoderForFormat(format)
+            MediaInputSupport.problem(mime, decoder != null)?.let { error(it) }
+            return Arguments.createMap().apply { putString("mime", mime); putDouble("bytes", bytes.toDouble()); putInt("width", width); putInt("height", height); putDouble("durationMs", duration.toDouble()); putDouble("fps", fps.toDouble()) }
         } finally { retriever.release(); extractor.release() }
     }
     @ReactMethod fun saveProject(json: String, promise: Promise) {
