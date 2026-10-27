@@ -2,6 +2,7 @@
 package com.gutkin.frame
 
 import android.content.Intent
+import android.app.Activity
 import android.graphics.BitmapFactory
 import android.net.Uri
 import androidx.activity.compose.BackHandler
@@ -21,9 +22,11 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.graphics.asImageBitmap
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.res.painterResource
@@ -42,6 +45,7 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleEventObserver
 import androidx.lifecycle.compose.LocalLifecycleOwner
 import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.core.view.WindowCompat
 import androidx.media3.common.MediaItem
 import androidx.media3.common.Player
 import androidx.media3.common.PlaybackException
@@ -78,6 +82,16 @@ private val Dark = Color(0xFF20211F)
         if (s.busy || s.exporting) model.message("Дождитесь завершения операции или отмените экспорт.") else model.back()
     }
     val isEditor = s.screen == Screen.EDITOR
+    SideEffect {
+        (context as? Activity)?.window?.let { window ->
+            window.statusBarColor = (if (isEditor) Dark else Cream).toArgb()
+            window.navigationBarColor = (if (isEditor) Dark else Cream).toArgb()
+            WindowCompat.getInsetsController(window, window.decorView).apply {
+                isAppearanceLightStatusBars = !isEditor
+                isAppearanceLightNavigationBars = !isEditor
+            }
+        }
+    }
     MaterialTheme(colorScheme = if (isEditor) darkColorScheme(primary = Coral, background = Dark, surface = Dark) else lightColorScheme(primary = Coral, background = Cream, surface = Cream, onBackground = Ink, onSurface = Ink)) {
         Box(Modifier.fillMaxSize().background(if (isEditor) Dark else Cream)) {
             Scaffold(containerColor = if (isEditor) Dark else Cream, contentWindowInsets = WindowInsets(0), bottomBar = {
@@ -187,7 +201,7 @@ private val Dark = Color(0xFF20211F)
                     }
                 }
             }
-            if (s.busy) Box(Modifier.fillMaxSize().background(Color.Black.copy(alpha = .65f)).clickable(enabled = false) {}, contentAlignment = Alignment.Center) {
+            if (s.busy) Box(Modifier.fillMaxSize().background(Color.Black.copy(alpha = .65f)).pointerInput(Unit) { awaitPointerEventScope { while (true) { awaitPointerEvent().changes.forEach { it.consume() } } } }, contentAlignment = Alignment.Center) {
                 Column(horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.spacedBy(16.dp)) { CircularProgressIndicator(color = Coral); Text("Проверяем и сохраняем…", color = Color.White) }
             }
         }
