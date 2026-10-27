@@ -145,9 +145,27 @@ class VideoExportTest {
             compose.onNodeWithText("Длина, сек").performImeAction()
             compose.waitForIdle()
             compose.onNodeWithContentDescription("Лента кадров").performScrollTo()
-            compose.mainClock.advanceTimeBy(700)
+            val editedDeadline = SystemClock.uptimeMillis() + 30000
+            var editedReady = false
+            while (SystemClock.uptimeMillis() < editedDeadline && !editedReady) {
+                compose.mainClock.advanceTimeBy(200)
+                scenario.onActivity { activity ->
+                    val player = playerView(activity.window.decorView)?.player
+                    val clip = player?.currentMediaItem?.clippingConfiguration
+                    editedReady = player?.playbackState == Player.STATE_READY && player.playerError == null && clip?.startPositionMs == 500L && clip.endPositionMs == 2500L
+                }
+                if (!editedReady) SystemClock.sleep(200)
+            }
+            assertTrue("Edited preview must become ready after trim and effect changes", editedReady)
+            tap("Воспроизвести")
+            compose.waitUntil(5000) { compose.onAllNodesWithContentDescription("Пауза").fetchSemanticsNodes().isNotEmpty() }
             SystemClock.sleep(700)
-            screenshot("frame-editor.png")
+            compose.waitUntil(10000) { compose.onAllNodesWithText("Готовим предпросмотр…").fetchSemanticsNodes().isEmpty() }
+            tap("Пауза")
+            SystemClock.sleep(250)
+            val preview = android.graphics.Rect()
+            scenario.onActivity { activity -> playerView(activity.window.decorView)!!.getGlobalVisibleRect(preview) }
+            screenshot("frame-editor.png", preview)
             compose.onNodeWithContentDescription("Сохранить проект").performClick()
             compose.waitUntil(10000) { compose.onAllNodesWithText("OK").fetchSemanticsNodes().isNotEmpty() }
             compose.onNodeWithText("OK").performClick()
@@ -170,8 +188,17 @@ class VideoExportTest {
             compose.onNodeWithText("Просто о важном").assertIsDisplayed()
         }
     }
-    private fun screenshot(name: String) {
+    private fun screenshot(name: String, preview: android.graphics.Rect? = null) {
         instrumentation.uiAutomation.takeScreenshot()?.let { bitmap ->
+            var gray = 0; var coral = 0
+            if (preview != null) {
+                for (y in preview.top.coerceAtLeast(0) until preview.bottom.coerceAtMost(bitmap.height)) for (x in preview.left.coerceAtLeast(0) until preview.right.coerceAtMost(bitmap.width)) {
+                    val c = bitmap.getPixel(x, y)
+                    val r = android.graphics.Color.red(c); val g = android.graphics.Color.green(c); val b = android.graphics.Color.blue(c)
+                    if (r in 30..230 && kotlin.math.abs(r - g) < 8 && kotlin.math.abs(r - b) < 8) gray++
+                    if (r > 100 && g < r * .7 && b < r * .65) coral++
+                }
+            }
             val values = ContentValues().apply {
                 put(MediaStore.Images.Media.DISPLAY_NAME, name)
                 put(MediaStore.Images.Media.MIME_TYPE, "image/png")
@@ -183,6 +210,10 @@ class VideoExportTest {
                 context.contentResolver.openOutputStream(uri).use { bitmap.compress(android.graphics.Bitmap.CompressFormat.PNG, 100, it!!) }
                 context.contentResolver.update(uri, ContentValues().apply { put(MediaStore.Images.Media.IS_PENDING, 0) }, null, null)
             } finally { bitmap.recycle() }
+            if (preview != null) {
+                assertTrue("Edited preview must display a real grayscale frame: $gray gray pixels", gray > 30)
+                assertTrue("Edited preview must display the coral title: $coral coral pixels", coral > 5)
+            }
         }
     }
     @Test fun editorSettingsRoundTripAndLegacyDefaultsWork() {

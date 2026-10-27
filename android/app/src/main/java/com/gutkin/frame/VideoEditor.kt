@@ -181,12 +181,14 @@ internal class EditorPlayback {
     val owner = LocalLifecycleOwner.current
     val player = remember(context) { ExoPlayer.Builder(context).build().apply { repeatMode = Player.REPEAT_MODE_ONE } }
     var error by remember { mutableStateOf<String?>(null) }
+    var loading by remember { mutableStateOf(true) }
     var loadedClip by remember { mutableStateOf("") }
     DisposableEffect(player, owner, control) {
         control?.player = player
         val observer = LifecycleEventObserver { _, event -> if (event == Lifecycle.Event.ON_STOP) player.pause() }
         val listener = object : Player.Listener {
-            override fun onPlayerError(e: PlaybackException) { error = "Не удалось воспроизвести видео: ${e.message}" }
+            override fun onRenderedFirstFrame() { loading = false }
+            override fun onPlayerError(e: PlaybackException) { loading = false; error = "Не удалось воспроизвести видео: ${e.message}" }
         }
         player.addListener(listener); owner.lifecycle.addObserver(observer)
         onDispose { control?.player = null; control?.ready = false; control?.isPlaying = false; control?.positionMs = 0; owner.lifecycle.removeObserver(observer); player.removeListener(listener); player.release() }
@@ -201,7 +203,7 @@ internal class EditorPlayback {
     }
     LaunchedEffect(project.muted) { player.volume = if (project.muted) 0f else 1f }
     LaunchedEffect(project.video.uri, project.startMs, project.endMs, project.title, project.templateId, project.edits) {
-        delay(250); error = null
+        delay(250); error = null; loading = true
         val clip = "${project.video.uri}:${project.startMs}:${project.endMs}"
         val position = if (clip == loadedClip) player.currentPosition else 0L
         val resume = player.playWhenReady
@@ -212,6 +214,10 @@ internal class EditorPlayback {
     }
     Box(modifier) {
         AndroidView(factory = { PlayerView(it).apply { this.player = player; useController = control == null; resizeMode = AspectRatioFrameLayout.RESIZE_MODE_FIT } }, modifier = Modifier.fillMaxSize())
+        if (loading && error == null) Column(Modifier.align(Alignment.Center).background(EditorBackground.copy(alpha = .85f), RoundedCornerShape(8.dp)).padding(12.dp), horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.spacedBy(8.dp)) {
+            CircularProgressIndicator(Modifier.size(24.dp), color = Accent, strokeWidth = 2.dp)
+            Text("Готовим предпросмотр…", color = Color.White, fontSize = 10.sp)
+        }
         error?.let { Text(it, Modifier.align(Alignment.Center).background(EditorBackground.copy(alpha = .85f)).padding(16.dp), color = Color.White, fontSize = 12.sp) }
     }
 }

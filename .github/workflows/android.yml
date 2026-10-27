@@ -48,9 +48,7 @@ jobs:
           emulator-options: -no-window -gpu swiftshader_indirect -no-snapshot -noaudio -no-boot-anim -camera-back none
           script: |
             adb install -r /tmp/frame-previous.apk
-            cd android && ./gradlew --no-daemon connectedReleaseAndroidTest
-            adb pull /sdcard/Pictures/FRAME-tests/frame-home.png /tmp/frame-home.png || true
-            adb pull /sdcard/Pictures/FRAME-tests/frame-editor.png /tmp/frame-editor.png || true
+            cd android && (./gradlew --no-daemon connectedReleaseAndroidTest; test_status=$?; adb pull /sdcard/Pictures/FRAME-tests/frame-home.png /tmp/frame-home.png || true; adb pull /sdcard/Pictures/FRAME-tests/frame-editor.png /tmp/frame-editor.png || true; exit "$test_status")
       - name: Upload APK and test evidence
         if: always()
         uses: actions/upload-artifact@v4
