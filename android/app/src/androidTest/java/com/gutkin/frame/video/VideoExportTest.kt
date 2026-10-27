@@ -12,7 +12,9 @@ import androidx.test.core.app.ActivityScenario
 import android.os.SystemClock
 import android.view.accessibility.AccessibilityNodeInfo
 import com.gutkin.frame.MainActivity
-import com.facebook.react.bridge.*
+import com.gutkin.frame.Project
+import com.gutkin.frame.ProjectStore
+import org.json.JSONObject
 import org.junit.Assert.*
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -61,7 +63,7 @@ class VideoExportTest {
                 }
                 if (!found) SystemClock.sleep(250)
             }
-            assertTrue("Bundled React Native home screen did not render", found)
+            assertTrue("Native Compose home screen did not render", found)
             awaitNode("Stories", true); awaitNode("Reels", false); awaitNode("Posts", false)
             for (i in 1..5) awaitNode("Слайд $i из 5", i == 1)
             awaitNode("Открыть Sunday Journal")
@@ -92,44 +94,85 @@ class VideoExportTest {
         parentFile!!.mkdirs()
         instrumentation.context.assets.open(name).use { input -> outputStream().use { input.copyTo(it) } }
     }
+    @Test fun importsHevcWithoutChangingTheSource() {
+        val source = fixture("sample-hevc.mp4")
+        val engine = VideoEngine(context)
+        try {
+            val imported = engine.importVideo(Uri.fromFile(source))
+            val copy = File(Uri.parse(imported.uri).path!!)
+            try {
+                assertEquals("video/hevc", imported.mime)
+                assertTrue(copy.canonicalPath.startsWith(File(context.filesDir, "media").canonicalPath + "/"))
+                assertArrayEquals(source.readBytes(), copy.readBytes())
+                assertTrue(source.exists())
+            } finally { copy.delete(); imported.thumbnail?.let { File(Uri.parse(it).path!!).delete() } }
+        } finally { instrumentation.runOnMainSync { engine.close() } }
+    }
+    @Test fun readsLegacyReactNativeProjectAndPreservesItsMedia() {
+        val file = File(context.filesDir, "project.json")
+        val backup = if (file.exists()) file.readBytes() else null
+        val source = fixture("sample.mp4")
+        val engine = VideoEngine(context)
+        try {
+            val metadata = engine.inspect(Uri.fromFile(source)).copy(id = source.nameWithoutExtension)
+            val legacyVideo = metadata.json().apply { remove("mime"); remove("thumbnail") }
+            // 0.1.x JavaScript serializes the numeric fields as doubles.
+            val legacy = JSONObject().put("version", 1).put("templateId", "journal").put("title", "Старый проект")
+                .put("video", legacyVideo.put("durationMs", metadata.durationMs.toDouble()).put("bytes", metadata.bytes.toDouble()))
+                .put("startMs", 500.0).put("endMs", 2500.0).put("muted", true).put("updatedAt", 1700000000000.0).toString()
+            file.writeText(legacy)
+            val store = ProjectStore(context)
+            val restored = store.load()!!
+            assertEquals("Старый проект", restored.title)
+            assertEquals(500, restored.startMs); assertEquals(2500, restored.endMs); assertTrue(restored.muted)
+            assertEquals(Uri.fromFile(source).toString(), restored.video.uri); assertTrue(source.exists())
+            store.save(restored)
+            assertEquals(restored, store.load())
+            assertEquals(1, JSONObject(file.readText()).getInt("version"))
+            file.writeText("{broken")
+            assertNull(store.load())
+        } finally {
+            if (backup == null) file.delete() else file.writeBytes(backup)
+            instrumentation.runOnMainSync { engine.close() }
+        }
+    }
     @Test fun validatesActualVideoAndRejects4K() {
-        lateinit var module: VideoModule
-        instrumentation.runOnMainSync { module = VideoModule(BridgeReactContext(context)) }
+        lateinit var module: VideoEngine
+        instrumentation.runOnMainSync { module = VideoEngine(context) }
         try {
             val info = module.inspect(Uri.fromFile(fixture("sample.mp4")))
-            assertEquals(640, info.getInt("width"))
-            assertEquals(360, info.getInt("height"))
-            assertTrue(info.getDouble("fps") in 23.0..25.0)
+            assertEquals(640, info.width)
+            assertEquals(360, info.height)
+            assertTrue(info.fps.toDouble() in 23.0..25.0)
             try { module.inspect(Uri.fromFile(fixture("4k.mp4"))); fail("4K import must be rejected") }
             catch (e: IllegalStateException) { assertTrue(e.message!!.contains("1080p")) }
-        } finally { instrumentation.runOnMainSync { module.invalidate() } }
+        } finally { instrumentation.runOnMainSync { module.close() } }
     }
     @Test fun acceptsActualHevcFromCamera() {
-        lateinit var module: VideoModule
-        instrumentation.runOnMainSync { module = VideoModule(BridgeReactContext(context)) }
+        lateinit var module: VideoEngine
+        instrumentation.runOnMainSync { module = VideoEngine(context) }
         try {
             val info = module.inspect(Uri.fromFile(fixture("sample-hevc.mp4")))
-            assertEquals("video/hevc", info.getString("mime"))
-            assertEquals(640, info.getInt("width"))
-        } finally { instrumentation.runOnMainSync { module.invalidate() } }
+            assertEquals("video/hevc", info.mime)
+            assertEquals(640, info.width)
+        } finally { instrumentation.runOnMainSync { module.close() } }
     }
     @Test fun exportsTrimmedPortraitWithTextAndWithoutAudio() = assertNativeExport("sample.mp4")
     @Test fun convertsHevcToCompatibleH264() = assertNativeExport("sample-hevc.mp4")
     private fun assertNativeExport(name: String) {
         val file = fixture(name)
-        lateinit var module: VideoModule
-        instrumentation.runOnMainSync { module = VideoModule(BridgeReactContext(context)) }
+        lateinit var module: VideoEngine
+        instrumentation.runOnMainSync { module = VideoEngine(context) }
         val done = CountDownLatch(1)
         var result: String? = null
         var failure: String? = null
-        val resolve = object : Callback { override fun invoke(vararg args: Any?) { result = args.firstOrNull() as? String; done.countDown() } }
-        val reject = object : Callback { override fun invoke(vararg args: Any?) { failure = args.joinToString(); done.countDown() } }
-        val options = Arguments.createMap().apply {
-            putString("uri", Uri.fromFile(file).toString()); putDouble("startMs", 500.0); putDouble("endMs", 2500.0)
-            putString("style", "journal"); putString("title", "ТЕСТ FRAME"); putBoolean("muted", true)
-        }
+        val project = Project("journal", "ТЕСТ FRAME", module.inspect(Uri.fromFile(file)).copy(id = file.nameWithoutExtension), 500, 2500, true)
         try {
-            module.exportVideo(options, PromiseImpl(resolve, reject))
+            instrumentation.runOnMainSync {
+                module.startExport(project, {}) { outcome ->
+                    result = outcome.getOrNull(); failure = outcome.exceptionOrNull()?.toString(); done.countDown()
+                }
+            }
             assertTrue("Timed out exporting native video", done.await(180, TimeUnit.SECONDS))
             assertNull("Native export rejected: $failure", failure)
             assertNotNull(result)
@@ -162,6 +205,6 @@ class VideoExportTest {
                     assertFalse("Muted export must not contain audio", tracks.any { it.startsWith("audio/") })
                 } finally { extractor.release() }
             } finally { context.contentResolver.delete(uri, null, null) }
-        } finally { instrumentation.runOnMainSync { module.invalidate() } }
+        } finally { instrumentation.runOnMainSync { module.close() } }
     }
 }

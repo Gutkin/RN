@@ -88,7 +88,7 @@ PYENV
 )"
 '''
 (ROOT / 'java-env.sh').write_text(env_script)
-for folder in ('android-user', 'avd', 'gradle-home', 'npm-cache'):
+for folder in ('android-user', 'avd', 'gradle-home'):
     (ROOT / folder).mkdir(exist_ok=True)
 subprocess.run(['bash', '-c', '''set -e
 . /workspace/tooling/java-env.sh
@@ -96,7 +96,7 @@ python3 - <<'PYSDK'
 import subprocess
 sdk='/workspace/tooling/android-sdk/cmdline-tools/12.0/bin/sdkmanager'
 subprocess.run([sdk,'--licenses'],input='y\\n'*200,text=True,check=True,stdout=subprocess.DEVNULL)
-subprocess.run([sdk,'platforms;android-35','build-tools;35.0.0','platform-tools','ndk;26.1.10909125'],input='y\\n'*200,text=True,check=True)
+subprocess.run([sdk,'platforms;android-35','build-tools;35.0.0','platform-tools'],input='y\\n'*200,text=True,check=True)
 PYSDK
 '''], check=True)
 print('Android tools installed. Activate with: . /workspace/tooling/java-env.sh')

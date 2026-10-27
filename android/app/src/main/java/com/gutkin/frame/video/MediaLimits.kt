@@ -14,5 +14,5 @@ object MediaLimits {
         fps > 60.1f -> "Максимум 60 кадров/с. Отключите замедленную съёмку."
         else -> null
     }
-    fun validTrim(start: Long, end: Long, duration: Long) = start >= 0 && end <= duration && end - start in 1000..MAX_EXPORT_MS
+    fun validTrim(start: Long, end: Long, duration: Long) = start >= 0 && start < duration && end > start && end <= duration && end - start in 1000..MAX_EXPORT_MS
 }

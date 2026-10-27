@@ -1,7 +1,10 @@
 # Third-party components
 
-- React Native 0.76.9 and React 18.3.1 — MIT. https://github.com/facebook/react-native and https://github.com/facebook/react
-- AndroidX Media3 1.5.1 — Apache License 2.0. https://github.com/androidx/media
-- Other dependency versions and their license metadata are recorded in `package-lock.json` and resolved Android dependencies.
-- Design imagery: generated FRAME concept commissioned in this conversation; `assets/concept.png` is the original concept used as an atlas for example cards; `assets/featured-collage.png` is clean promotional artwork with no baked-in text or controls.
+- Kotlin 1.9.25 — Apache 2.0. https://kotlinlang.org
+- AndroidX Jetpack Compose, Material 3, Lifecycle and Activity — Apache 2.0. https://developer.android.com/jetpack/compose
+- AndroidX Media3 1.5.1 — Apache 2.0. https://github.com/androidx/media
+- Kotlin coroutines — Apache 2.0. https://github.com/Kotlin/kotlinx.coroutines
+- Design artwork was generated for FRAME in this conversation. The clean photographic banner is in `android/app/src/main/res/drawable-nodpi/featured_collage.png`; captions and controls are rendered by Compose.
 - Instrumentation fixtures are synthetic FFmpeg-generated patterns and sine audio, with no external footage.
+
+Exact dependency versions are pinned by Gradle configuration and the Compose BOM. React and React Native are not dependencies of version 0.2.0.
