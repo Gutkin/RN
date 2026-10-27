@@ -54,7 +54,10 @@ export function FeaturedTemplates({collection, onCollectionChange, onOpen}: {
       <ScrollView key={collection} ref={pager} horizontal pagingEnabled bounces={false} showsHorizontalScrollIndicator={false} decelerationRate="fast" scrollEventThrottle={16} testID="featured-carousel"
         onMomentumScrollEnd={e => setIndex(Math.max(0, Math.min(items.length - 1, Math.round(e.nativeEvent.contentOffset.x / width))))}>
         {items.map((template, i) => <View key={`${collection}-${template.id}`} testID={`featured-card-${i}`} importantForAccessibility={i === index ? 'auto' : 'no-hide-descendants'} style={[s.card, {width, height: width * 199 / 330}]}>
-          <View style={s.mainPhoto}><Photo rect={[240, 318, 176, 195]} /></View>
+          <View style={s.mainPhoto}>
+            <View style={s.photoTop}><Photo rect={[240, 318, 176, 141]} /></View>
+            <View style={s.photoBottom}><Photo rect={[243, 461, 115, 51]} /></View>
+          </View>
           <View style={s.lemons}><Photo rect={[86, 463, 109, 49]} /></View>
           <View style={s.postcard}><View style={s.postcardPhoto}><Photo rect={[202, 460, 38, 50]} /></View></View>
           <Text maxFontSizeMultiplier={1.2} style={[s.caption, {fontSize: width * 0.019, lineHeight: width * 0.030}]}>{collection === 'Reels' ? 'MAKE EVERY\nMOMENT COUNT' : collection === 'Posts' ? 'LITTLE NOTES\nFROM YOUR LIFE' : 'A QUIETER\nKIND OF DAY'}</Text>
@@ -78,6 +81,8 @@ const s = StyleSheet.create({
   tabText: {color: '#373832', fontSize: 12}, activeTabText: {fontWeight: '600'}, divider: {height: 12, width: StyleSheet.hairlineWidth, backgroundColor: '#CDC8BF'},
   pagerClip: {borderRadius: 14, overflow: 'hidden'}, card: {backgroundColor: '#E9E5DC', overflow: 'hidden'},
   mainPhoto: {position: 'absolute', right: 0, top: 0, bottom: 0, width: '55%', overflow: 'hidden'},
+  photoTop: {position: 'absolute', left: 0, right: 0, top: 0, height: '73%', overflow: 'hidden'},
+  photoBottom: {position: 'absolute', left: 0, right: 0, bottom: 0, height: '27%', overflow: 'hidden'},
   lemons: {position: 'absolute', bottom: 0, left: 0, width: '33%', height: '27%', overflow: 'hidden'},
   postcard: {position: 'absolute', bottom: 0, left: '32%', width: '19%', height: '35%', padding: 5, backgroundColor: '#F8F5ED', transform: [{rotate: '-2deg'}]}, postcardPhoto: {flex: 1, overflow: 'hidden'},
   caption: {position: 'absolute', top: '12%', left: '6.5%', letterSpacing: 1.8, color: '#55594F'},

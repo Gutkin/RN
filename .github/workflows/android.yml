@@ -8,7 +8,7 @@ permissions:
   contents: write
 concurrency:
   group: android-preview
-  cancel-in-progress: false
+  cancel-in-progress: true
 jobs:
   build:
     runs-on: ubuntu-24.04
