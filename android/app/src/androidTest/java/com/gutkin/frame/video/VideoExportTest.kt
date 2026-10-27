@@ -6,6 +6,10 @@ import android.media.MediaMetadataRetriever
 import android.net.Uri
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
+import androidx.test.core.app.ActivityScenario
+import android.os.SystemClock
+import android.view.accessibility.AccessibilityNodeInfo
+import com.gutkin.frame.MainActivity
 import com.facebook.react.bridge.*
 import org.junit.Assert.*
 import org.junit.Test
@@ -18,6 +22,27 @@ import java.util.concurrent.TimeUnit
 class VideoExportTest {
     private val instrumentation = InstrumentationRegistry.getInstrumentation()
     private val context = instrumentation.targetContext
+    @Test fun appStartsWithBundledJavaScript() {
+        ActivityScenario.launch(MainActivity::class.java).use {
+            val deadline = SystemClock.uptimeMillis() + 45000
+            var found = false
+            while (SystemClock.uptimeMillis() < deadline && !found) {
+                val queue = java.util.ArrayDeque<AccessibilityNodeInfo>()
+                instrumentation.uiAutomation.rootInActiveWindow?.let { root -> queue.add(root) }
+                while (queue.isNotEmpty()) {
+                    val node = queue.removeFirst()
+                    if (node.text?.toString()?.contains("Твой стиль.") == true) found = true
+                    for (i in 0 until node.childCount) node.getChild(i)?.let { child -> queue.add(child) }
+                }
+                if (!found) SystemClock.sleep(250)
+            }
+            assertTrue("Bundled React Native home screen did not render", found)
+            instrumentation.uiAutomation.takeScreenshot()?.let { bitmap ->
+                File(context.getExternalFilesDir(null), "frame-home.png").outputStream().use { output -> bitmap.compress(android.graphics.Bitmap.CompressFormat.PNG, 100, output) }
+                bitmap.recycle()
+            }
+        }
+    }
     private fun fixture(name: String): File = File(context.filesDir, "media/$name").apply {
         parentFile!!.mkdirs()
         instrumentation.context.assets.open(name).use { input -> outputStream().use { input.copyTo(it) } }

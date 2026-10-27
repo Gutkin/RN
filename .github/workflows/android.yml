@@ -23,6 +23,7 @@ jobs:
         with:
           distribution: temurin
           java-version: '17'
+      - uses: gradle/actions/setup-gradle@v4
       - uses: android-actions/setup-android@v3
         with:
           cmdline-tools-version: '11076708'
@@ -39,8 +40,11 @@ jobs:
           chmod +x gradlew
           ./gradlew --no-daemon assembleRelease testReleaseUnitTest assembleReleaseAndroidTest 2>&1 | tee /tmp/frame-build.log
         shell: bash
+      - name: Enable emulator hardware acceleration
+        run: sudo chmod a+rw /dev/kvm
       - name: Exercise native import and video export
         id: device
+        timeout-minutes: 12
         uses: reactivecircus/android-emulator-runner@v2
         with:
           api-level: 30
@@ -49,6 +53,9 @@ jobs:
           disable-animations: true
           emulator-options: -no-window -gpu swiftshader_indirect -no-snapshot -noaudio -no-boot-anim -camera-back none
           script: cd android && ./gradlew --no-daemon connectedReleaseAndroidTest
+      - name: Collect home screen screenshot
+        if: always()
+        run: adb pull /sdcard/Android/data/com.gutkin.frame/files/frame-home.png /tmp/frame-home.png || true
       - name: Upload APK and test evidence
         if: always()
         uses: actions/upload-artifact@v4
@@ -60,6 +67,7 @@ jobs:
             android/app/build/reports/tests/
             android/app/build/reports/androidTests/
             /tmp/frame-build.log
+            /tmp/frame-home.png
       - name: Publish result to download branch
         if: always()
         env:
@@ -72,6 +80,8 @@ jobs:
             cp android/app/build/outputs/apk/release/app-release.apk "$delivery/frame-preview.apk"
           fi
           if [ -f /tmp/frame-build.log ]; then cp /tmp/frame-build.log "$delivery/build.log"; fi
+          if [ -f /tmp/frame-home.png ]; then cp /tmp/frame-home.png "$delivery/frame-home.png"; fi
+          if [ -d android/app/build/outputs/androidTest-results ]; then cp -R android/app/build/outputs/androidTest-results "$delivery/test-results"; fi
           python3 - "$delivery" <<'PY'
           import os,sys,json,pathlib
           root=pathlib.Path(sys.argv[1])
@@ -86,8 +96,10 @@ jobs:
             git checkout --orphan android-builds
           fi
           git rm -rf --ignore-unmatch . >/dev/null
-          cp "$delivery"/* .
+          cp -R "$delivery"/. .
           git add -f result.json
+          if [ -f frame-home.png ]; then git add -f frame-home.png; fi
+          if [ -d test-results ]; then git add -f test-results; fi
           if [ -f build.log ]; then git add -f build.log; fi
           if [ -f frame-preview.apk ]; then
             sha256sum frame-preview.apk > SHA256SUMS
