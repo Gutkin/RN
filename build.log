@@ -142,13 +142,13 @@ info Done copying assets
 > Task :app:mergeReleaseAssets
 > Task :app:processReleaseResources
 > Task :app:compressReleaseAssets
-> Task :app:mergeExtDexRelease
 > Task :app:extractReleaseVersionControlInfo
+> Task :app:mergeExtDexRelease
 > Task :app:collectReleaseDependencies
-> Task :app:optimizeReleaseResources
 > Task :app:sdkReleaseDependencyData
 > Task :app:validateSigningRelease
 > Task :app:writeReleaseAppMetadata
+> Task :app:optimizeReleaseResources
 > Task :app:writeReleaseSigningConfigVersions
 > Task :app:preReleaseUnitTestBuild
 > Task :app:preReleaseAndroidTestBuild SKIPPED
@@ -177,8 +177,8 @@ info Done copying assets
 > Task :app:mergeExtDexReleaseAndroidTest
 
 > Task :app:compileReleaseKotlin
-w: file:///home/runner/work/RN/RN/android/app/src/main/java/com/gutkin/frame/video/VideoModule.kt:83:34 Parameter 'name' is never used
-w: file:///home/runner/work/RN/RN/android/app/src/main/java/com/gutkin/frame/video/VideoModule.kt:84:38 Parameter 'count' is never used
+w: file:///home/runner/work/RN/RN/android/app/src/main/java/com/gutkin/frame/video/VideoModule.kt:84:34 Parameter 'name' is never used
+w: file:///home/runner/work/RN/RN/android/app/src/main/java/com/gutkin/frame/video/VideoModule.kt:85:38 Parameter 'count' is never used
 
 > Task :app:compileReleaseJavaWithJavac
 > Task :app:generateReleaseLintVitalReportModel
@@ -199,26 +199,10 @@ w: file:///home/runner/work/RN/RN/android/app/src/main/java/com/gutkin/frame/vid
 > Task :app:compileReleaseAndroidTestKotlin
 > Task :app:compileReleaseAndroidTestJavaWithJavac
 > Task :app:dexBuilderReleaseAndroidTest
-> Task :app:mergeDexReleaseAndroidTest
 > Task :app:mergeReleaseAndroidTestGlobalSynthetics
+> Task :app:mergeDexReleaseAndroidTest
 > Task :app:processReleaseAndroidTestJavaRes
 > Task :app:mergeReleaseAndroidTestJavaResource
 > Task :app:packageReleaseAndroidTest
 > Task :app:createReleaseAndroidTestApkListingFileRedirect
 > Task :app:assembleReleaseAndroidTest
-> Task :app:lintVitalAnalyzeRelease
-> Task :app:lintVitalReportRelease
-> Task :app:lintVitalRelease
-> Task :app:assembleRelease
-gradle/actions: Writing build results to /home/runner/work/_temp/.gradle-actions/build-results/apk-1793063643792.json
-
-[Incubating] Problems report is available at: file:///home/runner/work/RN/RN/android/build/reports/problems/problems-report.html
-
-Deprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.
-
-You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
-
-For more on this, please refer to https://docs.gradle.org/8.13/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
-
-BUILD SUCCESSFUL in 1m 23s
-99 actionable tasks: 99 executed

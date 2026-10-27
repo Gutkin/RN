@@ -1,7 +1,0 @@
-10-27 01:17:10.461  2426  2446 I TestRunner: started: validatesActualVideoAndRejects4K(com.gutkin.frame.video.VideoExportTest)
-10-27 01:17:10.462   503  2494 D EGL_emulation: eglMakeCurrent: 0x7a0e00b07e70: ver 3 0 (tinfo 0x7a0da0bcc310) (first time)
-10-27 01:17:10.491   429   475 D MediaBufferGroup: creating MemoryDealer
-10-27 01:17:10.502  2474  2497 D libEGL  : loaded /vendor/lib64/egl/libGLESv1_CM_emulation.so
-10-27 01:17:10.510  2474  2497 D libEGL  : loaded /vendor/lib64/egl/libGLESv2_emulation.so
-10-27 01:17:10.537   429  2500 D MediaBufferGroup: creating MemoryDealer
-10-27 01:17:10.541  2426  2446 I TestRunner: finished: validatesActualVideoAndRejects4K(com.gutkin.frame.video.VideoExportTest)
