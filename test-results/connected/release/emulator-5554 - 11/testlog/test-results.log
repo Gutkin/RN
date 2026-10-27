@@ -38,32 +38,14 @@ INSTRUMENTATION_STATUS: class=com.gutkin.frame.video.VideoExportTest
 INSTRUMENTATION_STATUS: current=3
 INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
 INSTRUMENTATION_STATUS: numtests=3
-INSTRUMENTATION_STATUS: stack=org.junit.ComparisonFailure: expected:<1[08]0> but was:<1[92]0>
-at org.junit.Assert.assertEquals(Assert.java:117)
-at org.junit.Assert.assertEquals(Assert.java:146)
-at com.gutkin.frame.video.VideoExportTest.exportsTrimmedPortraitWithTextAndWithoutAudio(VideoExportTest.kt:85)
-
-INSTRUMENTATION_STATUS: stream=
-Error in exportsTrimmedPortraitWithTextAndWithoutAudio(com.gutkin.frame.video.VideoExportTest):
-org.junit.ComparisonFailure: expected:<1[08]0> but was:<1[92]0>
-at org.junit.Assert.assertEquals(Assert.java:117)
-at org.junit.Assert.assertEquals(Assert.java:146)
-at com.gutkin.frame.video.VideoExportTest.exportsTrimmedPortraitWithTextAndWithoutAudio(VideoExportTest.kt:85)
-
+INSTRUMENTATION_STATUS: stream=.
 INSTRUMENTATION_STATUS: test=exportsTrimmedPortraitWithTextAndWithoutAudio
-INSTRUMENTATION_STATUS_CODE: -2
+INSTRUMENTATION_STATUS_CODE: 0
 INSTRUMENTATION_RESULT: stream=
 
-Time: 27.754
-There was 1 failure:
-1) exportsTrimmedPortraitWithTextAndWithoutAudio(com.gutkin.frame.video.VideoExportTest)
-org.junit.ComparisonFailure: expected:<1[08]0> but was:<1[92]0>
-at org.junit.Assert.assertEquals(Assert.java:117)
-at org.junit.Assert.assertEquals(Assert.java:146)
-at com.gutkin.frame.video.VideoExportTest.exportsTrimmedPortraitWithTextAndWithoutAudio(VideoExportTest.kt:85)
+Time: 27.651
 
-FAILURES!!!
-Tests run: 3,  Failures: 1
+OK (3 tests)
 
 
 INSTRUMENTATION_CODE: -1

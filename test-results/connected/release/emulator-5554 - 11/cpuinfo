@@ -1,12 +1,12 @@
 processor	: 0
-vendor_id	: GenuineIntel
+vendor_id	: AuthenticAMD
 cpu family	: 6
 model		: 6
 model name	: Android virtual processor
 stepping	: 3
-microcode	: 0x1
+microcode	: 0x1000065
 cpu MHz		: 0.001
-cache size	: 16384 KB
+cache size	: 512 KB
 physical id	: 0
 siblings	: 2
 core id		: 0
@@ -15,25 +15,26 @@ apicid		: 0
 initial apicid	: 0
 fpu		: yes
 fpu_exception	: yes
-cpuid level	: 28
+cpuid level	: 13
 wp		: yes
-flags		: fpu de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pse36 clflush mmx fxsr sse sse2 ht syscall nx lm rep_good nopl xtopology cpuid tsc_known_freq pni pclmulqdq ssse3 cx16 sse4_1 sse4_2 x2apic popcnt aes xsave avx f16c hypervisor lahf_lm abm cpuid_fault pti
-bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds swapgs itlb_multihit
-bogomips	: 4599.99
+flags		: fpu de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx lm nopl cpuid tsc_known_freq pni pclmulqdq ssse3 cx16 sse4_1 sse4_2 x2apic popcnt aes xsave avx f16c hypervisor lahf_lm cmp_legacy abm 3dnowprefetch vmmcall
+bugs		: fxsave_leak sysret_ss_attrs spectre_v1 spectre_v2 spec_store_bypass
+bogomips	: 4890.85
+TLB size	: 1024 4K pages
 clflush size	: 64
 cache_alignment	: 64
 address sizes	: 40 bits physical, 48 bits virtual
 power management:
 
 processor	: 1
-vendor_id	: GenuineIntel
+vendor_id	: AuthenticAMD
 cpu family	: 6
 model		: 6
 model name	: Android virtual processor
 stepping	: 3
-microcode	: 0x1
+microcode	: 0x1000065
 cpu MHz		: 0.001
-cache size	: 16384 KB
+cache size	: 512 KB
 physical id	: 0
 siblings	: 2
 core id		: 1
@@ -42,11 +43,12 @@ apicid		: 1
 initial apicid	: 1
 fpu		: yes
 fpu_exception	: yes
-cpuid level	: 28
+cpuid level	: 13
 wp		: yes
-flags		: fpu de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pse36 clflush mmx fxsr sse sse2 ht syscall nx lm rep_good nopl xtopology cpuid tsc_known_freq pni pclmulqdq ssse3 cx16 sse4_1 sse4_2 x2apic popcnt aes xsave avx f16c hypervisor lahf_lm abm cpuid_fault pti
-bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds swapgs itlb_multihit
-bogomips	: 4599.99
+flags		: fpu de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx lm nopl cpuid tsc_known_freq pni pclmulqdq ssse3 cx16 sse4_1 sse4_2 x2apic popcnt aes xsave avx f16c hypervisor lahf_lm cmp_legacy abm 3dnowprefetch vmmcall
+bugs		: fxsave_leak sysret_ss_attrs spectre_v1 spectre_v2 spec_store_bypass
+bogomips	: 4890.85
+TLB size	: 1024 4K pages
 clflush size	: 64
 cache_alignment	: 64
 address sizes	: 40 bits physical, 48 bits virtual

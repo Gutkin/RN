@@ -1,20 +1,20 @@
-# 2026-10-27T01:04:46.782006841Z:
+# 2026-10-27T01:11:08.814442721Z:
 test_suite_meta_data {
   scheduled_test_case_count: 3
 }
-test_status: FAILED
+test_status: PASSED
 test_result {
   test_case {
     test_class: "VideoExportTest"
     test_package: "com.gutkin.frame.video"
     test_method: "appStartsWithBundledJavaScript"
     start_time {
-      seconds: 1793063057
-      nanos: 650000000
+      seconds: 1793063439
+      nanos: 967000000
     }
     end_time {
-      seconds: 1793063059
-      nanos: 274000000
+      seconds: 1793063441
+      nanos: 621000000
     }
   }
   test_status: PASSED
@@ -61,12 +61,12 @@ test_result {
     test_package: "com.gutkin.frame.video"
     test_method: "validatesActualVideoAndRejects4K"
     start_time {
-      seconds: 1793063059
-      nanos: 294000000
+      seconds: 1793063441
+      nanos: 649000000
     }
     end_time {
-      seconds: 1793063059
-      nanos: 322000000
+      seconds: 1793063441
+      nanos: 676000000
     }
   }
   test_status: PASSED
@@ -113,20 +113,15 @@ test_result {
     test_package: "com.gutkin.frame.video"
     test_method: "exportsTrimmedPortraitWithTextAndWithoutAudio"
     start_time {
-      seconds: 1793063059
-      nanos: 350000000
+      seconds: 1793063441
+      nanos: 680000000
     }
     end_time {
-      seconds: 1793063085
-      nanos: 364000000
+      seconds: 1793063467
+      nanos: 593000000
     }
   }
-  test_status: FAILED
-  error {
-    error_message: "org.junit.ComparisonFailure: expected:<1[08]0> but was:<1[92]0>\nat org.junit.Assert.assertEquals(Assert.java:117)\nat org.junit.Assert.assertEquals(Assert.java:146)\nat com.gutkin.frame.video.VideoExportTest.exportsTrimmedPortraitWithTextAndWithoutAudio(VideoExportTest.kt:85)\n"
-    error_type: "org.junit.ComparisonFailure"
-    stack_trace: "org.junit.ComparisonFailure: expected:<1[08]0> but was:<1[92]0>\nat org.junit.Assert.assertEquals(Assert.java:117)\nat org.junit.Assert.assertEquals(Assert.java:146)\nat com.gutkin.frame.video.VideoExportTest.exportsTrimmedPortraitWithTextAndWithoutAudio(VideoExportTest.kt:85)\n"
-  }
+  test_status: PASSED
   output_artifact {
     label {
       label: "logcat"

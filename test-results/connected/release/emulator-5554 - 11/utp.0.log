@@ -38,13 +38,4 @@ INFO: Uninstalling com.gutkin.frame for device emulator-5554.
 INFO: Uninstalling com.gutkin.frame.test for device emulator-5554.
 INFO: Execute com.gutkin.frame.video.VideoExportTest.appStartsWithBundledJavaScript: PASSED
 INFO: Execute com.gutkin.frame.video.VideoExportTest.validatesActualVideoAndRejects4K: PASSED
-SEVERE: Execute com.gutkin.frame.video.VideoExportTest.exportsTrimmedPortraitWithTextAndWithoutAudio: FAILED
-org.junit.ComparisonFailure: org.junit.ComparisonFailure: expected:<1[08]0> but was:<1[92]0>
-at org.junit.Assert.assertEquals(Assert.java:117)
-at org.junit.Assert.assertEquals(Assert.java:146)
-at com.gutkin.frame.video.VideoExportTest.exportsTrimmedPortraitWithTextAndWithoutAudio(VideoExportTest.kt:85)
-
-org.junit.ComparisonFailure: expected:<1[08]0> but was:<1[92]0>
-at org.junit.Assert.assertEquals(Assert.java:117)
-at org.junit.Assert.assertEquals(Assert.java:146)
-at com.gutkin.frame.video.VideoExportTest.exportsTrimmedPortraitWithTextAndWithoutAudio(VideoExportTest.kt:85)
+INFO: Execute com.gutkin.frame.video.VideoExportTest.exportsTrimmedPortraitWithTextAndWithoutAudio: PASSED

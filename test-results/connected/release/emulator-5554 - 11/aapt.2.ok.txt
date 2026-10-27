@@ -1,7 +1,7 @@
 EXECUTING: /usr/local/lib/android/sdk/build-tools/35.0.0/aapt dump badging /home/runner/work/RN/RN/android/app/build/outputs/apk/androidTest/release/app-release-androidTest.apk
 CURRENT_WORKING_DIRECTORY: /home/runner/work/RN/RN/android
-START_TIME: 2026-10-27 01:04:46.471
-START_TIME-NANOS: 2026-10-27 01:04:46.471849022
+START_TIME: 2026-10-27 01:11:08.544
+START_TIME-NANOS: 2026-10-27 01:11:08.544942897
 ENVIRONMENT:
 
 *****************************************
@@ -22,7 +22,7 @@ supports-any-density: 'true'
 locales: '--_--'
 densities: '160'
 ===================
-END_TIME: 2026-10-27 01:04:46.480
-END_TIME-NANOS: 2026-10-27 01:04:46.480898126
-DURATION: 9ms
+END_TIME: 2026-10-27 01:11:08.550
+END_TIME-NANOS: 2026-10-27 01:11:08.550089531
+DURATION: 5ms
 EXIT CODE: 0
