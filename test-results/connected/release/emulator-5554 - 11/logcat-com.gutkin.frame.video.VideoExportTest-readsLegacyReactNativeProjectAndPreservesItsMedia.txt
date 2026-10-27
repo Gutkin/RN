@@ -1,3 +1,0 @@
-10-27 02:49:53.862  2371  2391 I TestRunner: started: readsLegacyReactNativeProjectAndPreservesItsMedia(com.gutkin.frame.video.VideoExportTest)
-10-27 02:49:53.882   426   982 D MediaBufferGroup: creating MemoryDealer
-10-27 02:49:53.897  2371  2391 I TestRunner: finished: readsLegacyReactNativeProjectAndPreservesItsMedia(com.gutkin.frame.video.VideoExportTest)

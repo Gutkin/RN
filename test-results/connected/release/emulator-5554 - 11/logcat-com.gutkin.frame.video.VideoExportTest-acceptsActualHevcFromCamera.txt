@@ -1,3 +1,0 @@
-10-27 02:50:26.111  2371  2391 I TestRunner: started: acceptsActualHevcFromCamera(com.gutkin.frame.video.VideoExportTest)
-10-27 02:50:26.128   426   426 D MediaBufferGroup: creating MemoryDealer
-10-27 02:50:26.136  2371  2391 I TestRunner: finished: acceptsActualHevcFromCamera(com.gutkin.frame.video.VideoExportTest)
