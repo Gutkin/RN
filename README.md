@@ -22,6 +22,8 @@ Android 10+ (API 29), ARM64 и x86_64. Исходник: H.264 SDR, не бол�
 
 ## Установка APK
 
+**[Скачать предварительный APK для телефона](https://github.com/Gutkin/RN/raw/refs/heads/phone-preview/frame-preview.apk)** — около 62 МБ, Android 10+, 64-битный ARM-телефон. Компиляция, подпись, 9 JS-тестов и 4 нативных unit-теста проверены. Эмуляторная проверка запуска/экспорта пока не подтверждена: подробный повторный запуск выполняется в GitHub Actions. Информация об этой сборке: [build-info.json](https://github.com/Gutkin/RN/blob/phone-preview/build-info.json).
+
 Готовые **успешно проверенные CI-сборки** размещаются в отдельной ветке `android-builds`:
 
 - [APK для телефона](https://github.com/Gutkin/RN/raw/refs/heads/android-builds/frame-preview.apk)
