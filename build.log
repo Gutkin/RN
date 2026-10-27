@@ -4,7 +4,7 @@ Daemon will be stopped at the end of the build
 > Task :app:checkKotlinGradlePluginConfigurationErrors
 > Task :app:preBuild UP-TO-DATE
 > Task :app:preReleaseBuild UP-TO-DATE
-> Task :app:generateReleaseBuildConfig
+> Task :app:generateReleaseBuildConfig FROM-CACHE
 > Task :app:generateReleaseResValues FROM-CACHE
 > Task :app:checkReleaseAarMetadata
 > Task :app:mapReleaseSourceSetPaths
@@ -14,23 +14,24 @@ Daemon will be stopped at the end of the build
 > Task :app:parseReleaseLocalResources FROM-CACHE
 > Task :app:createReleaseCompatibleScreenManifests
 > Task :app:extractDeepLinksRelease FROM-CACHE
-> Task :app:processReleaseMainManifest
-> Task :app:processReleaseManifest
+> Task :app:processReleaseMainManifest FROM-CACHE
+> Task :app:processReleaseManifest FROM-CACHE
+> Task :app:processReleaseManifestForPackage FROM-CACHE
+> Task :app:processReleaseResources FROM-CACHE
 > Task :app:javaPreCompileRelease FROM-CACHE
 > Task :app:extractProguardFiles
 > Task :app:mergeReleaseJniLibFolders
 > Task :app:mergeReleaseNativeLibs
-> Task :app:processReleaseManifestForPackage
 > Task :app:checkReleaseDuplicateClasses
-> Task :app:desugarReleaseFileDependencies FROM-CACHE
-> Task :app:mergeReleaseStartupProfile
 
 > Task :app:stripReleaseDebugSymbols
 Unable to strip the following libraries, packaging them as they are: libandroidx.graphics.path.so.
 
-> Task :app:mergeExtDexRelease FROM-CACHE
+> Task :app:desugarReleaseFileDependencies FROM-CACHE
 > Task :app:extractReleaseNativeSymbolTables FROM-CACHE
 > Task :app:mergeReleaseNativeDebugMetadata NO-SOURCE
+> Task :app:mergeReleaseStartupProfile
+> Task :app:mergeExtDexRelease FROM-CACHE
 > Task :app:mergeReleaseArtProfile
 > Task :app:mergeReleaseShaders
 > Task :app:compileReleaseShaders NO-SOURCE
@@ -38,8 +39,8 @@ Unable to strip the following libraries, packaging them as they are: libandroidx
 > Task :app:mergeReleaseAssets
 > Task :app:compressReleaseAssets FROM-CACHE
 > Task :app:extractReleaseVersionControlInfo
+> Task :app:optimizeReleaseResources FROM-CACHE
 > Task :app:collectReleaseDependencies
-> Task :app:processReleaseResources
 > Task :app:sdkReleaseDependencyData
 > Task :app:validateSigningRelease
 > Task :app:writeReleaseAppMetadata
@@ -48,7 +49,6 @@ Unable to strip the following libraries, packaging them as they are: libandroidx
 > Task :app:javaPreCompileReleaseUnitTest FROM-CACHE
 > Task :app:preReleaseAndroidTestBuild SKIPPED
 > Task :app:processReleaseAndroidTestManifest
-> Task :app:optimizeReleaseResources
 > Task :app:generateReleaseAndroidTestBuildConfig FROM-CACHE
 > Task :app:checkReleaseAndroidTestAarMetadata
 > Task :app:generateReleaseAndroidTestResValues FROM-CACHE
@@ -75,7 +75,7 @@ Unable to strip the following libraries, packaging them as they are: libandroidx
 w: file:///home/runner/work/RN/RN/android/app/src/main/java/com/gutkin/frame/FrameApp.kt:76:20 'setter for statusBarColor: Int' is deprecated. Deprecated in Java
 w: file:///home/runner/work/RN/RN/android/app/src/main/java/com/gutkin/frame/FrameApp.kt:77:20 'setter for navigationBarColor: Int' is deprecated. Deprecated in Java
 w: file:///home/runner/work/RN/RN/android/app/src/main/java/com/gutkin/frame/FrameApp.kt:228:290 'ArrowForward: ImageVector' is deprecated. Use the AutoMirrored version at Icons.AutoMirrored.Outlined.ArrowForward
-w: file:///home/runner/work/RN/RN/android/app/src/main/java/com/gutkin/frame/VideoEditor.kt:73:59 'ArrowBack: ImageVector' is deprecated. Use the AutoMirrored version at Icons.AutoMirrored.Outlined.ArrowBack
+w: file:///home/runner/work/RN/RN/android/app/src/main/java/com/gutkin/frame/VideoEditor.kt:74:59 'ArrowBack: ImageVector' is deprecated. Use the AutoMirrored version at Icons.AutoMirrored.Outlined.ArrowBack
 
 > Task :app:compileReleaseJavaWithJavac
 > Task :app:generateReleaseLintVitalReportModel
@@ -86,10 +86,10 @@ w: file:///home/runner/work/RN/RN/android/app/src/main/java/com/gutkin/frame/Vid
 > Task :app:bundleReleaseClassesToRuntimeJar
 > Task :app:bundleReleaseClassesToCompileJar
 > Task :app:mergeDexRelease
+> Task :app:compileReleaseArtProfile
 > Task :app:compileReleaseUnitTestKotlin
 > Task :app:compileReleaseUnitTestJavaWithJavac NO-SOURCE
 > Task :app:processReleaseUnitTestJavaRes
-> Task :app:compileReleaseArtProfile
 > Task :app:testReleaseUnitTest
 > Task :app:packageRelease
 > Task :app:createReleaseApkListingFileRedirect
@@ -98,8 +98,8 @@ w: file:///home/runner/work/RN/RN/android/app/src/main/java/com/gutkin/frame/Vid
 > Task :app:dexBuilderReleaseAndroidTest
 > Task :app:mergeReleaseAndroidTestGlobalSynthetics FROM-CACHE
 > Task :app:processReleaseAndroidTestJavaRes
-> Task :app:mergeDexReleaseAndroidTest
 > Task :app:mergeReleaseAndroidTestJavaResource
+> Task :app:mergeDexReleaseAndroidTest
 > Task :app:packageReleaseAndroidTest
 > Task :app:createReleaseAndroidTestApkListingFileRedirect
 > Task :app:assembleReleaseAndroidTest
@@ -107,7 +107,7 @@ w: file:///home/runner/work/RN/RN/android/app/src/main/java/com/gutkin/frame/Vid
 > Task :app:lintVitalReportRelease
 > Task :app:lintVitalRelease
 > Task :app:assembleRelease
-gradle/actions: Writing build results to /home/runner/work/_temp/.gradle-actions/build-results/apk-1793074154376.json
+gradle/actions: Writing build results to /home/runner/work/_temp/.gradle-actions/build-results/apk-1793074522721.json
 
 [Incubating] Problems report is available at: file:///home/runner/work/RN/RN/android/build/reports/problems/problems-report.html
 
@@ -117,5 +117,5 @@ You can use '--warning-mode all' to show the individual deprecation warnings and
 
 For more on this, please refer to https://docs.gradle.org/8.13/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
 
-BUILD SUCCESSFUL in 1m 6s
-84 actionable tasks: 61 executed, 23 from cache
+BUILD SUCCESSFUL in 44s
+84 actionable tasks: 55 executed, 29 from cache

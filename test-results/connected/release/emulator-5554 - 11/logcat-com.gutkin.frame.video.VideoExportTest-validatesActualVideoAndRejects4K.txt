@@ -1,6 +1,6 @@
-10-27 04:11:48.028  2423  2443 I TestRunner: started: validatesActualVideoAndRejects4K(com.gutkin.frame.video.VideoExportTest)
-10-27 04:11:48.030  2423  2443 D IdlingRegistry: Registering idling resources: [androidx.compose.ui.test.EspressoLink@f4fb1d]
-10-27 04:11:48.066   437   502 D MediaBufferGroup: creating MemoryDealer
-10-27 04:11:48.085   437   437 D MediaBufferGroup: creating MemoryDealer
-10-27 04:11:48.088  2423  2443 D IdlingRegistry: Unregistering idling resources: [androidx.compose.ui.test.EspressoLink@f4fb1d]
-10-27 04:11:48.088  2423  2443 I TestRunner: finished: validatesActualVideoAndRejects4K(com.gutkin.frame.video.VideoExportTest)
+10-27 04:17:31.796  2397  2417 I TestRunner: started: validatesActualVideoAndRejects4K(com.gutkin.frame.video.VideoExportTest)
+10-27 04:17:31.797  2397  2417 D IdlingRegistry: Registering idling resources: [androidx.compose.ui.test.EspressoLink@98287c0]
+10-27 04:17:31.815   435  1030 D MediaBufferGroup: creating MemoryDealer
+10-27 04:17:31.827   435  1030 D MediaBufferGroup: creating MemoryDealer
+10-27 04:17:31.830  2397  2417 D IdlingRegistry: Unregistering idling resources: [androidx.compose.ui.test.EspressoLink@98287c0]
+10-27 04:17:31.830  2397  2417 I TestRunner: finished: validatesActualVideoAndRejects4K(com.gutkin.frame.video.VideoExportTest)

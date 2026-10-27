@@ -1,20 +1,20 @@
-10-27 04:12:13.383  2423  2443 I TestRunner: started: importsHevcWithoutChangingTheSource(com.gutkin.frame.video.VideoExportTest)
-10-27 04:12:13.384  2423  2443 D IdlingRegistry: Registering idling resources: [androidx.compose.ui.test.EspressoLink@218058b]
-10-27 04:12:13.396   437   502 D MediaBufferGroup: creating MemoryDealer
-10-27 04:12:13.415   440  2522 I OMXClient: IOmx service obtained
-10-27 04:12:13.415   449  2512 I OMXMaster: makeComponentInstance(OMX.google.hevc.decoder) in android.hardwar process
-10-27 04:12:13.417   440  2522 D ACodec  : Setting [OMX.google.hevc.decoder] input port buffer number: 1
-10-27 04:12:13.417   449  2512 W SimpleSoftOMXComponent: component requires at least 8 buffers (1 requested)
-10-27 04:12:13.417   449  2512 E OMXNodeInstance: setParameter(0xe8480160:google.hevc.decoder, ParamPortDefinition(0x2000001)) ERROR: UnsupportedSetting(0x80001019)
-10-27 04:12:13.417   440  2522 W ACodec  : Fail to set [OMX.google.hevc.decoder] input port buffer number: 1
-10-27 04:12:13.417   440  2522 D ACodec  : Setting [OMX.google.hevc.decoder] output port buffer number: 1
-10-27 04:12:13.417   449  2512 W SimpleSoftOMXComponent: component requires at least 8 buffers (1 requested)
-10-27 04:12:13.417   449  2512 E OMXNodeInstance: setParameter(0xe8480160:google.hevc.decoder, ParamPortDefinition(0x2000001)) ERROR: UnsupportedSetting(0x80001019)
-10-27 04:12:13.417   440  2522 W ACodec  : Fail to set [OMX.google.hevc.decoder] output port buffer number: 1
-10-27 04:12:13.417   449  2512 D SoftVideoDecoderOMXComponent: Color Aspects preference: 1
-10-27 04:12:13.417   449  2512 E OMXNodeInstance: getConfig(0xe8480160:google.hevc.decoder, ConfigAndroidVendorExtension(0x6f100004)) ERROR: UnsupportedIndex(0x8000101a)
-10-27 04:12:13.421   440  2521 W ResourceManagerService: Ignoring request to add new resource entry with value <= 0
-10-27 04:12:13.421   437  1093 D MediaBufferGroup: creating MemoryDealer
-10-27 04:12:13.424   449  2523 D SoftVideoDecoderOMXComponent: Color Aspects preference: 1
-10-27 04:12:13.452  2423  2443 D IdlingRegistry: Unregistering idling resources: [androidx.compose.ui.test.EspressoLink@218058b]
-10-27 04:12:13.452  2423  2443 I TestRunner: finished: importsHevcWithoutChangingTheSource(com.gutkin.frame.video.VideoExportTest)
+10-27 04:17:55.606  2397  2417 I TestRunner: started: importsHevcWithoutChangingTheSource(com.gutkin.frame.video.VideoExportTest)
+10-27 04:17:55.606  2397  2417 D IdlingRegistry: Registering idling resources: [androidx.compose.ui.test.EspressoLink@6315f61]
+10-27 04:17:55.620   435   435 D MediaBufferGroup: creating MemoryDealer
+10-27 04:17:55.631   438  2510 I OMXClient: IOmx service obtained
+10-27 04:17:55.631   445  2499 I OMXMaster: makeComponentInstance(OMX.google.hevc.decoder) in android.hardwar process
+10-27 04:17:55.633   438  2510 D ACodec  : Setting [OMX.google.hevc.decoder] input port buffer number: 1
+10-27 04:17:55.633   445  2499 W SimpleSoftOMXComponent: component requires at least 8 buffers (1 requested)
+10-27 04:17:55.633   445  2499 E OMXNodeInstance: setParameter(0xefc40160:google.hevc.decoder, ParamPortDefinition(0x2000001)) ERROR: UnsupportedSetting(0x80001019)
+10-27 04:17:55.633   438  2510 W ACodec  : Fail to set [OMX.google.hevc.decoder] input port buffer number: 1
+10-27 04:17:55.633   438  2510 D ACodec  : Setting [OMX.google.hevc.decoder] output port buffer number: 1
+10-27 04:17:55.633   445  2499 W SimpleSoftOMXComponent: component requires at least 8 buffers (1 requested)
+10-27 04:17:55.633   445  2499 E OMXNodeInstance: setParameter(0xefc40160:google.hevc.decoder, ParamPortDefinition(0x2000001)) ERROR: UnsupportedSetting(0x80001019)
+10-27 04:17:55.633   438  2510 W ACodec  : Fail to set [OMX.google.hevc.decoder] output port buffer number: 1
+10-27 04:17:55.634   445  2499 D SoftVideoDecoderOMXComponent: Color Aspects preference: 1
+10-27 04:17:55.634   445  2499 E OMXNodeInstance: getConfig(0xefc40160:google.hevc.decoder, ConfigAndroidVendorExtension(0x6f100004)) ERROR: UnsupportedIndex(0x8000101a)
+10-27 04:17:55.636   438  2509 W ResourceManagerService: Ignoring request to add new resource entry with value <= 0
+10-27 04:17:55.636   435  2501 D MediaBufferGroup: creating MemoryDealer
+10-27 04:17:55.638   445  2511 D SoftVideoDecoderOMXComponent: Color Aspects preference: 1
+10-27 04:17:55.659  2397  2417 D IdlingRegistry: Unregistering idling resources: [androidx.compose.ui.test.EspressoLink@6315f61]
+10-27 04:17:55.659  2397  2417 I TestRunner: finished: importsHevcWithoutChangingTheSource(com.gutkin.frame.video.VideoExportTest)

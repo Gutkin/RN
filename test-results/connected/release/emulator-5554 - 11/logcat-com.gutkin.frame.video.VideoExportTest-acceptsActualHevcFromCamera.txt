@@ -1,5 +1,23 @@
-10-27 04:12:54.254  2423  2443 I TestRunner: started: acceptsActualHevcFromCamera(com.gutkin.frame.video.VideoExportTest)
-10-27 04:12:54.255  2423  2443 D IdlingRegistry: Registering idling resources: [androidx.compose.ui.test.EspressoLink@283f595]
-10-27 04:12:54.277   437   437 D MediaBufferGroup: creating MemoryDealer
-10-27 04:12:54.290  2423  2443 D IdlingRegistry: Unregistering idling resources: [androidx.compose.ui.test.EspressoLink@283f595]
-10-27 04:12:54.290  2423  2443 I TestRunner: finished: acceptsActualHevcFromCamera(com.gutkin.frame.video.VideoExportTest)
+10-27 04:18:32.680  2397  2417 I TestRunner: started: acceptsActualHevcFromCamera(com.gutkin.frame.video.VideoExportTest)
+10-27 04:18:32.682  2907  2931 D HostConnection: HostConnection::get() New Host Connection established 0x77a8e6577310, tid 2931
+10-27 04:18:32.683  2907  2931 D HostConnection: HostComposition ext ANDROID_EMU_CHECKSUM_HELPER_v1 ANDROID_EMU_native_sync_v2 ANDROID_EMU_dma_v1 ANDROID_EMU_direct_mem ANDROID_EMU_host_composition_v1 ANDROID_EMU_host_composition_v2 ANDROID_EMU_vulkan ANDROID_EMU_deferred_vulkan_commands ANDROID_EMU_vulkan_null_optional_strings ANDROID_EMU_vulkan_create_resources_with_requirements ANDROID_EMU_YUV_Cache ANDROID_EMU_vulkan_ignored_handles ANDROID_EMU_has_shared_slots_host_memory_allocator ANDROID_EMU_vulkan_free_memory_sync ANDROID_EMU_vulkan_shader_float16_int8 ANDROID_EMU_vulkan_async_queue_submit ANDROID_EMU_sync_buffer_data ANDROID_EMU_vulkan_async_qsri ANDROID_EMU_read_color_buffer_dma ANDROID_EMU_hwc_color_transform GL_OES_EGL_image_external_essl3 GL_OES_vertex_array_object GL_KHR_texture_compression_astc_ldr ANDROID_EMU_host_side_tracing ANDROID_EMU_gles_max_version_3_0
+10-27 04:18:32.684   159   159 I hwservicemanager: getTransport: Cannot find entry android.hardware.configstore@1.0::ISurfaceFlingerConfigs/default in either framework or device manifest.
+10-27 04:18:32.685  2907  2931 D EGL_emulation: eglCreateContext: 0x77a8d65d9e50: maj 3 min 0 rcv 3
+10-27 04:18:32.687  2907  2931 D EGL_emulation: eglMakeCurrent: 0x77a8d65d9e50: ver 3 0 (tinfo 0x77a8765c3c10) (first time)
+10-27 04:18:32.692  2397  2417 D IdlingRegistry: Registering idling resources: [androidx.compose.ui.test.EspressoLink@adc815a]
+10-27 04:18:32.694   299   299 D goldfish-address-space: claimShared: Ask to claim region [0x3fd291000 0x3fd359000]
+10-27 04:18:32.696   508  2935 D HostConnection: HostConnection::get() New Host Connection established 0x77a8e6580a90, tid 2935
+10-27 04:18:32.699   508  2935 D HostConnection: HostComposition ext ANDROID_EMU_CHECKSUM_HELPER_v1 ANDROID_EMU_native_sync_v2 ANDROID_EMU_dma_v1 ANDROID_EMU_direct_mem ANDROID_EMU_host_composition_v1 ANDROID_EMU_host_composition_v2 ANDROID_EMU_vulkan ANDROID_EMU_deferred_vulkan_commands ANDROID_EMU_vulkan_null_optional_strings ANDROID_EMU_vulkan_create_resources_with_requirements ANDROID_EMU_YUV_Cache ANDROID_EMU_vulkan_ignored_handles ANDROID_EMU_has_shared_slots_host_memory_allocator ANDROID_EMU_vulkan_free_memory_sync ANDROID_EMU_vulkan_shader_float16_int8 ANDROID_EMU_vulkan_async_queue_submit ANDROID_EMU_sync_buffer_data ANDROID_EMU_vulkan_async_qsri ANDROID_EMU_read_color_buffer_dma ANDROID_EMU_hwc_color_transform GL_OES_EGL_image_external_essl3 GL_OES_vertex_array_object GL_KHR_texture_compression_astc_ldr ANDROID_EMU_host_side_tracing ANDROID_EMU_gles_max_version_3_0
+10-27 04:18:32.700   159   159 I hwservicemanager: getTransport: Cannot find entry android.hardware.graphics.mapper@4.0::IMapper/default in either framework or device manifest.
+10-27 04:18:32.700  2907  2931 I Gralloc4: mapper 4.x is not supported
+10-27 04:18:32.701  2907  2931 D HostConnection: createUnique: call
+10-27 04:18:32.702  2907  2931 D HostConnection: HostConnection::get() New Host Connection established 0x77a8e657c050, tid 2931
+10-27 04:18:32.702  2907  2931 D goldfish-address-space: allocate: Ask for block of size 0x100
+10-27 04:18:32.702  2907  2931 D goldfish-address-space: allocate: ioctl allocate returned offset 0x3f9ffc000 size 0x2000
+10-27 04:18:32.705   435   499 D MediaBufferGroup: creating MemoryDealer
+10-27 04:18:32.708   159   159 I hwservicemanager: getTransport: Cannot find entry android.hardware.configstore@1.0::ISurfaceFlingerConfigs/default in either framework or device manifest.
+10-27 04:18:32.710  2907  2931 D HostConnection: HostComposition ext ANDROID_EMU_CHECKSUM_HELPER_v1 ANDROID_EMU_native_sync_v2 ANDROID_EMU_dma_v1 ANDROID_EMU_direct_mem ANDROID_EMU_host_composition_v1 ANDROID_EMU_host_composition_v2 ANDROID_EMU_vulkan ANDROID_EMU_deferred_vulkan_commands ANDROID_EMU_vulkan_null_optional_strings ANDROID_EMU_vulkan_create_resources_with_requirements ANDROID_EMU_YUV_Cache ANDROID_EMU_vulkan_ignored_handles ANDROID_EMU_has_shared_slots_host_memory_allocator ANDROID_EMU_vulkan_free_memory_sync ANDROID_EMU_vulkan_shader_float16_int8 ANDROID_EMU_vulkan_async_queue_submit ANDROID_EMU_sync_buffer_data ANDROID_EMU_vulkan_async_qsri ANDROID_EMU_read_color_buffer_dma ANDROID_EMU_hwc_color_transform GL_OES_EGL_image_external_essl3 GL_OES_vertex_array_object GL_KHR_texture_compression_astc_ldr ANDROID_EMU_host_side_tracing ANDROID_EMU_gles_max_version_3_0
+10-27 04:18:32.711   299   299 D goldfish-address-space: claimShared: Ask to claim region [0x3fd43b000 0x3fd503000]
+10-27 04:18:32.712   299   299 D goldfish-address-space: claimShared: Ask to claim region [0x3fdbe1000 0x3fdca9000]
+10-27 04:18:32.714  2397  2417 D IdlingRegistry: Unregistering idling resources: [androidx.compose.ui.test.EspressoLink@adc815a]
+10-27 04:18:32.714  2397  2417 I TestRunner: finished: acceptsActualHevcFromCamera(com.gutkin.frame.video.VideoExportTest)

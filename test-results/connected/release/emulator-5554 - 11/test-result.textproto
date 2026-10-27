@@ -1,20 +1,20 @@
-# 2026-10-27T04:12:56.197922758Z:
+# 2026-10-27T04:18:33.648176930Z:
 test_suite_meta_data {
   scheduled_test_case_count: 9
 }
-test_status: FAILED
+test_status: PASSED
 test_result {
   test_case {
     test_class: "VideoExportTest"
     test_package: "com.gutkin.frame.video"
     test_method: "editorSettingsRoundTripAndLegacyDefaultsWork"
     start_time {
-      seconds: 1793074308
-      nanos: 690000000
+      seconds: 1793074651
+      nanos: 640000000
     }
     end_time {
-      seconds: 1793074308
-      nanos: 776000000
+      seconds: 1793074651
+      nanos: 707000000
     }
   }
   test_status: PASSED
@@ -61,12 +61,12 @@ test_result {
     test_package: "com.gutkin.frame.video"
     test_method: "validatesActualVideoAndRejects4K"
     start_time {
-      seconds: 1793074308
-      nanos: 794000000
+      seconds: 1793074651
+      nanos: 718000000
     }
     end_time {
-      seconds: 1793074308
-      nanos: 821000000
+      seconds: 1793074651
+      nanos: 743000000
     }
   }
   test_status: PASSED
@@ -113,12 +113,12 @@ test_result {
     test_package: "com.gutkin.frame.video"
     test_method: "exportsEditorGeometryFilterAndColoredText"
     start_time {
-      seconds: 1793074308
-      nanos: 824000000
+      seconds: 1793074651
+      nanos: 745000000
     }
     end_time {
-      seconds: 1793074334
-      nanos: 76000000
+      seconds: 1793074675
+      nanos: 499000000
     }
   }
   test_status: PASSED
@@ -165,12 +165,12 @@ test_result {
     test_package: "com.gutkin.frame.video"
     test_method: "readsLegacyReactNativeProjectAndPreservesItsMedia"
     start_time {
-      seconds: 1793074334
-      nanos: 79000000
+      seconds: 1793074675
+      nanos: 503000000
     }
     end_time {
-      seconds: 1793074334
-      nanos: 130000000
+      seconds: 1793074675
+      nanos: 504000000
     }
   }
   test_status: PASSED
@@ -217,12 +217,12 @@ test_result {
     test_package: "com.gutkin.frame.video"
     test_method: "importsHevcWithoutChangingTheSource"
     start_time {
-      seconds: 1793074334
-      nanos: 134000000
+      seconds: 1793074675
+      nanos: 507000000
     }
     end_time {
-      seconds: 1793074334
-      nanos: 185000000
+      seconds: 1793074675
+      nanos: 558000000
     }
   }
   test_status: PASSED
@@ -269,12 +269,12 @@ test_result {
     test_package: "com.gutkin.frame.video"
     test_method: "convertsHevcToCompatibleH264"
     start_time {
-      seconds: 1793074334
-      nanos: 188000000
+      seconds: 1793074675
+      nanos: 559000000
     }
     end_time {
-      seconds: 1793074340
-      nanos: 415000000
+      seconds: 1793074679
+      nanos: 665000000
     }
   }
   test_status: PASSED
@@ -321,12 +321,12 @@ test_result {
     test_package: "com.gutkin.frame.video"
     test_method: "exportsTrimmedPortraitWithTextAndWithoutAudio"
     start_time {
-      seconds: 1793074340
-      nanos: 418000000
+      seconds: 1793074679
+      nanos: 667000000
     }
     end_time {
-      seconds: 1793074365
-      nanos: 795000000
+      seconds: 1793074703
+      nanos: 327000000
     }
   }
   test_status: PASSED
@@ -373,20 +373,15 @@ test_result {
     test_package: "com.gutkin.frame.video"
     test_method: "composeScreensAndNativePlaybackWork"
     start_time {
-      seconds: 1793074365
-      nanos: 798000000
+      seconds: 1793074703
+      nanos: 329000000
     }
     end_time {
-      seconds: 1793074374
-      nanos: 997000000
+      seconds: 1793074712
+      nanos: 588000000
     }
   }
-  test_status: FAILED
-  error {
-    error_message: "java.lang.AssertionError: expected:<EditSettings(textPosition=bottom, textScale=1.3, textColor=coral, filter=mono, fit=true)> but was:<EditSettings(textPosition=bottom, textScale=1.3, textColor=template, filter=mono, fit=true)>\nat org.junit.Assert.fail(Assert.java:89)\nat org.junit.Assert.failNotEquals(Assert.java:835)\nat org.junit.Assert.assertEquals(Assert.java:120)\nat org.junit.Assert.assertEquals(Assert.java:146)\nat com.gutkin.frame.video.VideoExportTest.composeScreensAndNativePlaybackWork$lambda$9$lambda$7(VideoExportTest.kt:135)\nat com.gutkin.frame.video.VideoExportTest.$r8$lambda$9MX1GamGWgBzzZ_OLuXy8Ll2AKc(Unknown Source:0)\nat com.gutkin.frame.video.VideoExportTest$$ExternalSyntheticLambda1.perform(D8$$SyntheticClass:0)\nat androidx.test.core.app.ActivityScenario.lambda$onActivity$2$androidx-test-core-app-ActivityScenario(ActivityScenario.java:794)\nat androidx.test.core.app.ActivityScenario$$ExternalSyntheticLambda2.run(D8$$SyntheticClass:0)\nat java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:462)\nat java.util.concurrent.FutureTask.run(FutureTask.java:266)\nat android.app.Instrumentation$SyncRunnable.run(Instrumentation.java:2223)\nat android.os.Handler.handleCallback(Handler.java:938)\nat android.os.Handler.dispatchMessage(Handler.java:99)\nat android.os.Looper.loop(Looper.java:223)\nat android.app.ActivityThread.main(ActivityThread.java:7656)\nat java.lang.reflect.Method.invoke(Native Method)\nat com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:592)\nat com.android.internal.os.ZygoteInit.main(ZygoteInit.java:947)\n"
-    error_type: "java.lang.AssertionError"
-    stack_trace: "java.lang.AssertionError: expected:<EditSettings(textPosition=bottom, textScale=1.3, textColor=coral, filter=mono, fit=true)> but was:<EditSettings(textPosition=bottom, textScale=1.3, textColor=template, filter=mono, fit=true)>\nat org.junit.Assert.fail(Assert.java:89)\nat org.junit.Assert.failNotEquals(Assert.java:835)\nat org.junit.Assert.assertEquals(Assert.java:120)\nat org.junit.Assert.assertEquals(Assert.java:146)\nat com.gutkin.frame.video.VideoExportTest.composeScreensAndNativePlaybackWork$lambda$9$lambda$7(VideoExportTest.kt:135)\nat com.gutkin.frame.video.VideoExportTest.$r8$lambda$9MX1GamGWgBzzZ_OLuXy8Ll2AKc(Unknown Source:0)\nat com.gutkin.frame.video.VideoExportTest$$ExternalSyntheticLambda1.perform(D8$$SyntheticClass:0)\nat androidx.test.core.app.ActivityScenario.lambda$onActivity$2$androidx-test-core-app-ActivityScenario(ActivityScenario.java:794)\nat androidx.test.core.app.ActivityScenario$$ExternalSyntheticLambda2.run(D8$$SyntheticClass:0)\nat java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:462)\nat java.util.concurrent.FutureTask.run(FutureTask.java:266)\nat android.app.Instrumentation$SyncRunnable.run(Instrumentation.java:2223)\nat android.os.Handler.handleCallback(Handler.java:938)\nat android.os.Handler.dispatchMessage(Handler.java:99)\nat android.os.Looper.loop(Looper.java:223)\nat android.app.ActivityThread.main(ActivityThread.java:7656)\nat java.lang.reflect.Method.invoke(Native Method)\nat com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:592)\nat com.android.internal.os.ZygoteInit.main(ZygoteInit.java:947)\n"
-  }
+  test_status: PASSED
   output_artifact {
     label {
       label: "logcat"
@@ -430,12 +425,12 @@ test_result {
     test_package: "com.gutkin.frame.video"
     test_method: "acceptsActualHevcFromCamera"
     start_time {
-      seconds: 1793074375
-      nanos: 7000000
+      seconds: 1793074712
+      nanos: 590000000
     }
     end_time {
-      seconds: 1793074375
-      nanos: 33000000
+      seconds: 1793074712
+      nanos: 618000000
     }
   }
   test_status: PASSED
