@@ -1,4 +1,4 @@
-# 2026-10-27T01:50:42.116185490Z:
+# 2026-10-27T02:02:00.582273693Z:
 test_suite_meta_data {
   scheduled_test_case_count: 5
 }
@@ -9,12 +9,12 @@ test_result {
     test_package: "com.gutkin.frame.video"
     test_method: "appStartsWithBundledJavaScript"
     start_time {
-      seconds: 1793065808
-      nanos: 755000000
+      seconds: 1793066489
+      nanos: 858000000
     }
     end_time {
-      seconds: 1793065810
-      nanos: 691000000
+      seconds: 1793066491
+      nanos: 512000000
     }
   }
   test_status: PASSED
@@ -61,12 +61,12 @@ test_result {
     test_package: "com.gutkin.frame.video"
     test_method: "validatesActualVideoAndRejects4K"
     start_time {
-      seconds: 1793065810
-      nanos: 709000000
+      seconds: 1793066491
+      nanos: 535000000
     }
     end_time {
-      seconds: 1793065810
-      nanos: 737000000
+      seconds: 1793066491
+      nanos: 561000000
     }
   }
   test_status: PASSED
@@ -113,12 +113,12 @@ test_result {
     test_package: "com.gutkin.frame.video"
     test_method: "convertsHevcToCompatibleH264"
     start_time {
-      seconds: 1793065810
-      nanos: 742000000
+      seconds: 1793066491
+      nanos: 565000000
     }
     end_time {
-      seconds: 1793065816
-      nanos: 493000000
+      seconds: 1793066496
+      nanos: 198000000
     }
   }
   test_status: PASSED
@@ -165,12 +165,12 @@ test_result {
     test_package: "com.gutkin.frame.video"
     test_method: "exportsTrimmedPortraitWithTextAndWithoutAudio"
     start_time {
-      seconds: 1793065816
-      nanos: 497000000
+      seconds: 1793066496
+      nanos: 199000000
     }
     end_time {
-      seconds: 1793065840
-      nanos: 841000000
+      seconds: 1793066519
+      nanos: 612000000
     }
   }
   test_status: PASSED
@@ -217,12 +217,12 @@ test_result {
     test_package: "com.gutkin.frame.video"
     test_method: "acceptsActualHevcFromCamera"
     start_time {
-      seconds: 1793065840
-      nanos: 848000000
+      seconds: 1793066519
+      nanos: 615000000
     }
     end_time {
-      seconds: 1793065840
-      nanos: 874000000
+      seconds: 1793066519
+      nanos: 642000000
     }
   }
   test_status: PASSED

@@ -1,13 +1,13 @@
 <?xml version='1.0' encoding='UTF-8' ?>
-<testsuite name="com.gutkin.frame.video.VideoExportTest" tests="5" failures="0" errors="0" skipped="0" time="33.28" timestamp="2026-10-27T01:50:42" hostname="localhost">
+<testsuite name="com.gutkin.frame.video.VideoExportTest" tests="5" failures="0" errors="0" skipped="0" time="30.67" timestamp="2026-10-27T02:02:00" hostname="localhost">
   <properties>
     <property name="device" value="emulator-5554 - 11" />
     <property name="flavor" value="" />
     <property name="project" value=":app" />
   </properties>
-  <testcase name="appStartsWithBundledJavaScript" classname="com.gutkin.frame.video.VideoExportTest" time="1.906" />
-  <testcase name="validatesActualVideoAndRejects4K" classname="com.gutkin.frame.video.VideoExportTest" time="0.018" />
-  <testcase name="convertsHevcToCompatibleH264" classname="com.gutkin.frame.video.VideoExportTest" time="5.753" />
-  <testcase name="exportsTrimmedPortraitWithTextAndWithoutAudio" classname="com.gutkin.frame.video.VideoExportTest" time="24.352" />
-  <testcase name="acceptsActualHevcFromCamera" classname="com.gutkin.frame.video.VideoExportTest" time="0.026" />
+  <testcase name="appStartsWithBundledJavaScript" classname="com.gutkin.frame.video.VideoExportTest" time="1.659" />
+  <testcase name="validatesActualVideoAndRejects4K" classname="com.gutkin.frame.video.VideoExportTest" time="0.002" />
+  <testcase name="convertsHevcToCompatibleH264" classname="com.gutkin.frame.video.VideoExportTest" time="4.631" />
+  <testcase name="exportsTrimmedPortraitWithTextAndWithoutAudio" classname="com.gutkin.frame.video.VideoExportTest" time="23.416" />
+  <testcase name="acceptsActualHevcFromCamera" classname="com.gutkin.frame.video.VideoExportTest" time="0.03" />
 </testsuite>
