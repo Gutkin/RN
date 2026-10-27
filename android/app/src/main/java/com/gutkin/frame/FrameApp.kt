@@ -252,8 +252,9 @@ private val Dark = Color(0xFF20211F)
     val scope = rememberCoroutineScope()
     LaunchedEffect(collection) { pager.scrollToPage(0) }
     Column(verticalArrangement = Arrangement.spacedBy(14.dp)) {
-        Row(Modifier.fillMaxWidth().clip(RoundedCornerShape(13.dp)).background(Color(0xFFE8E4DE)).padding(4.dp)) {
-            listOf("Stories", "Reels", "Posts").forEach { label ->
+        Row(Modifier.fillMaxWidth().clip(RoundedCornerShape(13.dp)).background(Color(0xFFE8E4DE)).padding(4.dp), verticalAlignment = Alignment.CenterVertically) {
+            listOf("Stories", "Reels", "Posts").forEachIndexed { index, label ->
+                if (index > 0) Box(Modifier.width(.5.dp).height(12.dp).background(Color(0xFFCDC8BF)))
                 Box(Modifier.weight(1f).height(34.dp).clip(RoundedCornerShape(10.dp)).background(if (collection == label) Color(0xFFFFFDF9) else Color.Transparent).selectable(collection == label, role = Role.Tab, onClick = { change(label) }).semantics { contentDescription = label }, contentAlignment = Alignment.Center) { Text(label, color = Ink, fontSize = 12.sp, fontWeight = if (collection == label) FontWeight.SemiBold else FontWeight.Normal) }
             }
         }
