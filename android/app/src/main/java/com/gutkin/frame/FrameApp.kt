@@ -28,6 +28,7 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.semantics.Role
@@ -71,6 +72,7 @@ private val Dark = Color(0xFF20211F)
     val s = model.state
     val context = LocalContext.current
     val lifecycle = LocalLifecycleOwner.current
+    val previewWidth = minOf(236.dp, LocalConfiguration.current.screenHeightDp.dp * .52f * 9f / 16f)
     val picker = rememberLauncherForActivityResult(ActivityResultContracts.OpenDocument()) { it?.let(model::importVideo) }
     var clearConfirm by remember { mutableStateOf(false) }
     DisposableEffect(lifecycle) {
@@ -154,7 +156,7 @@ private val Dark = Color(0xFF20211F)
                                     Text(s.template.name, Modifier.weight(1f), textAlign = TextAlign.Center, fontSize = 13.sp)
                                     TextButton(onClick = { model.navigate(Screen.EXPORT) }, enabled = s.trimProblem == null) { Text("Далее →") }
                                 }
-                                Box(Modifier.align(Alignment.CenterHorizontally).widthIn(max = 236.dp).fillMaxWidth().aspectRatio(9f / 16f).clip(RoundedCornerShape(3.dp)).background(Color.Black)) {
+                                Box(Modifier.align(Alignment.CenterHorizontally).widthIn(max = previewWidth).fillMaxWidth().aspectRatio(9f / 16f).clip(RoundedCornerShape(3.dp)).background(Color.Black)) {
                                     val draft = s.draft()
                                     if (draft != null) NativeVideoPreview(draft, Modifier.fillMaxSize()) else {
                                         Image(painterResource(R.drawable.featured_collage), null, Modifier.fillMaxSize(), contentScale = ContentScale.Crop)
