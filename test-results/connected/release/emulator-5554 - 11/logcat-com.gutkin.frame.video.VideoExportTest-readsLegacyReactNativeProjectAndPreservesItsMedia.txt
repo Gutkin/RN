@@ -1,5 +1,5 @@
-10-27 03:14:44.261  2448  2468 I TestRunner: started: readsLegacyReactNativeProjectAndPreservesItsMedia(com.gutkin.frame.video.VideoExportTest)
-10-27 03:14:44.262  2448  2468 D IdlingRegistry: Registering idling resources: [androidx.compose.ui.test.EspressoLink@241478a]
-10-27 03:14:44.284   438  2470 D MediaBufferGroup: creating MemoryDealer
-10-27 03:14:44.304  2448  2468 D IdlingRegistry: Unregistering idling resources: [androidx.compose.ui.test.EspressoLink@241478a]
-10-27 03:14:44.305  2448  2468 I TestRunner: finished: readsLegacyReactNativeProjectAndPreservesItsMedia(com.gutkin.frame.video.VideoExportTest)
+10-27 04:12:13.346  2423  2443 I TestRunner: started: readsLegacyReactNativeProjectAndPreservesItsMedia(com.gutkin.frame.video.VideoExportTest)
+10-27 04:12:13.347  2423  2443 D IdlingRegistry: Registering idling resources: [androidx.compose.ui.test.EspressoLink@efbff9b]
+10-27 04:12:13.370   437  2275 D MediaBufferGroup: creating MemoryDealer
+10-27 04:12:13.382  2423  2443 D IdlingRegistry: Unregistering idling resources: [androidx.compose.ui.test.EspressoLink@efbff9b]
+10-27 04:12:13.382  2423  2443 I TestRunner: finished: readsLegacyReactNativeProjectAndPreservesItsMedia(com.gutkin.frame.video.VideoExportTest)

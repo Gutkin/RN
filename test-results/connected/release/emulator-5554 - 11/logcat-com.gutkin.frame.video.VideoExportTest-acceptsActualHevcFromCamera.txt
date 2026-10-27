@@ -1,8 +1,5 @@
-10-27 03:15:22.660  2448  2468 I TestRunner: started: acceptsActualHevcFromCamera(com.gutkin.frame.video.VideoExportTest)
-10-27 03:15:22.661   510  2782 D libEGL  : loaded /vendor/lib64/egl/libGLESv2_emulation.so
-10-27 03:15:22.662  2448  2468 D IdlingRegistry: Registering idling resources: [androidx.compose.ui.test.EspressoLink@d222177]
-10-27 03:15:22.678   438   999 D MediaBufferGroup: creating MemoryDealer
-10-27 03:15:22.691   721   721 D InterruptionStateProvider: No bubble up: not allowed to bubble: -1|android|8|null|1000
-10-27 03:15:22.692   721   721 D InterruptionStateProvider: No heads up: unimportant notification: -1|android|8|null|1000
-10-27 03:15:22.697  2448  2468 D IdlingRegistry: Unregistering idling resources: [androidx.compose.ui.test.EspressoLink@d222177]
-10-27 03:15:22.697  2448  2468 I TestRunner: finished: acceptsActualHevcFromCamera(com.gutkin.frame.video.VideoExportTest)
+10-27 04:12:54.254  2423  2443 I TestRunner: started: acceptsActualHevcFromCamera(com.gutkin.frame.video.VideoExportTest)
+10-27 04:12:54.255  2423  2443 D IdlingRegistry: Registering idling resources: [androidx.compose.ui.test.EspressoLink@283f595]
+10-27 04:12:54.277   437   437 D MediaBufferGroup: creating MemoryDealer
+10-27 04:12:54.290  2423  2443 D IdlingRegistry: Unregistering idling resources: [androidx.compose.ui.test.EspressoLink@283f595]
+10-27 04:12:54.290  2423  2443 I TestRunner: finished: acceptsActualHevcFromCamera(com.gutkin.frame.video.VideoExportTest)

@@ -1,20 +1,72 @@
-# 2026-10-27T03:15:23.904739342Z:
+# 2026-10-27T04:12:56.197922758Z:
 test_suite_meta_data {
-  scheduled_test_case_count: 7
+  scheduled_test_case_count: 9
 }
-test_status: PASSED
+test_status: FAILED
+test_result {
+  test_case {
+    test_class: "VideoExportTest"
+    test_package: "com.gutkin.frame.video"
+    test_method: "editorSettingsRoundTripAndLegacyDefaultsWork"
+    start_time {
+      seconds: 1793074308
+      nanos: 690000000
+    }
+    end_time {
+      seconds: 1793074308
+      nanos: 776000000
+    }
+  }
+  test_status: PASSED
+  output_artifact {
+    label {
+      label: "logcat"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/RN/RN/android/app/build/outputs/androidTest-results/connected/release/emulator-5554 - 11/logcat-com.gutkin.frame.video.VideoExportTest-editorSettingsRoundTripAndLegacyDefaultsWork.txt"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/RN/RN/android/app/build/outputs/androidTest-results/connected/release/emulator-5554 - 11/device-info.pb"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.meminfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/RN/RN/android/app/build/outputs/androidTest-results/connected/release/emulator-5554 - 11/meminfo"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.cpuinfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/RN/RN/android/app/build/outputs/androidTest-results/connected/release/emulator-5554 - 11/cpuinfo"
+    }
+  }
+}
 test_result {
   test_case {
     test_class: "VideoExportTest"
     test_package: "com.gutkin.frame.video"
     test_method: "validatesActualVideoAndRejects4K"
     start_time {
-      seconds: 1793070884
-      nanos: 219000000
+      seconds: 1793074308
+      nanos: 794000000
     }
     end_time {
-      seconds: 1793070884
-      nanos: 324000000
+      seconds: 1793074308
+      nanos: 821000000
     }
   }
   test_status: PASSED
@@ -59,14 +111,66 @@ test_result {
   test_case {
     test_class: "VideoExportTest"
     test_package: "com.gutkin.frame.video"
-    test_method: "readsLegacyReactNativeProjectAndPreservesItsMedia"
+    test_method: "exportsEditorGeometryFilterAndColoredText"
     start_time {
-      seconds: 1793070884
-      nanos: 344000000
+      seconds: 1793074308
+      nanos: 824000000
     }
     end_time {
-      seconds: 1793070884
-      nanos: 371000000
+      seconds: 1793074334
+      nanos: 76000000
+    }
+  }
+  test_status: PASSED
+  output_artifact {
+    label {
+      label: "logcat"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/RN/RN/android/app/build/outputs/androidTest-results/connected/release/emulator-5554 - 11/logcat-com.gutkin.frame.video.VideoExportTest-exportsEditorGeometryFilterAndColoredText.txt"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/RN/RN/android/app/build/outputs/androidTest-results/connected/release/emulator-5554 - 11/device-info.pb"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.meminfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/RN/RN/android/app/build/outputs/androidTest-results/connected/release/emulator-5554 - 11/meminfo"
+    }
+  }
+  output_artifact {
+    label {
+      label: "device-info.cpuinfo"
+      namespace: "android"
+    }
+    source_path {
+      path: "/home/runner/work/RN/RN/android/app/build/outputs/androidTest-results/connected/release/emulator-5554 - 11/cpuinfo"
+    }
+  }
+}
+test_result {
+  test_case {
+    test_class: "VideoExportTest"
+    test_package: "com.gutkin.frame.video"
+    test_method: "readsLegacyReactNativeProjectAndPreservesItsMedia"
+    start_time {
+      seconds: 1793074334
+      nanos: 79000000
+    }
+    end_time {
+      seconds: 1793074334
+      nanos: 130000000
     }
   }
   test_status: PASSED
@@ -113,12 +217,12 @@ test_result {
     test_package: "com.gutkin.frame.video"
     test_method: "importsHevcWithoutChangingTheSource"
     start_time {
-      seconds: 1793070884
-      nanos: 374000000
+      seconds: 1793074334
+      nanos: 134000000
     }
     end_time {
-      seconds: 1793070884
-      nanos: 475000000
+      seconds: 1793074334
+      nanos: 185000000
     }
   }
   test_status: PASSED
@@ -165,12 +269,12 @@ test_result {
     test_package: "com.gutkin.frame.video"
     test_method: "convertsHevcToCompatibleH264"
     start_time {
-      seconds: 1793070884
-      nanos: 478000000
+      seconds: 1793074334
+      nanos: 188000000
     }
     end_time {
-      seconds: 1793070890
-      nanos: 982000000
+      seconds: 1793074340
+      nanos: 415000000
     }
   }
   test_status: PASSED
@@ -217,12 +321,12 @@ test_result {
     test_package: "com.gutkin.frame.video"
     test_method: "exportsTrimmedPortraitWithTextAndWithoutAudio"
     start_time {
-      seconds: 1793070890
-      nanos: 985000000
+      seconds: 1793074340
+      nanos: 418000000
     }
     end_time {
-      seconds: 1793070916
-      nanos: 325000000
+      seconds: 1793074365
+      nanos: 795000000
     }
   }
   test_status: PASSED
@@ -269,15 +373,20 @@ test_result {
     test_package: "com.gutkin.frame.video"
     test_method: "composeScreensAndNativePlaybackWork"
     start_time {
-      seconds: 1793070916
-      nanos: 328000000
+      seconds: 1793074365
+      nanos: 798000000
     }
     end_time {
-      seconds: 1793070922
-      nanos: 718000000
+      seconds: 1793074374
+      nanos: 997000000
     }
   }
-  test_status: PASSED
+  test_status: FAILED
+  error {
+    error_message: "java.lang.AssertionError: expected:<EditSettings(textPosition=bottom, textScale=1.3, textColor=coral, filter=mono, fit=true)> but was:<EditSettings(textPosition=bottom, textScale=1.3, textColor=template, filter=mono, fit=true)>\nat org.junit.Assert.fail(Assert.java:89)\nat org.junit.Assert.failNotEquals(Assert.java:835)\nat org.junit.Assert.assertEquals(Assert.java:120)\nat org.junit.Assert.assertEquals(Assert.java:146)\nat com.gutkin.frame.video.VideoExportTest.composeScreensAndNativePlaybackWork$lambda$9$lambda$7(VideoExportTest.kt:135)\nat com.gutkin.frame.video.VideoExportTest.$r8$lambda$9MX1GamGWgBzzZ_OLuXy8Ll2AKc(Unknown Source:0)\nat com.gutkin.frame.video.VideoExportTest$$ExternalSyntheticLambda1.perform(D8$$SyntheticClass:0)\nat androidx.test.core.app.ActivityScenario.lambda$onActivity$2$androidx-test-core-app-ActivityScenario(ActivityScenario.java:794)\nat androidx.test.core.app.ActivityScenario$$ExternalSyntheticLambda2.run(D8$$SyntheticClass:0)\nat java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:462)\nat java.util.concurrent.FutureTask.run(FutureTask.java:266)\nat android.app.Instrumentation$SyncRunnable.run(Instrumentation.java:2223)\nat android.os.Handler.handleCallback(Handler.java:938)\nat android.os.Handler.dispatchMessage(Handler.java:99)\nat android.os.Looper.loop(Looper.java:223)\nat android.app.ActivityThread.main(ActivityThread.java:7656)\nat java.lang.reflect.Method.invoke(Native Method)\nat com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:592)\nat com.android.internal.os.ZygoteInit.main(ZygoteInit.java:947)\n"
+    error_type: "java.lang.AssertionError"
+    stack_trace: "java.lang.AssertionError: expected:<EditSettings(textPosition=bottom, textScale=1.3, textColor=coral, filter=mono, fit=true)> but was:<EditSettings(textPosition=bottom, textScale=1.3, textColor=template, filter=mono, fit=true)>\nat org.junit.Assert.fail(Assert.java:89)\nat org.junit.Assert.failNotEquals(Assert.java:835)\nat org.junit.Assert.assertEquals(Assert.java:120)\nat org.junit.Assert.assertEquals(Assert.java:146)\nat com.gutkin.frame.video.VideoExportTest.composeScreensAndNativePlaybackWork$lambda$9$lambda$7(VideoExportTest.kt:135)\nat com.gutkin.frame.video.VideoExportTest.$r8$lambda$9MX1GamGWgBzzZ_OLuXy8Ll2AKc(Unknown Source:0)\nat com.gutkin.frame.video.VideoExportTest$$ExternalSyntheticLambda1.perform(D8$$SyntheticClass:0)\nat androidx.test.core.app.ActivityScenario.lambda$onActivity$2$androidx-test-core-app-ActivityScenario(ActivityScenario.java:794)\nat androidx.test.core.app.ActivityScenario$$ExternalSyntheticLambda2.run(D8$$SyntheticClass:0)\nat java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:462)\nat java.util.concurrent.FutureTask.run(FutureTask.java:266)\nat android.app.Instrumentation$SyncRunnable.run(Instrumentation.java:2223)\nat android.os.Handler.handleCallback(Handler.java:938)\nat android.os.Handler.dispatchMessage(Handler.java:99)\nat android.os.Looper.loop(Looper.java:223)\nat android.app.ActivityThread.main(ActivityThread.java:7656)\nat java.lang.reflect.Method.invoke(Native Method)\nat com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:592)\nat com.android.internal.os.ZygoteInit.main(ZygoteInit.java:947)\n"
+  }
   output_artifact {
     label {
       label: "logcat"
@@ -321,12 +430,12 @@ test_result {
     test_package: "com.gutkin.frame.video"
     test_method: "acceptsActualHevcFromCamera"
     start_time {
-      seconds: 1793070922
-      nanos: 720000000
+      seconds: 1793074375
+      nanos: 7000000
     }
     end_time {
-      seconds: 1793070922
-      nanos: 747000000
+      seconds: 1793074375
+      nanos: 33000000
     }
   }
   test_status: PASSED
