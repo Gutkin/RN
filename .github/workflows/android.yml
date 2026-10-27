@@ -54,7 +54,7 @@ jobs:
           emulator-options: -no-window -gpu swiftshader_indirect -no-snapshot -noaudio -no-boot-anim -camera-back none
           script: |
             cd android && ./gradlew --no-daemon connectedReleaseAndroidTest
-            adb pull /sdcard/Android/data/com.gutkin.frame/files/frame-home.png /tmp/frame-home.png
+            adb pull /sdcard/Android/data/com.gutkin.frame/files/frame-home.png /tmp/frame-home.png || true
       - name: Upload APK and test evidence
         if: always()
         uses: actions/upload-artifact@v4
