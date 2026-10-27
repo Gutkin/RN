@@ -24,7 +24,7 @@ class VideoExportTest {
     }
     @Test fun validatesActualVideoAndRejects4K() {
         lateinit var module: VideoModule
-        instrumentation.runOnMainSync { module = VideoModule(ReactApplicationContext(context)) }
+        instrumentation.runOnMainSync { module = VideoModule(BridgeReactContext(context)) }
         try {
             val info = module.inspect(Uri.fromFile(fixture("sample.mp4")))
             assertEquals(640, info.getInt("width"))
@@ -37,7 +37,7 @@ class VideoExportTest {
     @Test fun exportsTrimmedPortraitWithTextAndWithoutAudio() {
         val file = fixture("sample.mp4")
         lateinit var module: VideoModule
-        instrumentation.runOnMainSync { module = VideoModule(ReactApplicationContext(context)) }
+        instrumentation.runOnMainSync { module = VideoModule(BridgeReactContext(context)) }
         val done = CountDownLatch(1)
         var result: String? = null
         var failure: String? = null
