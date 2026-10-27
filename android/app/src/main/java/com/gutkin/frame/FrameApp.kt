@@ -134,7 +134,7 @@ private val Dark = Color(0xFF20211F)
                                         }
                                     }
                                 } ?: Column(Modifier.fillMaxWidth().padding(vertical = 48.dp), horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.spacedBy(18.dp)) {
-                                    Icon(Icons.Outlined.FolderOpen, null, Modifier.size(60.dp), tint = Color(0xFFC4BAAA))
+                                    Icon(FrameIcons.Folder, null, Modifier.size(60.dp), tint = Color(0xFFC4BAAA))
                                     Text("Здесь начнётся твоя история", fontSize = 18.sp, textAlign = TextAlign.Center)
                                     Body("Выбери шаблон, добавь видео и сохрани проект в редакторе.")
                                     ActionButton("Выбрать шаблон", { model.navigate(Screen.TEMPLATES) })
@@ -212,7 +212,7 @@ private val Dark = Color(0xFF20211F)
 
 @Composable private fun BottomBar(current: Screen, navigate: (Screen) -> Unit) {
     NavigationBar(modifier = Modifier.height(72.dp), windowInsets = WindowInsets(0), containerColor = Color(0xFFFDFBF7), tonalElevation = 0.dp) {
-        listOf(Triple(Screen.HOME, "Главная", Icons.Outlined.Home), Triple(Screen.TEMPLATES, "Шаблоны", Icons.Outlined.GridView), Triple(Screen.PROJECTS, "Проекты", Icons.Outlined.FolderOpen), Triple(Screen.SETTINGS, "О приложении", Icons.Outlined.Tune)).forEach { (screen, label, icon) ->
+        listOf(Triple(Screen.HOME, "Главная", Icons.Outlined.Home), Triple(Screen.TEMPLATES, "Шаблоны", FrameIcons.Grid), Triple(Screen.PROJECTS, "Проекты", FrameIcons.Folder), Triple(Screen.SETTINGS, "О приложении", FrameIcons.Settings)).forEach { (screen, label, icon) ->
             NavigationBarItem(current == screen, { navigate(screen) }, icon = { Icon(icon, null) }, label = { Text(label, fontSize = 10.sp) }, colors = NavigationBarItemDefaults.colors(selectedIconColor = Coral, selectedTextColor = Coral, indicatorColor = Color.Transparent), modifier = Modifier.semantics { contentDescription = label })
         }
     }

@@ -12,6 +12,12 @@ import androidx.test.core.app.ActivityScenario
 import android.os.SystemClock
 import android.view.accessibility.AccessibilityNodeInfo
 import com.gutkin.frame.MainActivity
+import com.gutkin.frame.FrameViewModel
+import androidx.lifecycle.ViewModelProvider
+import android.view.View
+import android.view.ViewGroup
+import androidx.media3.ui.PlayerView
+import androidx.media3.common.Player
 import com.gutkin.frame.Project
 import com.gutkin.frame.ProjectStore
 import org.json.JSONObject
@@ -49,8 +55,13 @@ class VideoExportTest {
         assertTrue("Control must be clickable: $label", awaitNode(label).performAction(AccessibilityNodeInfo.ACTION_CLICK))
         instrumentation.waitForIdleSync()
     }
+    private fun playerView(view: View): PlayerView? {
+        if (view is PlayerView) return view
+        if (view is ViewGroup) for (i in 0 until view.childCount) playerView(view.getChildAt(i))?.let { return it }
+        return null
+    }
     @Test fun appStartsWithBundledJavaScript() {
-        ActivityScenario.launch(MainActivity::class.java).use {
+        ActivityScenario.launch(MainActivity::class.java).use { scenario ->
             val deadline = SystemClock.uptimeMillis() + 45000
             var found = false
             while (SystemClock.uptimeMillis() < deadline && !found) {
@@ -88,6 +99,21 @@ class VideoExportTest {
             tap("Слайд 2 из 5"); awaitNode("Слайд 2 из 5", true)
             tap("Открыть Quiet Moment")
             awaitNode("+ Добавить видео")
+            // Exercise the new ActivityResult-independent UI state path and the real native player.
+            val source = fixture("sample.mp4")
+            scenario.onActivity { ViewModelProvider(it)[FrameViewModel::class.java].importVideo(Uri.fromFile(source)) }
+            awaitNode("Заменить видео")
+            val readyDeadline = SystemClock.uptimeMillis() + 30000
+            var ready = false
+            while (SystemClock.uptimeMillis() < readyDeadline && !ready) {
+                scenario.onActivity { activity ->
+                    val player = playerView(activity.window.decorView)?.player
+                    ready = player?.playbackState == Player.STATE_READY && player.playerError == null
+                    if (ready) player?.play()
+                }
+                if (!ready) SystemClock.sleep(200)
+            }
+            assertTrue("Compose editor must prepare the real video player", ready)
         }
     }
     private fun fixture(name: String): File = File(context.filesDir, "media/$name").apply {
