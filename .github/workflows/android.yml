@@ -52,10 +52,9 @@ jobs:
           target: default
           disable-animations: true
           emulator-options: -no-window -gpu swiftshader_indirect -no-snapshot -noaudio -no-boot-anim -camera-back none
-          script: cd android && ./gradlew --no-daemon connectedReleaseAndroidTest
-      - name: Collect home screen screenshot
-        if: always()
-        run: adb pull /sdcard/Android/data/com.gutkin.frame/files/frame-home.png /tmp/frame-home.png || true
+          script: |
+            cd android && ./gradlew --no-daemon connectedReleaseAndroidTest
+            adb pull /sdcard/Android/data/com.gutkin.frame/files/frame-home.png /tmp/frame-home.png
       - name: Upload APK and test evidence
         if: always()
         uses: actions/upload-artifact@v4
