@@ -44,7 +44,7 @@ export function FeaturedTemplates({collection, onCollectionChange, onOpen}: {
       <ScrollView key={collection} ref={pager} horizontal pagingEnabled bounces={false} showsHorizontalScrollIndicator={false} decelerationRate="fast" scrollEventThrottle={16} testID="featured-carousel"
         onMomentumScrollEnd={e => setIndex(Math.max(0, Math.min(items.length - 1, Math.round(e.nativeEvent.contentOffset.x / width))))}>
         {items.map((template, i) => <View key={`${collection}-${template.id}`} testID={`featured-card-${i}`} importantForAccessibility={i === index ? 'auto' : 'no-hide-descendants'} style={[s.card, {width, height: width * 199 / 330}]}>
-          <Image accessible={false} source={require('../assets/featured-collage.png')} resizeMode="cover" fadeDuration={0} style={StyleSheet.absoluteFill} />
+          <Image testID={`featured-image-${i}`} accessible={false} source={require('../assets/featured-collage.png')} resizeMode="cover" fadeDuration={0} style={{position: 'absolute', left: 0, top: 0, width, height: width * 199 / 330}} />
           <Text maxFontSizeMultiplier={1.2} style={[s.caption, {fontSize: width * 0.019, lineHeight: width * 0.030}]}>{collection === 'Reels' ? 'MAKE EVERY\nMOMENT COUNT' : collection === 'Posts' ? 'LITTLE NOTES\nFROM YOUR LIFE' : 'A QUIETER\nKIND OF DAY'}</Text>
           <Text testID={`featured-title-${i}`} maxFontSizeMultiplier={1.2} style={[s.title, {fontSize: width * 0.075, lineHeight: width * 0.080}]}>{template.title}</Text>
           <Pressable accessibilityRole="button" accessibilityLabel={`Открыть ${template.name}`} testID={`featured-open-${i}`} hitSlop={10} onPress={() => onOpen(template)} style={[s.open, {width: arrowSize, height: arrowSize}]}>

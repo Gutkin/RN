@@ -50,6 +50,10 @@ describe('featured template navigation', () => {
     const card = StyleSheet.flatten(node('featured-card-0').props.style);
     expect(card.width).toBe(280);
     expect(card.height).toBeCloseTo(280 * 199 / 330);
+    // Local RN assets have intrinsic dimensions; explicit bounds must override them.
+    const image = StyleSheet.flatten(node('featured-image-0').props.style);
+    expect(image.width).toBe(card.width);
+    expect(image.height).toBe(card.height);
     act(() => node('featured-carousel').props.onMomentumScrollEnd({nativeEvent: {contentOffset: {x: 280 * 4}}}));
     expect(node('featured-dot-4').props.accessibilityState.selected).toBe(true);
     act(() => renderer.unmount());
