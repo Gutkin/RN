@@ -1,0 +1,18 @@
+{
+  "source": "4a7ebf2c9b9928517147c475946ee425201392d4",
+  "version": "0.1.0",
+  "min_android": "10",
+  "architecture": [
+    "arm64-v8a",
+    "x86_64"
+  ],
+  "sha256": "caad422ae8ae993301bcedd37fefea96b338074d94f0453e3655204ddb6f43c0",
+  "bytes": 62240000,
+  "validation": {
+    "typescript": "passed",
+    "javascript_tests": 9,
+    "native_unit_tests": 4,
+    "apk_signature": "verified",
+    "device_tests": "pending"
+  }
+}
