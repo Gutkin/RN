@@ -142,11 +142,11 @@ info Done copying assets
 > Task :app:mergeReleaseAssets
 > Task :app:processReleaseResources
 > Task :app:compressReleaseAssets
-> Task :app:extractReleaseVersionControlInfo
 > Task :app:mergeExtDexRelease
+> Task :app:extractReleaseVersionControlInfo
 > Task :app:collectReleaseDependencies
-> Task :app:sdkReleaseDependencyData
 > Task :app:optimizeReleaseResources
+> Task :app:sdkReleaseDependencyData
 > Task :app:validateSigningRelease
 > Task :app:writeReleaseAppMetadata
 > Task :app:writeReleaseSigningConfigVersions
@@ -190,17 +190,17 @@ w: file:///home/runner/work/RN/RN/android/app/src/main/java/com/gutkin/frame/vid
 > Task :app:bundleReleaseClassesToRuntimeJar
 > Task :app:bundleReleaseClassesToCompileJar
 > Task :app:mergeReleaseJavaResource
+> Task :app:packageRelease
+> Task :app:createReleaseApkListingFileRedirect
 > Task :app:compileReleaseUnitTestKotlin
 > Task :app:compileReleaseUnitTestJavaWithJavac NO-SOURCE
 > Task :app:processReleaseUnitTestJavaRes
 > Task :app:testReleaseUnitTest
-> Task :app:packageRelease
-> Task :app:createReleaseApkListingFileRedirect
 > Task :app:compileReleaseAndroidTestKotlin
 > Task :app:compileReleaseAndroidTestJavaWithJavac
 > Task :app:dexBuilderReleaseAndroidTest
-> Task :app:mergeReleaseAndroidTestGlobalSynthetics
 > Task :app:mergeDexReleaseAndroidTest
+> Task :app:mergeReleaseAndroidTestGlobalSynthetics
 > Task :app:processReleaseAndroidTestJavaRes
 > Task :app:mergeReleaseAndroidTestJavaResource
 > Task :app:packageReleaseAndroidTest
@@ -210,7 +210,7 @@ w: file:///home/runner/work/RN/RN/android/app/src/main/java/com/gutkin/frame/vid
 > Task :app:lintVitalReportRelease
 > Task :app:lintVitalRelease
 > Task :app:assembleRelease
-gradle/actions: Writing build results to /home/runner/work/_temp/.gradle-actions/build-results/apk-1793063254811.json
+gradle/actions: Writing build results to /home/runner/work/_temp/.gradle-actions/build-results/apk-1793063643792.json
 
 [Incubating] Problems report is available at: file:///home/runner/work/RN/RN/android/build/reports/problems/problems-report.html
 
@@ -220,5 +220,5 @@ You can use '--warning-mode all' to show the individual deprecation warnings and
 
 For more on this, please refer to https://docs.gradle.org/8.13/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
 
-BUILD SUCCESSFUL in 1m 32s
+BUILD SUCCESSFUL in 1m 23s
 99 actionable tasks: 99 executed

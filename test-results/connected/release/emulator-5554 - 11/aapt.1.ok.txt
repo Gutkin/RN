@@ -1,7 +1,7 @@
 EXECUTING: /usr/local/lib/android/sdk/build-tools/35.0.0/aapt dump badging /home/runner/work/RN/RN/android/app/build/outputs/apk/release/app-release.apk
 CURRENT_WORKING_DIRECTORY: /home/runner/work/RN/RN/android
-START_TIME: 2026-10-27 01:11:08.171
-START_TIME-NANOS: 2026-10-27 01:11:08.171974921
+START_TIME: 2026-10-27 01:17:38.960
+START_TIME-NANOS: 2026-10-27 01:17:38.960997860
 ENVIRONMENT:
 
 *****************************************
@@ -120,7 +120,7 @@ locales: '--_--' 'af' 'am' 'ar' 'as' 'az' 'be' 'bg' 'bn' 'bs' 'ca' 'cs' 'da' 'de
 densities: '120' '160' '240' '320' '480' '640' '65534'
 native-code: 'arm64-v8a' 'armeabi-v7a' 'x86' 'x86_64'
 ===================
-END_TIME: 2026-10-27 01:11:08.480
-END_TIME-NANOS: 2026-10-27 01:11:08.480306459
-DURATION: 308ms
+END_TIME: 2026-10-27 01:17:39.084
+END_TIME-NANOS: 2026-10-27 01:17:39.084735606
+DURATION: 123ms
 EXIT CODE: 0

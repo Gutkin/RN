@@ -43,7 +43,7 @@ INSTRUMENTATION_STATUS: test=exportsTrimmedPortraitWithTextAndWithoutAudio
 INSTRUMENTATION_STATUS_CODE: 0
 INSTRUMENTATION_RESULT: stream=
 
-Time: 27.651
+Time: 28.852
 
 OK (3 tests)
 

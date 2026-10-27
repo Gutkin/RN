@@ -1,186 +1,182 @@
-10-27 01:10:39.651  2395  2415 I TestRunner: started: appStartsWithBundledJavaScript(com.gutkin.frame.video.VideoExportTest)
-10-27 01:10:39.656  2395  2415 W Settings: Setting always_finish_activities has moved from android.provider.Settings.System to android.provider.Settings.Global, returning read-only value.
-10-27 01:10:39.658   506   540 D EventSequenceValidator: Transition from ACTIVITY_FINISHED to INTENT_STARTED
-10-27 01:10:39.659   413   413 I perfetto: ing_service_impl.cc:758 Configured tracing session 6, #sources:1, duration:5000 ms, #buffers:1, total buffer size:4096 KB, total sessions:1, uid:1071 session name: ""
-10-27 01:10:39.659   410   410 I perfetto: probes_producer.cc:230  Ftrace setup (target_buf=6)
-10-27 01:10:39.662   506   807 W InputReader: Device virtio_input_multi_touch_10 is associated with display ADISPLAY_ID_NONE.
-10-27 01:10:39.662   506   807 W InputReader: Device virtio_input_multi_touch_7 is associated with display ADISPLAY_ID_NONE.
-10-27 01:10:39.662   506   807 W InputReader: Device virtio_input_multi_touch_4 is associated with display ADISPLAY_ID_NONE.
-10-27 01:10:39.662   506   807 W InputReader: Device virtio_input_multi_touch_11 is associated with display ADISPLAY_ID_NONE.
-10-27 01:10:39.662   506   807 W InputReader: Device virtio_input_multi_touch_5 is associated with display ADISPLAY_ID_NONE.
-10-27 01:10:39.662   506   807 W InputReader: Device virtio_input_multi_touch_2 is associated with display ADISPLAY_ID_NONE.
-10-27 01:10:39.662   506   807 W InputReader: Device virtio_input_multi_touch_6 is associated with display ADISPLAY_ID_NONE.
-10-27 01:10:39.662   506   807 W InputReader: Device virtio_input_multi_touch_3 is associated with display ADISPLAY_ID_NONE.
-10-27 01:10:39.662   506   807 W InputReader: Device virtio_input_multi_touch_8 is associated with display ADISPLAY_ID_NONE.
-10-27 01:10:39.662   506   807 W InputReader: Device virtio_input_multi_touch_9 is associated with display ADISPLAY_ID_NONE.
-10-27 01:10:39.662   506   807 W InputReader: Device virtio_input_multi_touch_10 is associated with display ADISPLAY_ID_NONE.
-10-27 01:10:39.662   506   807 W InputReader: Device virtio_input_multi_touch_7 is associated with display ADISPLAY_ID_NONE.
-10-27 01:10:39.662   506   807 W InputReader: Device virtio_input_multi_touch_4 is associated with display ADISPLAY_ID_NONE.
-10-27 01:10:39.662   506   807 W InputReader: Device virtio_input_multi_touch_11 is associated with display ADISPLAY_ID_NONE.
-10-27 01:10:39.662   506   807 W InputReader: Device virtio_input_multi_touch_5 is associated with display ADISPLAY_ID_NONE.
-10-27 01:10:39.662   506   807 W InputReader: Device virtio_input_multi_touch_2 is associated with display ADISPLAY_ID_NONE.
-10-27 01:10:39.662   506   807 W InputReader: Device virtio_input_multi_touch_6 is associated with display ADISPLAY_ID_NONE.
-10-27 01:10:39.662   506   807 W InputReader: Device virtio_input_multi_touch_3 is associated with display ADISPLAY_ID_NONE.
-10-27 01:10:39.662   506   807 W InputReader: Device virtio_input_multi_touch_8 is associated with display ADISPLAY_ID_NONE.
-10-27 01:10:39.662   506   807 W InputReader: Device virtio_input_multi_touch_9 is associated with display ADISPLAY_ID_NONE.
-10-27 01:10:39.665   506   540 D EventSequenceValidator: Transition from INTENT_STARTED to ACTIVITY_LAUNCHED
-10-27 01:10:39.679  2395  2395 D AppCompatDelegate: Checking for metadata for AppLocalesMetadataHolderService : Service not found
-10-27 01:10:39.683   410   410 I perfetto: ftrace_procfs.cc:176    enabled ftrace
-10-27 01:10:39.683  2395  2395 D LifecycleMonitor: Lifecycle status change: com.gutkin.frame.MainActivity@c1718d0 in: PRE_ON_CREATE
-10-27 01:10:39.684  2395  2395 V ActivityScenario: Activity lifecycle changed event received but ignored because the reported transition was not ON_CREATE while the last known transition was PRE_ON_CREATE
-10-27 01:10:39.684   300  1860 D goldfish-address-space: claimShared: Ask to claim region [0x3fd5cb000 0x3fd693000]
-10-27 01:10:39.690  2395  2424 D libEGL  : loaded /vendor/lib64/egl/libEGL_emulation.so
-10-27 01:10:39.691  2395  2424 D libEGL  : loaded /vendor/lib64/egl/libGLESv1_CM_emulation.so
-10-27 01:10:39.694  2395  2395 W SoLoader: SoLoader already initialized
-10-27 01:10:39.705  2395  2424 D libEGL  : loaded /vendor/lib64/egl/libGLESv2_emulation.so
-10-27 01:10:39.710  2395  2395 D jni_lib_merge: Entering merged library JNI_OnLoad.
-10-27 01:10:39.710  2395  2395 D jni_lib_merge: Preparing 12 pre-merged libs (including stub)
-10-27 01:10:39.710  2395  2395 D jni_lib_merge: Preparing to register libfabricjni_so.  onload_func: 0x78af9ab23360
-10-27 01:10:39.710  2395  2395 D jni_lib_merge: Preparing to register libmapbufferjni_so.  onload_func: 0x78af9ab73130
-10-27 01:10:39.710  2395  2395 D jni_lib_merge: Preparing to register libreact_devsupportjni_so.  onload_func: 0x78af9abeaa80
-10-27 01:10:39.710  2395  2395 D jni_lib_merge: Preparing to register libreact_featureflagsjni_so.  onload_func: 0x78af9abf1880
-10-27 01:10:39.710  2395  2395 D jni_lib_merge: Preparing to register libreact_newarchdefaults_so.  onload_func: 0x78af9ac16690
-10-27 01:10:39.710  2395  2395 D jni_lib_merge: Preparing to register libreactnativeblob_so.  onload_func: 0x78af9acaead0
-10-27 01:10:39.710  2395  2395 D jni_lib_merge: Preparing to register libreactnativejni_so.  onload_func: 0x78af9accd700
-10-27 01:10:39.710  2395  2395 D jni_lib_merge: Preparing to register librninstance_so.  onload_func: 0x78af9ace8800
-10-27 01:10:39.710  2395  2395 D jni_lib_merge: Preparing to register libturbomodulejsijni_so.  onload_func: 0x78af9ad4ea10
-10-27 01:10:39.710  2395  2395 D jni_lib_merge: Preparing to register libuimanagerjni_so.  onload_func: 0x78af9ad569e0
-10-27 01:10:39.710  2395  2395 D jni_lib_merge: Preparing to register libyoga_so.  onload_func: 0x78af9ad5beb0
-10-27 01:10:39.710  2395  2395 D jni_lib_merge: About to register 11 actual methods.
-10-27 01:10:39.710  2395  2395 D jni_lib_merge: Entering merged library JNI_OnLoad.
-10-27 01:10:39.710  2395  2395 D jni_lib_merge: Preparing 4 pre-merged libs (including stub)
-10-27 01:10:39.710  2395  2395 D jni_lib_merge: Preparing to register libhermes_executor_so.  onload_func: 0x78af9c3a7280
-10-27 01:10:39.710  2395  2395 D jni_lib_merge: Preparing to register libhermesinstancejni_so.  onload_func: 0x78af9c3ad910
-10-27 01:10:39.710  2395  2395 D jni_lib_merge: Preparing to register libjsijniprofiler_so.  onload_func: 0x78af9c3ae000
-10-27 01:10:39.710  2395  2395 D jni_lib_merge: About to register 3 actual methods.
-10-27 01:10:39.711  2395  2395 W SoLoader: SoLoader already initialized
-10-27 01:10:39.733  2395  2395 D LifecycleMonitor: Lifecycle status change: com.gutkin.frame.MainActivity@c1718d0 in: CREATED
-10-27 01:10:39.733  2395  2395 V ActivityScenario: Update currentActivityStage to CREATED, currentActivity=com.gutkin.frame.MainActivity@c1718d0
-10-27 01:10:39.735  2395  2395 D LifecycleMonitor: Lifecycle status change: com.gutkin.frame.MainActivity@c1718d0 in: STARTED
-10-27 01:10:39.735  2395  2395 V ActivityScenario: Update currentActivityStage to STARTED, currentActivity=com.gutkin.frame.MainActivity@c1718d0
-10-27 01:10:39.736  2395  2395 D LifecycleMonitor: Lifecycle status change: com.gutkin.frame.MainActivity@c1718d0 in: RESUMED
-10-27 01:10:39.736  2395  2395 V ActivityScenario: Update currentActivityStage to RESUMED, currentActivity=com.gutkin.frame.MainActivity@c1718d0
-10-27 01:10:39.762  2395  2428 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.drawer.ReactDrawerLayoutManager
-10-27 01:10:39.763  2395  2422 D HostConnection: HostConnection::get() New Host Connection established 0x78b085a30110, tid 2422
-10-27 01:10:39.791  2395  2428 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.uimanager.LayoutShadowNode
-10-27 01:10:39.792  2395  2428 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.scroll.ReactHorizontalScrollViewManager
-10-27 01:10:39.793  2395  2428 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.scroll.ReactHorizontalScrollContainerViewManager
-10-27 01:10:39.793  2395  2428 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.progressbar.ReactProgressBarViewManager
-10-27 01:10:39.794  2395  2422 D HostConnection: HostComposition ext ANDROID_EMU_CHECKSUM_HELPER_v1 ANDROID_EMU_native_sync_v2 ANDROID_EMU_dma_v1 ANDROID_EMU_direct_mem ANDROID_EMU_host_composition_v1 ANDROID_EMU_host_composition_v2 ANDROID_EMU_vulkan ANDROID_EMU_deferred_vulkan_commands ANDROID_EMU_vulkan_null_optional_strings ANDROID_EMU_vulkan_create_resources_with_requirements ANDROID_EMU_YUV_Cache ANDROID_EMU_vulkan_ignored_handles ANDROID_EMU_has_shared_slots_host_memory_allocator ANDROID_EMU_vulkan_free_memory_sync ANDROID_EMU_vulkan_shader_float16_int8 ANDROID_EMU_vulkan_async_queue_submit ANDROID_EMU_sync_buffer_data ANDROID_EMU_vulkan_async_qsri ANDROID_EMU_read_color_buffer_dma ANDROID_EMU_hwc_color_transform GL_OES_EGL_image_external_essl3 GL_OES_vertex_array_object GL_KHR_texture_compression_astc_ldr ANDROID_EMU_host_side_tracing ANDROID_EMU_gles_max_version_3_0
-10-27 01:10:39.794  2395  2428 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.progressbar.ProgressBarShadowNode
-10-27 01:10:39.794  2395  2428 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.scroll.ReactScrollViewManager
-10-27 01:10:39.795  2395  2428 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.switchview.ReactSwitchManager
-10-27 01:10:39.795   158   158 I hwservicemanager: getTransport: Cannot find entry android.hardware.configstore@1.0::ISurfaceFlingerConfigs/default in either framework or device manifest.
-10-27 01:10:39.796  2395  2428 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.switchview.ReactSwitchManager$ReactSwitchShadowNode
-10-27 01:10:39.796  2395  2428 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.safeareaview.ReactSafeAreaViewManager
-10-27 01:10:39.796  2395  2428 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.safeareaview.ReactSafeAreaViewShadowNode
-10-27 01:10:39.796  2395  2428 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.swiperefresh.SwipeRefreshLayoutManager
-10-27 01:10:39.797  2395  2428 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.text.frescosupport.FrescoBasedReactTextInlineImageViewManager
-10-27 01:10:39.797  2395  2428 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.text.frescosupport.FrescoBasedReactTextInlineImageShadowNode
-10-27 01:10:39.797  2395  2428 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.image.ReactImageManager
-10-27 01:10:39.798  2395  2428 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.modal.ReactModalHostManager
-10-27 01:10:39.798  2395  2428 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.text.ReactRawTextManager
-10-27 01:10:39.798  2395  2422 D EGL_emulation: eglCreateContext: 0x78b075a7a360: maj 3 min 0 rcv 3
-10-27 01:10:39.798  2395  2428 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.text.ReactRawTextShadowNode
-10-27 01:10:39.799  2395  2428 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.textinput.ReactTextInputManager
-10-27 01:10:39.800  2395  2428 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.textinput.ReactTextInputShadowNode
-10-27 01:10:39.800  2395  2422 D EGL_emulation: eglMakeCurrent: 0x78b075a7a360: ver 3 0 (tinfo 0x78b015a78ff0) (first time)
-10-27 01:10:39.800  2395  2428 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.text.ReactTextViewManager
-10-27 01:10:39.800  2395  2428 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.text.ReactTextShadowNode
-10-27 01:10:39.800  2395  2428 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.view.ReactViewManager
-10-27 01:10:39.801  2395  2428 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.text.ReactVirtualTextViewManager
-10-27 01:10:39.801  2395  2428 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.text.ReactVirtualTextShadowNode
-10-27 01:10:39.801  2395  2428 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.unimplementedview.ReactUnimplementedViewManager
-10-27 01:10:39.801  2395  2428 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.gutkin.frame.video.VideoPreviewManager
-10-27 01:10:39.809   300  1860 D goldfish-address-space: claimShared: Ask to claim region [0x3fd503000 0x3fd5cb000]
-10-27 01:10:39.810   158   158 I hwservicemanager: getTransport: Cannot find entry android.hardware.graphics.mapper@4.0::IMapper/default in either framework or device manifest.
-10-27 01:10:39.810  2395  2422 I Gralloc4: mapper 4.x is not supported
-10-27 01:10:39.811  2395  2422 D HostConnection: createUnique: call
-10-27 01:10:39.811  2395  2422 D HostConnection: HostConnection::get() New Host Connection established 0x78b085a2f990, tid 2422
-10-27 01:10:39.811  2395  2422 D goldfish-address-space: allocate: Ask for block of size 0x100
-10-27 01:10:39.812  2395  2422 D goldfish-address-space: allocate: ioctl allocate returned offset 0x3fbffe000 size 0x2000
-10-27 01:10:39.817  2395  2422 D HostConnection: HostComposition ext ANDROID_EMU_CHECKSUM_HELPER_v1 ANDROID_EMU_native_sync_v2 ANDROID_EMU_dma_v1 ANDROID_EMU_direct_mem ANDROID_EMU_host_composition_v1 ANDROID_EMU_host_composition_v2 ANDROID_EMU_vulkan ANDROID_EMU_deferred_vulkan_commands ANDROID_EMU_vulkan_null_optional_strings ANDROID_EMU_vulkan_create_resources_with_requirements ANDROID_EMU_YUV_Cache ANDROID_EMU_vulkan_ignored_handles ANDROID_EMU_has_shared_slots_host_memory_allocator ANDROID_EMU_vulkan_free_memory_sync ANDROID_EMU_vulkan_shader_float16_int8 ANDROID_EMU_vulkan_async_queue_submit ANDROID_EMU_sync_buffer_data ANDROID_EMU_vulkan_async_qsri ANDROID_EMU_read_color_buffer_dma ANDROID_EMU_hwc_color_transform GL_OES_EGL_image_external_essl3 GL_OES_vertex_array_object GL_KHR_texture_compression_astc_ldr ANDROID_EMU_host_side_tracing ANDROID_EMU_gles_max_version_3_0
-10-27 01:10:39.818   300  1860 D goldfish-address-space: claimShared: Ask to claim region [0x3fd693000 0x3fd75b000]
-10-27 01:10:39.819   300  1860 D goldfish-address-space: claimShared: Ask to claim region [0x3fd75b000 0x3fd823000]
-10-27 01:10:39.827  2395  2427 I ReactNativeJS: Running "FrameStories"
-10-27 01:10:39.894  2395  2428 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is null.
-10-27 01:10:39.894  2395  2428 I chatty  : uid=10130(com.gutkin.frame) mqt_native_modu identical 2 lines
-10-27 01:10:39.894  2395  2428 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is null.
-10-27 01:10:39.975   343   561 W ServiceManager: Permission failure: android.permission.ACCESS_SURFACE_FLINGER from uid=10130 pid=2395
-10-27 01:10:39.975   343   561 D PermissionCache: checking android.permission.ACCESS_SURFACE_FLINGER for uid=10130 => denied (210 us)
-10-27 01:10:39.976   506   545 D ArtManagerInternalImpl: /data/misc/iorapd/com.gutkin.frame/1/com.gutkin.frame.MainActivity/compiled_traces/compiled_trace.pb doesn't exist
-10-27 01:10:39.980   506   545 I ActivityTaskManager: Displayed com.gutkin.frame/.MainActivity: +316ms
-10-27 01:10:39.981   506   540 D EventSequenceValidator: Transition from ACTIVITY_LAUNCHED to ACTIVITY_FINISHED
-10-27 01:10:40.516  2395  2437 V UiAutomation: Init UiAutomation@903110d[id=1, flags=0]
-10-27 01:10:40.779   343   562 D PermissionCache: checking android.permission.READ_FRAME_BUFFER for uid=2000 => granted (133 us)
-10-27 01:10:40.780   300  1860 D goldfish-address-space: claimShared: Ask to claim region [0x3fd369000 0x3fd431000]
-10-27 01:10:40.912   158   158 I hwservicemanager: getTransport: Cannot find entry android.hardware.graphics.mapper@4.0::IMapper/default in either framework or device manifest.
-10-27 01:10:40.912  2383  2394 I Gralloc4: mapper 4.x is not supported
-10-27 01:10:40.917  2383  2394 D HostConnection: createUnique: call
-10-27 01:10:40.918  2383  2394 D HostConnection: HostConnection::get() New Host Connection established 0x7b43f06ebed0, tid 2394
-10-27 01:10:40.918  2383  2394 D goldfish-address-space: allocate: Ask for block of size 0x100
-10-27 01:10:40.918  2383  2394 D goldfish-address-space: allocate: ioctl allocate returned offset 0x3fbffe000 size 0x2000
-10-27 01:10:40.925  2383  2394 D HostConnection: HostComposition ext ANDROID_EMU_CHECKSUM_HELPER_v1 ANDROID_EMU_native_sync_v2 ANDROID_EMU_dma_v1 ANDROID_EMU_direct_mem ANDROID_EMU_host_composition_v1 ANDROID_EMU_host_composition_v2 ANDROID_EMU_vulkan ANDROID_EMU_deferred_vulkan_commands ANDROID_EMU_vulkan_null_optional_strings ANDROID_EMU_vulkan_create_resources_with_requirements ANDROID_EMU_YUV_Cache ANDROID_EMU_vulkan_ignored_handles ANDROID_EMU_has_shared_slots_host_memory_allocator ANDROID_EMU_vulkan_free_memory_sync ANDROID_EMU_vulkan_shader_float16_int8 ANDROID_EMU_vulkan_async_queue_submit ANDROID_EMU_sync_buffer_data ANDROID_EMU_vulkan_async_qsri ANDROID_EMU_read_color_buffer_dma ANDROID_EMU_hwc_color_transform GL_OES_EGL_image_external_essl3 GL_OES_vertex_array_object GL_KHR_texture_compression_astc_ldr ANDROID_EMU_host_side_tracing ANDROID_EMU_gles_max_version_3_0
-10-27 01:10:40.935  2383  2438 D libEGL  : loaded /vendor/lib64/egl/libEGL_emulation.so
-10-27 01:10:40.936  2383  2438 D libEGL  : loaded /vendor/lib64/egl/libGLESv1_CM_emulation.so
-10-27 01:10:40.937  2383  2438 D libEGL  : loaded /vendor/lib64/egl/libGLESv2_emulation.so
-10-27 01:10:40.948  2383  2438 D HostConnection: HostConnection::get() New Host Connection established 0x7b43f06ea910, tid 2438
-10-27 01:10:40.950  2383  2438 D HostConnection: HostComposition ext ANDROID_EMU_CHECKSUM_HELPER_v1 ANDROID_EMU_native_sync_v2 ANDROID_EMU_dma_v1 ANDROID_EMU_direct_mem ANDROID_EMU_host_composition_v1 ANDROID_EMU_host_composition_v2 ANDROID_EMU_vulkan ANDROID_EMU_deferred_vulkan_commands ANDROID_EMU_vulkan_null_optional_strings ANDROID_EMU_vulkan_create_resources_with_requirements ANDROID_EMU_YUV_Cache ANDROID_EMU_vulkan_ignored_handles ANDROID_EMU_has_shared_slots_host_memory_allocator ANDROID_EMU_vulkan_free_memory_sync ANDROID_EMU_vulkan_shader_float16_int8 ANDROID_EMU_vulkan_async_queue_submit ANDROID_EMU_sync_buffer_data ANDROID_EMU_vulkan_async_qsri ANDROID_EMU_read_color_buffer_dma ANDROID_EMU_hwc_color_transform GL_OES_EGL_image_external_essl3 GL_OES_vertex_array_object GL_KHR_texture_compression_astc_ldr ANDROID_EMU_host_side_tracing ANDROID_EMU_gles_max_version_3_0
-10-27 01:10:40.951   158   158 I hwservicemanager: getTransport: Cannot find entry android.hardware.configstore@1.0::ISurfaceFlingerConfigs/default in either framework or device manifest.
-10-27 01:10:40.955  2383  2438 D EGL_emulation: eglCreateContext: 0x7b43e0706d40: maj 3 min 0 rcv 3
-10-27 01:10:40.956  2383  2438 D EGL_emulation: eglMakeCurrent: 0x7b43e0706d40: ver 3 0 (tinfo 0x7b4380719310) (first time)
-10-27 01:10:41.058   506   540 D EventSequenceValidator: Transition from ACTIVITY_FINISHED to INTENT_STARTED
-10-27 01:10:41.058   413   413 I perfetto: ing_service_impl.cc:758 Configured tracing session 7, #sources:1, duration:5000 ms, #buffers:1, total buffer size:4096 KB, total sessions:2, uid:1071 session name: ""
-10-27 01:10:41.058   410   410 I perfetto: probes_producer.cc:230  Ftrace setup (target_buf=7)
-10-27 01:10:41.063  2395  2395 D LifecycleMonitor: Lifecycle status change: com.gutkin.frame.MainActivity@c1718d0 in: PAUSED
-10-27 01:10:41.063  2395  2395 V ActivityScenario: Update currentActivityStage to PAUSED, currentActivity=com.gutkin.frame.MainActivity@c1718d0
-10-27 01:10:41.069   506   540 D EventSequenceValidator: Transition from INTENT_STARTED to ACTIVITY_LAUNCHED
-10-27 01:10:41.078   300  1860 D goldfish-address-space: claimShared: Ask to claim region [0x3fd43b000 0x3fd503000]
-10-27 01:10:41.193   280   280 D Zygote  : Forked child process 2444
-10-27 01:10:41.198  2444  2444 W tkin.frame.tes: Unexpected CPU variant for X86 using defaults: x86_64
-10-27 01:10:41.200   388   404 I adbd    : jdwp connection from 2444
-10-27 01:10:41.204   506  1005 W InputReader: Device virtio_input_multi_touch_10 is associated with display ADISPLAY_ID_NONE.
-10-27 01:10:41.204   506  1005 W InputReader: Device virtio_input_multi_touch_7 is associated with display ADISPLAY_ID_NONE.
-10-27 01:10:41.204   506  1005 W InputReader: Device virtio_input_multi_touch_4 is associated with display ADISPLAY_ID_NONE.
-10-27 01:10:41.204   506  1005 W InputReader: Device virtio_input_multi_touch_11 is associated with display ADISPLAY_ID_NONE.
-10-27 01:10:41.204   506  1005 W InputReader: Device virtio_input_multi_touch_5 is associated with display ADISPLAY_ID_NONE.
-10-27 01:10:41.204   506  1005 W InputReader: Device virtio_input_multi_touch_2 is associated with display ADISPLAY_ID_NONE.
-10-27 01:10:41.204   506  1005 W InputReader: Device virtio_input_multi_touch_6 is associated with display ADISPLAY_ID_NONE.
-10-27 01:10:41.204   506  1005 W InputReader: Device virtio_input_multi_touch_3 is associated with display ADISPLAY_ID_NONE.
-10-27 01:10:41.204   506  1005 W InputReader: Device virtio_input_multi_touch_8 is associated with display ADISPLAY_ID_NONE.
-10-27 01:10:41.204   506  1005 W InputReader: Device virtio_input_multi_touch_9 is associated with display ADISPLAY_ID_NONE.
-10-27 01:10:41.204   506  1005 W InputReader: Device virtio_input_multi_touch_10 is associated with display ADISPLAY_ID_NONE.
-10-27 01:10:41.204   506  1005 W InputReader: Device virtio_input_multi_touch_7 is associated with display ADISPLAY_ID_NONE.
-10-27 01:10:41.204   506  1005 W InputReader: Device virtio_input_multi_touch_4 is associated with display ADISPLAY_ID_NONE.
-10-27 01:10:41.204   506  1005 W InputReader: Device virtio_input_multi_touch_11 is associated with display ADISPLAY_ID_NONE.
-10-27 01:10:41.204   506  1005 W InputReader: Device virtio_input_multi_touch_5 is associated with display ADISPLAY_ID_NONE.
-10-27 01:10:41.204   506  1005 W InputReader: Device virtio_input_multi_touch_2 is associated with display ADISPLAY_ID_NONE.
-10-27 01:10:41.204   506  1005 W InputReader: Device virtio_input_multi_touch_6 is associated with display ADISPLAY_ID_NONE.
-10-27 01:10:41.204   506  1005 W InputReader: Device virtio_input_multi_touch_3 is associated with display ADISPLAY_ID_NONE.
-10-27 01:10:41.204   506  1005 W InputReader: Device virtio_input_multi_touch_8 is associated with display ADISPLAY_ID_NONE.
-10-27 01:10:41.204   506  1005 W InputReader: Device virtio_input_multi_touch_9 is associated with display ADISPLAY_ID_NONE.
-10-27 01:10:41.207   343   561 D PermissionCache: checking android.permission.READ_FRAME_BUFFER for uid=1000 => granted (66 us)
-10-27 01:10:41.207   300  1860 D goldfish-address-space: claimShared: Ask to claim region [0x3fd5cb000 0x3fd693000]
-10-27 01:10:41.272  2444  2444 D ApplicationLoaders: Returning zygote-cached class loader: /system/framework/android.test.base.jar
-10-27 01:10:41.272  2444  2444 D ApplicationLoaders: Returning zygote-cached class loader: /system/framework/android.test.base.jar
-10-27 01:10:41.273  2444  2444 I tkin.frame.tes: The ClassLoaderContext is a special shared library.
-10-27 01:10:41.273  2444  2444 D ApplicationLoaders: Returning zygote-cached class loader: /system/framework/android.test.base.jar
-10-27 01:10:41.273  2444  2444 D ApplicationLoaders: Returning zygote-cached class loader: /system/framework/android.test.base.jar
-10-27 01:10:41.273  2444  2444 I tkin.frame.tes: The ClassLoaderContext is a special shared library.
-10-27 01:10:41.282  2444  2444 D NetworkSecurityConfig: No Network Security Config specified, using platform default
-10-27 01:10:41.282   506  2464 D libEGL  : loaded /vendor/lib64/egl/libEGL_emulation.so
-10-27 01:10:41.282  2444  2444 D NetworkSecurityConfig: No Network Security Config specified, using platform default
-10-27 01:10:41.283   506  2464 D libEGL  : loaded /vendor/lib64/egl/libGLESv1_CM_emulation.so
-10-27 01:10:41.285   506  2464 D libEGL  : loaded /vendor/lib64/egl/libGLESv2_emulation.so
-10-27 01:10:41.290  2444  2467 D libEGL  : loaded /vendor/lib64/egl/libEGL_emulation.so
-10-27 01:10:41.294  2444  2467 D libEGL  : loaded /vendor/lib64/egl/libGLESv1_CM_emulation.so
-10-27 01:10:41.296  2395  2395 D LifecycleMonitor: Lifecycle status change: com.gutkin.frame.MainActivity@c1718d0 in: STOPPED
-10-27 01:10:41.296  2395  2395 V ActivityScenario: Update currentActivityStage to STOPPED, currentActivity=com.gutkin.frame.MainActivity@c1718d0
-10-27 01:10:41.297  2444  2467 D libEGL  : loaded /vendor/lib64/egl/libGLESv2_emulation.so
-10-27 01:10:41.308  2395  2395 E unknown:ReactNative: Tried to remove non-existent frame callback
-10-27 01:10:41.308  2395  2395 D LifecycleMonitor: Lifecycle status change: com.gutkin.frame.MainActivity@c1718d0 in: DESTROYED
-10-27 01:10:41.308  2395  2395 V ActivityScenario: Update currentActivityStage to DESTROYED, currentActivity=null
-10-27 01:10:41.308   506  2464 D HostConnection: HostConnection::get() New Host Connection established 0x78b085a331d0, tid 2464
-10-27 01:10:41.311  2395  2428 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is null.
-10-27 01:10:41.311  2395  2428 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is null.
-10-27 01:10:41.315  2395  2415 I TestRunner: finished: appStartsWithBundledJavaScript(com.gutkin.frame.video.VideoExportTest)
+10-27 01:17:08.910  2426  2446 I TestRunner: started: appStartsWithBundledJavaScript(com.gutkin.frame.video.VideoExportTest)
+10-27 01:17:08.916  2426  2446 W Settings: Setting always_finish_activities has moved from android.provider.Settings.System to android.provider.Settings.Global, returning read-only value.
+10-27 01:17:08.919   503   538 D EventSequenceValidator: Transition from ACTIVITY_FINISHED to INTENT_STARTED
+10-27 01:17:08.920   414   414 I perfetto: ing_service_impl.cc:758 Configured tracing session 5, #sources:1, duration:5000 ms, #buffers:1, total buffer size:4096 KB, total sessions:1, uid:1071 session name: ""
+10-27 01:17:08.921   407   407 I perfetto: probes_producer.cc:230  Ftrace setup (target_buf=5)
+10-27 01:17:08.926   503   538 D EventSequenceValidator: Transition from INTENT_STARTED to ACTIVITY_LAUNCHED
+10-27 01:17:08.926   503   532 W InputReader: Device virtio_input_multi_touch_10 is associated with display ADISPLAY_ID_NONE.
+10-27 01:17:08.926   503   532 W InputReader: Device virtio_input_multi_touch_7 is associated with display ADISPLAY_ID_NONE.
+10-27 01:17:08.926   503   532 W InputReader: Device virtio_input_multi_touch_4 is associated with display ADISPLAY_ID_NONE.
+10-27 01:17:08.926   503   532 W InputReader: Device virtio_input_multi_touch_5 is associated with display ADISPLAY_ID_NONE.
+10-27 01:17:08.926   503   532 W InputReader: Device virtio_input_multi_touch_2 is associated with display ADISPLAY_ID_NONE.
+10-27 01:17:08.926   503   532 W InputReader: Device virtio_input_multi_touch_6 is associated with display ADISPLAY_ID_NONE.
+10-27 01:17:08.926   503   532 W InputReader: Device virtio_input_multi_touch_8 is associated with display ADISPLAY_ID_NONE.
+10-27 01:17:08.926   503   532 W InputReader: Device virtio_input_multi_touch_9 is associated with display ADISPLAY_ID_NONE.
+10-27 01:17:08.926   503   532 W InputReader: Device virtio_input_multi_touch_3 is associated with display ADISPLAY_ID_NONE.
+10-27 01:17:08.926   503   532 W InputReader: Device virtio_input_multi_touch_11 is associated with display ADISPLAY_ID_NONE.
+10-27 01:17:08.926   503   532 W InputReader: Device virtio_input_multi_touch_10 is associated with display ADISPLAY_ID_NONE.
+10-27 01:17:08.926   503   532 W InputReader: Device virtio_input_multi_touch_7 is associated with display ADISPLAY_ID_NONE.
+10-27 01:17:08.926   503   532 W InputReader: Device virtio_input_multi_touch_4 is associated with display ADISPLAY_ID_NONE.
+10-27 01:17:08.926   503   532 W InputReader: Device virtio_input_multi_touch_5 is associated with display ADISPLAY_ID_NONE.
+10-27 01:17:08.926   503   532 W InputReader: Device virtio_input_multi_touch_2 is associated with display ADISPLAY_ID_NONE.
+10-27 01:17:08.926   503   532 W InputReader: Device virtio_input_multi_touch_6 is associated with display ADISPLAY_ID_NONE.
+10-27 01:17:08.926   503   532 W InputReader: Device virtio_input_multi_touch_8 is associated with display ADISPLAY_ID_NONE.
+10-27 01:17:08.926   503   532 W InputReader: Device virtio_input_multi_touch_9 is associated with display ADISPLAY_ID_NONE.
+10-27 01:17:08.926   503   532 W InputReader: Device virtio_input_multi_touch_3 is associated with display ADISPLAY_ID_NONE.
+10-27 01:17:08.926   503   532 W InputReader: Device virtio_input_multi_touch_11 is associated with display ADISPLAY_ID_NONE.
+10-27 01:17:08.933  2426  2426 D AppCompatDelegate: Checking for metadata for AppLocalesMetadataHolderService : Service not found
+10-27 01:17:08.935  2426  2426 D LifecycleMonitor: Lifecycle status change: com.gutkin.frame.MainActivity@64c0a50 in: PRE_ON_CREATE
+10-27 01:17:08.935  2426  2426 V ActivityScenario: Activity lifecycle changed event received but ignored because the reported transition was not ON_CREATE while the last known transition was PRE_ON_CREATE
+10-27 01:17:08.943   407   407 I perfetto: ftrace_procfs.cc:176    enabled ftrace
+10-27 01:17:08.944  2426  2426 W SoLoader: SoLoader already initialized
+10-27 01:17:08.948  2426  2455 D libEGL  : loaded /vendor/lib64/egl/libEGL_emulation.so
+10-27 01:17:08.949  2426  2455 D libEGL  : loaded /vendor/lib64/egl/libGLESv1_CM_emulation.so
+10-27 01:17:08.951  2426  2455 D libEGL  : loaded /vendor/lib64/egl/libGLESv2_emulation.so
+10-27 01:17:08.955   298  1754 D goldfish-address-space: claimShared: Ask to claim region [0x3fe1da000 0x3fe2a2000]
+10-27 01:17:09.025  2426  2426 D jni_lib_merge: Entering merged library JNI_OnLoad.
+10-27 01:17:09.025  2426  2426 D jni_lib_merge: Preparing 12 pre-merged libs (including stub)
+10-27 01:17:09.025  2426  2426 D jni_lib_merge: Preparing to register libfabricjni_so.  onload_func: 0x7a0d25bd9360
+10-27 01:17:09.025  2426  2426 D jni_lib_merge: Preparing to register libmapbufferjni_so.  onload_func: 0x7a0d25c29130
+10-27 01:17:09.025  2426  2426 D jni_lib_merge: Preparing to register libreact_devsupportjni_so.  onload_func: 0x7a0d25ca0a80
+10-27 01:17:09.025  2426  2426 D jni_lib_merge: Preparing to register libreact_featureflagsjni_so.  onload_func: 0x7a0d25ca7880
+10-27 01:17:09.025  2426  2426 D jni_lib_merge: Preparing to register libreact_newarchdefaults_so.  onload_func: 0x7a0d25ccc690
+10-27 01:17:09.025  2426  2426 D jni_lib_merge: Preparing to register libreactnativeblob_so.  onload_func: 0x7a0d25d64ad0
+10-27 01:17:09.025  2426  2426 D jni_lib_merge: Preparing to register libreactnativejni_so.  onload_func: 0x7a0d25d83700
+10-27 01:17:09.025  2426  2426 D jni_lib_merge: Preparing to register librninstance_so.  onload_func: 0x7a0d25d9e800
+10-27 01:17:09.026  2426  2426 D jni_lib_merge: Preparing to register libturbomodulejsijni_so.  onload_func: 0x7a0d25e04a10
+10-27 01:17:09.026  2426  2426 D jni_lib_merge: Preparing to register libuimanagerjni_so.  onload_func: 0x7a0d25e0c9e0
+10-27 01:17:09.026  2426  2426 D jni_lib_merge: Preparing to register libyoga_so.  onload_func: 0x7a0d25e11eb0
+10-27 01:17:09.026  2426  2426 D jni_lib_merge: About to register 11 actual methods.
+10-27 01:17:09.026  2426  2426 D jni_lib_merge: Entering merged library JNI_OnLoad.
+10-27 01:17:09.026  2426  2426 D jni_lib_merge: Preparing 4 pre-merged libs (including stub)
+10-27 01:17:09.026  2426  2426 D jni_lib_merge: Preparing to register libhermes_executor_so.  onload_func: 0x7a0d2792a280
+10-27 01:17:09.026  2426  2426 D jni_lib_merge: Preparing to register libhermesinstancejni_so.  onload_func: 0x7a0d27930910
+10-27 01:17:09.026  2426  2426 D jni_lib_merge: Preparing to register libjsijniprofiler_so.  onload_func: 0x7a0d27931000
+10-27 01:17:09.026  2426  2426 D jni_lib_merge: About to register 3 actual methods.
+10-27 01:17:09.028  2426  2426 W SoLoader: SoLoader already initialized
+10-27 01:17:09.038  2426  2426 D LifecycleMonitor: Lifecycle status change: com.gutkin.frame.MainActivity@64c0a50 in: CREATED
+10-27 01:17:09.038  2426  2426 V ActivityScenario: Update currentActivityStage to CREATED, currentActivity=com.gutkin.frame.MainActivity@64c0a50
+10-27 01:17:09.040  2426  2426 D LifecycleMonitor: Lifecycle status change: com.gutkin.frame.MainActivity@64c0a50 in: STARTED
+10-27 01:17:09.040  2426  2426 V ActivityScenario: Update currentActivityStage to STARTED, currentActivity=com.gutkin.frame.MainActivity@64c0a50
+10-27 01:17:09.041  2426  2426 D LifecycleMonitor: Lifecycle status change: com.gutkin.frame.MainActivity@64c0a50 in: RESUMED
+10-27 01:17:09.041  2426  2426 V ActivityScenario: Update currentActivityStage to RESUMED, currentActivity=com.gutkin.frame.MainActivity@64c0a50
+10-27 01:17:09.056  2426  2453 D HostConnection: HostConnection::get() New Host Connection established 0x7a0e10a83710, tid 2453
+10-27 01:17:09.073  2426  2453 D HostConnection: HostComposition ext ANDROID_EMU_CHECKSUM_HELPER_v1 ANDROID_EMU_native_sync_v2 ANDROID_EMU_dma_v1 ANDROID_EMU_direct_mem ANDROID_EMU_host_composition_v1 ANDROID_EMU_host_composition_v2 ANDROID_EMU_vulkan ANDROID_EMU_deferred_vulkan_commands ANDROID_EMU_vulkan_null_optional_strings ANDROID_EMU_vulkan_create_resources_with_requirements ANDROID_EMU_YUV_Cache ANDROID_EMU_vulkan_ignored_handles ANDROID_EMU_has_shared_slots_host_memory_allocator ANDROID_EMU_vulkan_free_memory_sync ANDROID_EMU_vulkan_shader_float16_int8 ANDROID_EMU_vulkan_async_queue_submit ANDROID_EMU_sync_buffer_data ANDROID_EMU_vulkan_async_qsri ANDROID_EMU_read_color_buffer_dma ANDROID_EMU_hwc_color_transform GL_OES_EGL_image_external_essl3 GL_OES_vertex_array_object GL_KHR_texture_compression_astc_ldr ANDROID_EMU_host_side_tracing ANDROID_EMU_gles_max_version_3_0
+10-27 01:17:09.074   159   159 I hwservicemanager: getTransport: Cannot find entry android.hardware.configstore@1.0::ISurfaceFlingerConfigs/default in either framework or device manifest.
+10-27 01:17:09.076  2426  2453 D EGL_emulation: eglCreateContext: 0x7a0e00ada7c0: maj 3 min 0 rcv 3
+10-27 01:17:09.077  2426  2453 D EGL_emulation: eglMakeCurrent: 0x7a0e00ada7c0: ver 3 0 (tinfo 0x7a0da0acbab0) (first time)
+10-27 01:17:09.088   298  1754 D goldfish-address-space: claimShared: Ask to claim region [0x3fe04a000 0x3fe112000]
+10-27 01:17:09.089   159   159 I hwservicemanager: getTransport: Cannot find entry android.hardware.graphics.mapper@4.0::IMapper/default in either framework or device manifest.
+10-27 01:17:09.089  2426  2453 I Gralloc4: mapper 4.x is not supported
+10-27 01:17:09.090  2426  2453 D HostConnection: createUnique: call
+10-27 01:17:09.091  2426  2453 D HostConnection: HostConnection::get() New Host Connection established 0x7a0e10a85150, tid 2453
+10-27 01:17:09.091  2426  2453 D goldfish-address-space: allocate: Ask for block of size 0x100
+10-27 01:17:09.091  2426  2453 D goldfish-address-space: allocate: ioctl allocate returned offset 0x3fbffe000 size 0x2000
+10-27 01:17:09.099  2426  2459 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.drawer.ReactDrawerLayoutManager
+10-27 01:17:09.100  2426  2453 D HostConnection: HostComposition ext ANDROID_EMU_CHECKSUM_HELPER_v1 ANDROID_EMU_native_sync_v2 ANDROID_EMU_dma_v1 ANDROID_EMU_direct_mem ANDROID_EMU_host_composition_v1 ANDROID_EMU_host_composition_v2 ANDROID_EMU_vulkan ANDROID_EMU_deferred_vulkan_commands ANDROID_EMU_vulkan_null_optional_strings ANDROID_EMU_vulkan_create_resources_with_requirements ANDROID_EMU_YUV_Cache ANDROID_EMU_vulkan_ignored_handles ANDROID_EMU_has_shared_slots_host_memory_allocator ANDROID_EMU_vulkan_free_memory_sync ANDROID_EMU_vulkan_shader_float16_int8 ANDROID_EMU_vulkan_async_queue_submit ANDROID_EMU_sync_buffer_data ANDROID_EMU_vulkan_async_qsri ANDROID_EMU_read_color_buffer_dma ANDROID_EMU_hwc_color_transform GL_OES_EGL_image_external_essl3 GL_OES_vertex_array_object GL_KHR_texture_compression_astc_ldr ANDROID_EMU_host_side_tracing ANDROID_EMU_gles_max_version_3_0
+10-27 01:17:09.101   298  1754 D goldfish-address-space: claimShared: Ask to claim region [0x3fe2a2000 0x3fe36a000]
+10-27 01:17:09.101  2426  2459 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.uimanager.LayoutShadowNode
+10-27 01:17:09.101   298  1754 D goldfish-address-space: claimShared: Ask to claim region [0x3fe36a000 0x3fe432000]
+10-27 01:17:09.102  2426  2459 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.scroll.ReactHorizontalScrollViewManager
+10-27 01:17:09.106  2426  2459 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.scroll.ReactHorizontalScrollContainerViewManager
+10-27 01:17:09.108  2426  2459 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.progressbar.ReactProgressBarViewManager
+10-27 01:17:09.108  2426  2459 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.progressbar.ProgressBarShadowNode
+10-27 01:17:09.109  2426  2459 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.scroll.ReactScrollViewManager
+10-27 01:17:09.109  2426  2459 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.switchview.ReactSwitchManager
+10-27 01:17:09.110  2426  2459 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.switchview.ReactSwitchManager$ReactSwitchShadowNode
+10-27 01:17:09.110  2426  2459 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.safeareaview.ReactSafeAreaViewManager
+10-27 01:17:09.110  2426  2459 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.safeareaview.ReactSafeAreaViewShadowNode
+10-27 01:17:09.110  2426  2459 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.swiperefresh.SwipeRefreshLayoutManager
+10-27 01:17:09.111  2426  2459 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.text.frescosupport.FrescoBasedReactTextInlineImageViewManager
+10-27 01:17:09.111  2426  2459 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.text.frescosupport.FrescoBasedReactTextInlineImageShadowNode
+10-27 01:17:09.112  2426  2459 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.image.ReactImageManager
+10-27 01:17:09.113  2426  2459 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.modal.ReactModalHostManager
+10-27 01:17:09.113  2426  2459 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.text.ReactRawTextManager
+10-27 01:17:09.113  2426  2459 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.text.ReactRawTextShadowNode
+10-27 01:17:09.114  2426  2459 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.textinput.ReactTextInputManager
+10-27 01:17:09.115  2426  2459 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.textinput.ReactTextInputShadowNode
+10-27 01:17:09.115  2426  2459 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.text.ReactTextViewManager
+10-27 01:17:09.115  2426  2459 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.text.ReactTextShadowNode
+10-27 01:17:09.116  2426  2459 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.view.ReactViewManager
+10-27 01:17:09.116  2426  2459 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.text.ReactVirtualTextViewManager
+10-27 01:17:09.116  2426  2459 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.text.ReactVirtualTextShadowNode
+10-27 01:17:09.116  2426  2459 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.unimplementedview.ReactUnimplementedViewManager
+10-27 01:17:09.116  2426  2459 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.gutkin.frame.video.VideoPreviewManager
+10-27 01:17:09.171  2426  2458 I ReactNativeJS: Running "FrameStories"
+10-27 01:17:09.226   345  1368 W ServiceManager: Permission failure: android.permission.ACCESS_SURFACE_FLINGER from uid=10130 pid=2426
+10-27 01:17:09.227   345  1368 D PermissionCache: checking android.permission.ACCESS_SURFACE_FLINGER for uid=10130 => denied (325 us)
+10-27 01:17:09.242   503   538 D EventSequenceValidator: Transition from ACTIVITY_LAUNCHED to ACTIVITY_FINISHED
+10-27 01:17:09.260   503   543 D ArtManagerInternalImpl: /data/misc/iorapd/com.gutkin.frame/1/com.gutkin.frame.MainActivity/compiled_traces/compiled_trace.pb doesn't exist
+10-27 01:17:09.261   503   543 I ActivityTaskManager: Displayed com.gutkin.frame/.MainActivity: +308ms
+10-27 01:17:09.277  2426  2462 V UiAutomation: Init UiAutomation@8e9a054[id=1, flags=0]
+10-27 01:17:09.816   345   596 D PermissionCache: checking android.permission.READ_FRAME_BUFFER for uid=2000 => granted (151 us)
+10-27 01:17:09.817   298  1754 D goldfish-address-space: claimShared: Ask to claim region [0x3fdf82000 0x3fe04a000]
+10-27 01:17:09.974   159   159 I hwservicemanager: getTransport: Cannot find entry android.hardware.graphics.mapper@4.0::IMapper/default in either framework or device manifest.
+10-27 01:17:09.974  2414  2425 I Gralloc4: mapper 4.x is not supported
+10-27 01:17:10.028  2414  2425 D HostConnection: createUnique: call
+10-27 01:17:10.029  2414  2425 D HostConnection: HostConnection::get() New Host Connection established 0x7f4978b76350, tid 2425
+10-27 01:17:10.029  2414  2425 D goldfish-address-space: allocate: Ask for block of size 0x100
+10-27 01:17:10.029  2414  2425 D goldfish-address-space: allocate: ioctl allocate returned offset 0x3fbffe000 size 0x2000
+10-27 01:17:10.039  2414  2425 D HostConnection: HostComposition ext ANDROID_EMU_CHECKSUM_HELPER_v1 ANDROID_EMU_native_sync_v2 ANDROID_EMU_dma_v1 ANDROID_EMU_direct_mem ANDROID_EMU_host_composition_v1 ANDROID_EMU_host_composition_v2 ANDROID_EMU_vulkan ANDROID_EMU_deferred_vulkan_commands ANDROID_EMU_vulkan_null_optional_strings ANDROID_EMU_vulkan_create_resources_with_requirements ANDROID_EMU_YUV_Cache ANDROID_EMU_vulkan_ignored_handles ANDROID_EMU_has_shared_slots_host_memory_allocator ANDROID_EMU_vulkan_free_memory_sync ANDROID_EMU_vulkan_shader_float16_int8 ANDROID_EMU_vulkan_async_queue_submit ANDROID_EMU_sync_buffer_data ANDROID_EMU_vulkan_async_qsri ANDROID_EMU_read_color_buffer_dma ANDROID_EMU_hwc_color_transform GL_OES_EGL_image_external_essl3 GL_OES_vertex_array_object GL_KHR_texture_compression_astc_ldr ANDROID_EMU_host_side_tracing ANDROID_EMU_gles_max_version_3_0
+10-27 01:17:10.048  2414  2468 D libEGL  : loaded /vendor/lib64/egl/libEGL_emulation.so
+10-27 01:17:10.049  2414  2468 D libEGL  : loaded /vendor/lib64/egl/libGLESv1_CM_emulation.so
+10-27 01:17:10.051  2414  2468 D libEGL  : loaded /vendor/lib64/egl/libGLESv2_emulation.so
+10-27 01:17:10.065  2414  2468 D HostConnection: HostConnection::get() New Host Connection established 0x7f4978b74010, tid 2468
+10-27 01:17:10.070  2414  2468 D HostConnection: HostComposition ext ANDROID_EMU_CHECKSUM_HELPER_v1 ANDROID_EMU_native_sync_v2 ANDROID_EMU_dma_v1 ANDROID_EMU_direct_mem ANDROID_EMU_host_composition_v1 ANDROID_EMU_host_composition_v2 ANDROID_EMU_vulkan ANDROID_EMU_deferred_vulkan_commands ANDROID_EMU_vulkan_null_optional_strings ANDROID_EMU_vulkan_create_resources_with_requirements ANDROID_EMU_YUV_Cache ANDROID_EMU_vulkan_ignored_handles ANDROID_EMU_has_shared_slots_host_memory_allocator ANDROID_EMU_vulkan_free_memory_sync ANDROID_EMU_vulkan_shader_float16_int8 ANDROID_EMU_vulkan_async_queue_submit ANDROID_EMU_sync_buffer_data ANDROID_EMU_vulkan_async_qsri ANDROID_EMU_read_color_buffer_dma ANDROID_EMU_hwc_color_transform GL_OES_EGL_image_external_essl3 GL_OES_vertex_array_object GL_KHR_texture_compression_astc_ldr ANDROID_EMU_host_side_tracing ANDROID_EMU_gles_max_version_3_0
+10-27 01:17:10.071   159   159 I hwservicemanager: getTransport: Cannot find entry android.hardware.configstore@1.0::ISurfaceFlingerConfigs/default in either framework or device manifest.
+10-27 01:17:10.073  2414  2468 D EGL_emulation: eglCreateContext: 0x7f4968b823a0: maj 3 min 0 rcv 3
+10-27 01:17:10.075  2414  2468 D EGL_emulation: eglMakeCurrent: 0x7f4968b823a0: ver 3 0 (tinfo 0x7f4908b9ac20) (first time)
+10-27 01:17:10.191   503   538 D EventSequenceValidator: Transition from ACTIVITY_FINISHED to INTENT_STARTED
+10-27 01:17:10.195   414   414 I perfetto: ing_service_impl.cc:758 Configured tracing session 6, #sources:1, duration:5000 ms, #buffers:1, total buffer size:4096 KB, total sessions:2, uid:1071 session name: ""
+10-27 01:17:10.195   407   407 I perfetto: probes_producer.cc:230  Ftrace setup (target_buf=6)
+10-27 01:17:10.202  2426  2426 D LifecycleMonitor: Lifecycle status change: com.gutkin.frame.MainActivity@64c0a50 in: PAUSED
+10-27 01:17:10.202  2426  2426 V ActivityScenario: Update currentActivityStage to PAUSED, currentActivity=com.gutkin.frame.MainActivity@64c0a50
+10-27 01:17:10.203   503   538 D EventSequenceValidator: Transition from INTENT_STARTED to ACTIVITY_LAUNCHED
+10-27 01:17:10.217   281   281 D Zygote  : Forked child process 2474
+10-27 01:17:10.221   298  1754 D goldfish-address-space: claimShared: Ask to claim region [0x3fe432000 0x3fe4fa000]
+10-27 01:17:10.235  2474  2474 W tkin.frame.tes: Unexpected CPU variant for X86 using defaults: x86_64
+10-27 01:17:10.238   389   413 I adbd    : jdwp connection from 2474
+10-27 01:17:10.243   503   533 W InputReader: Device virtio_input_multi_touch_10 is associated with display ADISPLAY_ID_NONE.
+10-27 01:17:10.243   503   533 W InputReader: Device virtio_input_multi_touch_7 is associated with display ADISPLAY_ID_NONE.
+10-27 01:17:10.243   503   533 W InputReader: Device virtio_input_multi_touch_4 is associated with display ADISPLAY_ID_NONE.
+10-27 01:17:10.243   503   533 W InputReader: Device virtio_input_multi_touch_5 is associated with display ADISPLAY_ID_NONE.
+10-27 01:17:10.243   503   533 W InputReader: Device virtio_input_multi_touch_2 is associated with display ADISPLAY_ID_NONE.
+10-27 01:17:10.243   503   533 W InputReader: Device virtio_input_multi_touch_6 is associated with display ADISPLAY_ID_NONE.
+10-27 01:17:10.243   503   533 W InputReader: Device virtio_input_multi_touch_8 is associated with display ADISPLAY_ID_NONE.
+10-27 01:17:10.243   503   533 W InputReader: Device virtio_input_multi_touch_9 is associated with display ADISPLAY_ID_NONE.
+10-27 01:17:10.243   503   533 W InputReader: Device virtio_input_multi_touch_3 is associated with display ADISPLAY_ID_NONE.
+10-27 01:17:10.243   503   533 W InputReader: Device virtio_input_multi_touch_11 is associated with display ADISPLAY_ID_NONE.
+10-27 01:17:10.243   503   533 W InputReader: Device virtio_input_multi_touch_10 is associated with display ADISPLAY_ID_NONE.
+10-27 01:17:10.243   503   533 W InputReader: Device virtio_input_multi_touch_7 is associated with display ADISPLAY_ID_NONE.
+10-27 01:17:10.243   503   533 W InputReader: Device virtio_input_multi_touch_4 is associated with display ADISPLAY_ID_NONE.
+10-27 01:17:10.243   503   533 W InputReader: Device virtio_input_multi_touch_5 is associated with display ADISPLAY_ID_NONE.
+10-27 01:17:10.243   503   533 W InputReader: Device virtio_input_multi_touch_2 is associated with display ADISPLAY_ID_NONE.
+10-27 01:17:10.243   503   533 W InputReader: Device virtio_input_multi_touch_6 is associated with display ADISPLAY_ID_NONE.
+10-27 01:17:10.243   503   533 W InputReader: Device virtio_input_multi_touch_8 is associated with display ADISPLAY_ID_NONE.
+10-27 01:17:10.243   503   533 W InputReader: Device virtio_input_multi_touch_9 is associated with display ADISPLAY_ID_NONE.
+10-27 01:17:10.243   503   533 W InputReader: Device virtio_input_multi_touch_3 is associated with display ADISPLAY_ID_NONE.
+10-27 01:17:10.243   503   533 W InputReader: Device virtio_input_multi_touch_11 is associated with display ADISPLAY_ID_NONE.
+10-27 01:17:10.251   345  1368 D PermissionCache: checking android.permission.READ_FRAME_BUFFER for uid=1000 => granted (97 us)
+10-27 01:17:10.251   298  1754 D goldfish-address-space: claimShared: Ask to claim region [0x3fe4fa000 0x3fe5c2000]
+10-27 01:17:10.395  2474  2474 D ApplicationLoaders: Returning zygote-cached class loader: /system/framework/android.test.base.jar
+10-27 01:17:10.395  2474  2474 D ApplicationLoaders: Returning zygote-cached class loader: /system/framework/android.test.base.jar
+10-27 01:17:10.401  2474  2474 I tkin.frame.tes: The ClassLoaderContext is a special shared library.
+10-27 01:17:10.402  2474  2474 D ApplicationLoaders: Returning zygote-cached class loader: /system/framework/android.test.base.jar
+10-27 01:17:10.402  2474  2474 D ApplicationLoaders: Returning zygote-cached class loader: /system/framework/android.test.base.jar
+10-27 01:17:10.402  2474  2474 I tkin.frame.tes: The ClassLoaderContext is a special shared library.
+10-27 01:17:10.406   503  2191 W system_server: Long monitor contention with owner android.anim (539) at void com.android.server.wm.WindowSurfacePlacer$Traverser.run()(WindowSurfacePlacer.java:59) waiters=1 in int com.android.server.wm.ActivityTaskManagerService.getLastResumedActivityUserId() for 156ms
+10-27 01:17:10.408  2474  2474 D NetworkSecurityConfig: No Network Security Config specified, using platform default
+10-27 01:17:10.408  2474  2474 D NetworkSecurityConfig: No Network Security Config specified, using platform default
+10-27 01:17:10.412   503  2494 D libEGL  : loaded /vendor/lib64/egl/libEGL_emulation.so
+10-27 01:17:10.418   503  2494 D libEGL  : loaded /vendor/lib64/egl/libGLESv1_CM_emulation.so
+10-27 01:17:10.421   503  2494 D libEGL  : loaded /vendor/lib64/egl/libGLESv2_emulation.so
+10-27 01:17:10.437  2426  2426 D LifecycleMonitor: Lifecycle status change: com.gutkin.frame.MainActivity@64c0a50 in: STOPPED
+10-27 01:17:10.438  2426  2426 V ActivityScenario: Update currentActivityStage to STOPPED, currentActivity=com.gutkin.frame.MainActivity@64c0a50
+10-27 01:17:10.444   503  2494 D HostConnection: HostConnection::get() New Host Connection established 0x7a0e10a82c90, tid 2494
+10-27 01:17:10.451  2426  2426 E unknown:ReactNative: Tried to remove non-existent frame callback
+10-27 01:17:10.451  2426  2426 D LifecycleMonitor: Lifecycle status change: com.gutkin.frame.MainActivity@64c0a50 in: DESTROYED
+10-27 01:17:10.451  2426  2426 V ActivityScenario: Update currentActivityStage to DESTROYED, currentActivity=null
+10-27 01:17:10.452   503  2494 D HostConnection: HostComposition ext ANDROID_EMU_CHECKSUM_HELPER_v1 ANDROID_EMU_native_sync_v2 ANDROID_EMU_dma_v1 ANDROID_EMU_direct_mem ANDROID_EMU_host_composition_v1 ANDROID_EMU_host_composition_v2 ANDROID_EMU_vulkan ANDROID_EMU_deferred_vulkan_commands ANDROID_EMU_vulkan_null_optional_strings ANDROID_EMU_vulkan_create_resources_with_requirements ANDROID_EMU_YUV_Cache ANDROID_EMU_vulkan_ignored_handles ANDROID_EMU_has_shared_slots_host_memory_allocator ANDROID_EMU_vulkan_free_memory_sync ANDROID_EMU_vulkan_shader_float16_int8 ANDROID_EMU_vulkan_async_queue_submit ANDROID_EMU_sync_buffer_data ANDROID_EMU_vulkan_async_qsri ANDROID_EMU_read_color_buffer_dma ANDROID_EMU_hwc_color_transform GL_OES_EGL_image_external_essl3 GL_OES_vertex_array_object GL_KHR_texture_compression_astc_ldr ANDROID_EMU_host_side_tracing ANDROID_EMU_gles_max_version_3_0
+10-27 01:17:10.453   159   159 I hwservicemanager: getTransport: Cannot find entry android.hardware.configstore@1.0::ISurfaceFlingerConfigs/default in either framework or device manifest.
+10-27 01:17:10.459   503  2494 D EGL_emulation: eglCreateContext: 0x7a0e00b07e70: maj 3 min 0 rcv 3
+10-27 01:17:10.460  2426  2446 I TestRunner: finished: appStartsWithBundledJavaScript(com.gutkin.frame.video.VideoExportTest)

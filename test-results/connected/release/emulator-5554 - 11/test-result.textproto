@@ -1,4 +1,4 @@
-# 2026-10-27T01:11:08.814442721Z:
+# 2026-10-27T01:17:39.484331259Z:
 test_suite_meta_data {
   scheduled_test_case_count: 3
 }
@@ -9,12 +9,12 @@ test_result {
     test_package: "com.gutkin.frame.video"
     test_method: "appStartsWithBundledJavaScript"
     start_time {
-      seconds: 1793063439
-      nanos: 967000000
+      seconds: 1793063829
+      nanos: 499000000
     }
     end_time {
-      seconds: 1793063441
-      nanos: 621000000
+      seconds: 1793063831
+      nanos: 38000000
     }
   }
   test_status: PASSED
@@ -61,12 +61,12 @@ test_result {
     test_package: "com.gutkin.frame.video"
     test_method: "validatesActualVideoAndRejects4K"
     start_time {
-      seconds: 1793063441
-      nanos: 649000000
+      seconds: 1793063831
+      nanos: 74000000
     }
     end_time {
-      seconds: 1793063441
-      nanos: 676000000
+      seconds: 1793063831
+      nanos: 100000000
     }
   }
   test_status: PASSED
@@ -113,12 +113,12 @@ test_result {
     test_package: "com.gutkin.frame.video"
     test_method: "exportsTrimmedPortraitWithTextAndWithoutAudio"
     start_time {
-      seconds: 1793063441
-      nanos: 680000000
+      seconds: 1793063831
+      nanos: 106000000
     }
     end_time {
-      seconds: 1793063467
-      nanos: 593000000
+      seconds: 1793063858
+      nanos: 324000000
     }
   }
   test_status: PASSED
